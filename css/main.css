@@ -1,0 +1,53 @@
+.bg-color {
+    background-color: #EDF2F4;
+}
+
+:root {
+    --blue: #4e73df;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #EF233C;
+    --orange: #fd7e14;
+    --yellow: #f6c23e;
+    --green: #1cc88a;
+    --teal: #20c9a6;
+    --cyan: #36b9cc;
+    --white: #fff;
+    --gray: #858796;
+    --gray-dark: #2B2D42;
+    --primary: #4e73df;
+    --secondary: #858796;
+    --success: #1cc88a;
+    --info: #36b9cc;
+    --warning: #f6c23e;
+    --danger: #e74a3b;
+    --light: #EDF2F4;
+    --dark: #5a5c69;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: "SF Pro", "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  
+
+.box {
+    border-color: #D4D7D9;
+    font-size: 2rem;
+}
+
+.logo {
+    height: 70px;
+    width: 70px;
+}
+
+@media (min-width: 1600px) {
+    .logo {
+        height: 90px;
+        width: 90px;
+    }
+    
+}
