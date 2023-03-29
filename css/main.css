@@ -44,6 +44,9 @@
     width: 70px;
 }
 
+.nav-active {
+    color: #EF233C;
+}
 
 @media (min-width: 1600px) {
     .logo {
