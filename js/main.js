@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    $("#title").click(() => {
-        alert("testing")
+    $("#create").click(() => {
+        const inputValue = $("#myInput").val();
+        $("#randomList").append(`<p id="result">${inputValue}</p>`)
+
     })
 })
