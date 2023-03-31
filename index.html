@@ -13,55 +13,113 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid bg-color">
-        <div class="row">
-            <div class="col-lg-2 vh-100">
+    <div id="test" class="vh-100 vw-100 position-absolute bg-white d-none">
+        <div class="d-flex justify-content-between">
+            <img class="logo ms-3 mt-3" src="images/Chatbot logo.svg" alt="Chatbot logo">
+            <button id="burgerMenuButtonClose" class="d-flex me-3 mt-3 align-items-center justify-content-center btn border" style="width: 3rem; height: 3rem;" type="button">
+                <i class="bi-x fs-3" ></i>
+            </button>
+        </div>
+        <div class="d-flex justify-content-center">
+            <nav class="navbar flex-column">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item">
+                        <a class="d-flex gap-3 align-items-center nav-link" href="#">
+                            <i class="nav-icon bi-house"></i>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-active">
+                        <a class="d-flex gap-3 align-items-center nav-link nav-active" href="#">
+                            <i class="nav-icon bi-chat" ></i>
+                            <span class="nav-text">Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="d-flex gap-3 align-items-center nav-text nav-link" href="#">
+                            <i class="nav-icon bi-search"></i>
+                            <span class="nav-text">Search</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="d-flex gap-3 align-items-center nav-link" href="#">
+                            <i class="nav-icon bi-person-circle"></i>
+                            <span class="nav-text">Account</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="test2" class="container-fluid bg-color">
+        <div class="row vh-100">
+            <div class="col-xl-2 col-1 d-none d-lg-block">
+                
                 <div class="row border-end border-bottom" style="height: 15%">
+                    <!--Logo-->
+                
                     <div class="d-flex gap-2 justify-content-center align-items-center">
                         <img class="logo" src="images/Chatbot logo.svg" alt="Chatbot logo">
-                        <h1 class="fw-bolder fs-xl-2 fs-md-4 d-none d-xl-block">realChat</h1>
+                        <h1 class="logoText d-none d-xl-block">realChat</h1>
                     </div>
                 </div>
                 <div class="row border-end" style="height:85%">
-                    <div class="d-flex">
+                    <!--Navigation Bar-->
+                    <div class="d-flex justify-content-center">
                         <nav class="navbar flex-column">
-                            <ul class="navbar-nav ms-5 mt-4 gap-4" style="color: #2B2D42">
+                            <ul class="navbar-nav d-flex gap-4 mt-3">
                                 <li class="nav-item">
-                                    <a class="d-flex gap-3 align-items-center fw-light fs-3 nav-link" href="#">
-                                        <i class="bi-house" style="font-size: 30px;"></i>
-                                        <span>Home</span>
+                                    <a class="d-flex gap-3 align-items-center nav-link" href="#">
+                                        <i class="nav-icon bi-house"></i>
+                                        <span class="nav-text d-none d-xl-block">Home</span>
                                     </a>
                                 </li>
                                 <li class="nav-item nav-active">
-                                    <a class="d-flex gap-3 align-items-center fw-light fs-3 nav-link nav-active" href="#">
-                                        <i class="bi-chat" style="font-size: 30px;"></i>
-                                        <span>Chat</span>
+                                    <a class="d-flex gap-3 align-items-center nav-link nav-active" href="#">
+                                        <i class="nav-icon bi-chat" ></i>
+                                        <span class="nav-text d-none d-xl-block">Chat</span>
                                     </a>
                                 </li>
-                                <li class="nav-item d-flex gap-3 align-items-center">
-                                    <i class="bi-search" style="font-size: 30px;"></i>
-                                    <a class="fw-light fs-3 nav-link" href="#">Search</a>
+                                <li class="nav-item">
+                                    <a class="d-flex gap-3 align-items-center nav-link" href="#">
+                                        <i class="nav-icon bi-search"></i>
+                                        <span class="nav-text d-none d-xl-block">Search</span>
+                                    </a>
                                 </li>
-                                <li class="nav-item d-flex gap-3 align-items-center">
-                                    <i class="bi-person-circle" style="font-size: 30px;"></i>
-                                    <a class="fw-light fs-3 nav-link" href="#">Account</a>
+                                <li class="nav-item">
+                                    <a class="d-flex gap-3 align-items-center nav-link" href="#">
+                                        <i class="nav-icon bi-person-circle"></i>
+                                        <span class="nav-text d-none d-xl-block">Account</span>
+                                    </a>
                                 </li>
                                 
                             </ul>
-                                
-
-
                         </nav>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="row align-items-center border-bottom " style="height: 15%">
-                    <div class="d-flex">
-                        <h1 class="fw-semibold ms-5">Chat</h1>
+                <div class="row align-items-center border-bottom" style="height: 15%">
+                    <!--Page header-->
+                    <div class="d-flex justify-content-between">
+                        <h1 class="fw-semibold ms-4" style="font-size: 2rem;">Chat</h1>
+                        <button id="burgerMenuButtonOpen" class="d-flex me-4 align-items-center justify-content-center btn border d-lg-none" style="width: 3rem; height: 3rem;" type="button">
+                            <i class="bi-list fs-3" ></i>
+                        </button>
+
+                          
                     </div>
                 </div>
-                <div class="row" >
+                <div class="row flex-column-reverse" style="height:85%; background-color: #EDF2F4; ">
+                    <!--Chat Panel-->
+                    <div class="d-flex gap-2 mb-4">
+                        <textarea spellcheck="false" class="form-control" placeholder="Type your message here..."></textarea>
+                        <button id="sendBtn" class="btn rounded-5 d-flex align-items-center justify-content-center">
+                        <i class="bi-send" style="font-size:1rem; color: white"></i>
+                    </button>
+                    </div>
+
 
                 </div>
             </div>

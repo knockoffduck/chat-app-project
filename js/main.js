@@ -1,7 +1,10 @@
-$(document).ready(function () {
-    $("#create").click(() => {
-        const inputValue = $("#myInput").val();
-        $("#randomList").append(`<p id="result">${inputValue}</p>`)
-
-    })
-})
+$(document).ready(function() {
+    $('#burgerMenuButtonOpen').click(function() {
+      $('#test').toggleClass('d-none');
+      $('#test2').toggleClass('d-none');
+    });
+    $('#burgerMenuButtonClose').click(function() {
+      $('#test').toggleClass('d-none');
+      $('#test2').toggleClass('d-none');
+    });
+  });
