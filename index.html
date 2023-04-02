@@ -23,26 +23,22 @@
         <div class="d-flex justify-content-center">
             <nav class="navbar flex-column">
                 <ul class="navbar-nav gap-4">
-                    <li class="nav-item">
-                        <a class="d-flex gap-3 align-items-center nav-link" href="#">
+                        <a class="nav-link" href="#">
                             <i class="nav-icon bi-house"></i>
                             <span class="nav-text">Home</span>
                         </a>
-                    </li>
-                    <li class="nav-item nav-active">
-                        <a class="d-flex gap-3 align-items-center nav-link nav-active" href="#">
+                        <a class="nav-link nav-active" href="#">
                             <i class="nav-icon bi-chat" ></i>
                             <span class="nav-text">Chat</span>
                         </a>
-                    </li>
                     <li class="nav-item">
-                        <a class="d-flex gap-3 align-items-center nav-text nav-link" href="#">
+                        <a class="nav-text nav-link" href="#">
                             <i class="nav-icon bi-search"></i>
                             <span class="nav-text">Search</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="d-flex gap-3 align-items-center nav-link" href="#">
+                        <a class="nav-link" href="#">
                             <i class="nav-icon bi-person-circle"></i>
                             <span class="nav-text">Account</span>
                         </a>
@@ -54,9 +50,9 @@
     </div>
     <div id="test2" class="container-fluid bg-color">
         <div class="row vh-100">
-            <div class="col-xl-2 col-1 d-none d-lg-block">
+            <div class="side-pane col-xl-2 col-1 d-none d-lg-block ">
                 
-                <div class="row border-end border-bottom" style="height: 15%">
+                <div class="row border-end border-bottom" style="height: 12.5%">
                     <!--Logo-->
                 
                     <div class="d-flex gap-2 justify-content-center align-items-center">
@@ -64,43 +60,34 @@
                         <h1 class="logoText d-none d-xl-block">realChat</h1>
                     </div>
                 </div>
-                <div class="row border-end" style="height:85%">
+                <div class="row border-end" style="height:87.5% ">
                     <!--Navigation Bar-->
                     <div class="d-flex justify-content-center">
                         <nav class="navbar flex-column">
                             <ul class="navbar-nav d-flex gap-4 mt-3">
-                                <li class="nav-item">
-                                    <a class="d-flex gap-3 align-items-center nav-link" href="#">
-                                        <i class="nav-icon bi-house"></i>
-                                        <span class="nav-text d-none d-xl-block">Home</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item nav-active">
-                                    <a class="d-flex gap-3 align-items-center nav-link nav-active" href="#">
-                                        <i class="nav-icon bi-chat" ></i>
-                                        <span class="nav-text d-none d-xl-block">Chat</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="d-flex gap-3 align-items-center nav-link" href="#">
-                                        <i class="nav-icon bi-search"></i>
-                                        <span class="nav-text d-none d-xl-block">Search</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="d-flex gap-3 align-items-center nav-link" href="#">
-                                        <i class="nav-icon bi-person-circle"></i>
-                                        <span class="nav-text d-none d-xl-block">Account</span>
-                                    </a>
-                                </li>
-                                
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon bi-house"></i>
+                                    <span class="nav-text">Home</span>
+                                </a>
+                                <a class="nav-link nav-active" href="#">
+                                    <i class="nav-icon bi-chat" ></i>
+                                    <span class="nav-text">Chat</span>
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon bi-search"></i>
+                                    <span class="nav-text">Search</span>
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <i class="nav-icon bi-person-circle"></i>
+                                    <span class="nav-text">Account</span>
+                                </a>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="row align-items-center border-bottom" style="height: 15%">
+                <div class="row align-items-center border-bottom" style="height: 12.5%">
                     <!--Page header-->
                     <div class="d-flex justify-content-between">
                         <h1 class="fw-semibold ms-4" style="font-size: 2rem;">Chat</h1>
@@ -111,7 +98,7 @@
                           
                     </div>
                 </div>
-                <div class="row flex-column-reverse" style="height:85%; background-color: #EDF2F4; ">
+                <div class="row flex-column-reverse" style="height:87.5%; background-color: #EDF2F4; ">
                     <!--Chat Panel-->
                     <div class="d-flex gap-2 mb-4">
                         <textarea spellcheck="false" class="form-control" placeholder="Type your message here..."></textarea>
@@ -119,8 +106,6 @@
                         <i class="bi-send" style="font-size:1rem; color: white"></i>
                     </button>
                     </div>
-
-
                 </div>
             </div>
         </div>

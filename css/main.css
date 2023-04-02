@@ -57,10 +57,28 @@
 }
 
 .nav-text {
+    display: none;
     font-size: 1.5rem;
     font-weight: 300;
 }
 
+.nav-link {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  height: 3.5rem;
+  width: 3.5rem;
+
+}
+
+.side-pane {
+  max-width: 250px;
+}
+
+.nav-link:hover {
+  background-color: rgba(43,45,66,0.1);
+  border-radius: 0.25rem;
+}
 
 textarea {
     overflow: hidden;
@@ -82,16 +100,37 @@ textarea.form-control {
     background-color: #EF233C;
 }
 
-@media (min-width: 1600px) {
+@media (max-width: 1200px) {
+  .nav-link {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) {
     .logo {
-        height: 90px;
-        width: 90px;
+        height: 50px;
+        width: 50px;
     }
 
     .logoText {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+    .nav-link {
+      gap: 1.5rem;
+      padding-left: 1rem;
+      height: 3.5rem; 
+      width: 12rem;
+    }
+
+    .nav-text {
+      display: block;
     }
     
+    .nav-link:hover {
+      background-color: rgba(43,45,66,0.1);
+      border-radius: 0.25rem;
+    }
+
 }
 
 .burger-menu {

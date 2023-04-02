@@ -1,0 +1,18 @@
+{
+    "printWidth": 80, 
+    "tabWidth": 2,
+    "useTabs": false, 
+    "semi": true, 
+    "singleQuote": true, 
+    "quoteProps": "as-needed", 
+    "htmlWhitespaceSensitivity": "ignore", 
+    "vueIndentScriptAndStyle": true, 
+    "cssIndent": "2", 
+    "cssParentheses": "always", 
+    "cssBraceStyle": "end-expand", 
+    "cssInsertFinalNewline": true, 
+    "arrowParens": "always", 
+    "rangeStart": 0, 
+    "proseWrap": "preserve" 
+  }
+  
