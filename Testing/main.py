@@ -5,8 +5,9 @@ import openai
 openai.api_key = API_KEY
 
 messages = []
-system_msg = input("What type of chatbot would you like to create?\n")
-messages.append({"role": "system", "content": system_msg})
+#This part of the code sets the initial context of what you want to be. (where you would paste the context prompt)
+system_msg = input("What type of chatbot would you like to create?\n") 
+messages.append({"role": "system", "content": system_msg}) 
 
 print("Your new assistant is ready!")
 while input != "quit()":
