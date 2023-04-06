@@ -1,116 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat app Project</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div id="test" class="vh-100 vw-100 position-absolute bg-white d-none">
-        <div class="d-flex justify-content-between">
-            <img class="logo ms-3 mt-3" src="images/Chatbot logo.svg" alt="Chatbot logo">
-            <button id="burgerMenuButtonClose" class="d-flex me-3 mt-3 align-items-center justify-content-center btn border" style="width: 3rem; height: 3rem;" type="button">
-                <i class="bi-x fs-3" ></i>
-            </button>
-        </div>
-        <div class="d-flex justify-content-center">
-            <nav class="navbar flex-column">
-                <ul class="navbar-nav gap-4">
-                        <a class="nav-link" href="#">
-                            <i class="nav-icon bi-house"></i>
-                            <span class="nav-text">Home</span>
-                        </a>
-                        <a class="nav-link nav-active" href="#">
-                            <i class="nav-icon bi-chat" ></i>
-                            <span class="nav-text">Chat</span>
-                        </a>
-                    <li class="nav-item">
-                        <a class="nav-text nav-link" href="#">
-                            <i class="nav-icon bi-search"></i>
-                            <span class="nav-text">Search</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="nav-icon bi-person-circle"></i>
-                            <span class="nav-text">Account</span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <div id="test2" class="container-fluid bg-color">
-        <div class="row vh-100">
-            <div class="side-pane col-xl-2 col-1 d-none d-lg-block ">
-                
-                <div class="row border-end border-bottom" style="height: 12.5%">
-                    <!--Logo-->
-                
-                    <div class="d-flex gap-2 justify-content-center align-items-center">
-                        <img class="logo" src="images/Chatbot logo.svg" alt="Chatbot logo">
-                        <h1 class="logoText d-none d-xl-block">realChat</h1>
-                    </div>
-                </div>
-                <div class="row border-end" style="height:87.5% ">
-                    <!--Navigation Bar-->
-                    <div class="d-flex justify-content-center">
-                        <nav class="navbar flex-column">
-                            <ul class="navbar-nav d-flex gap-4 mt-3">
-                                <a class="nav-link" href="#">
-                                    <i class="nav-icon bi-house"></i>
-                                    <span class="nav-text">Home</span>
-                                </a>
-                                <a class="nav-link nav-active" href="#">
-                                    <i class="nav-icon bi-chat" ></i>
-                                    <span class="nav-text">Chat</span>
-                                </a>
-                                <a class="nav-link" href="#">
-                                    <i class="nav-icon bi-search"></i>
-                                    <span class="nav-text">Search</span>
-                                </a>
-                                <a class="nav-link" href="#">
-                                    <i class="nav-icon bi-person-circle"></i>
-                                    <span class="nav-text">Account</span>
-                                </a>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="side-pane">
+      <nav>
+        <a href="/" class="logo-area">
+          <img class="logo" src="/images/Chatbot logo.svg" alt="ChatBot Logo" />
+          <h1 class="logo-text">realChat</h1>
+        </a>
+        <ul class="nav-items">
+          <a class="nav-item" href="/home">
+            <div class="nav-item-area">
+              <i class="nav-icon bi-house"></i>
+              <span>Home</span>
             </div>
-            <div class="col">
-                <div class="row align-items-center border-bottom" style="height: 12.5%">
-                    <!--Page header-->
-                    <div class="d-flex justify-content-between">
-                        <h1 class="fw-semibold ms-4" style="font-size: 2rem;">Chat</h1>
-                        <button id="burgerMenuButtonOpen" class="d-flex me-4 align-items-center justify-content-center btn border d-lg-none" style="width: 3rem; height: 3rem;" type="button">
-                            <i class="bi-list fs-3" ></i>
-                        </button>
+          </a>
 
-                          
-                    </div>
-                </div>
-                <div class="row flex-column-reverse" style="height:87.5%; background-color: #EDF2F4; ">
-                    <!--Chat Panel-->
-                    <div class="d-flex gap-2 mb-4">
-                        <textarea spellcheck="false" class="form-control" placeholder="Type your message here..."></textarea>
-                        <button id="sendBtn" class="btn rounded-5 d-flex align-items-center justify-content-center">
-                        <i class="bi-send" style="font-size:1rem; color: white"></i>
-                    </button>
-                    </div>
-                </div>
+          <a class="nav-item" href="/chat">
+            <div class="nav-item-area">
+              <i class="nav-icon bi-chat"></i>
+              <span>Chat</span>
             </div>
-        </div>
+          </a>
+          <a class="nav-item" href="/search">
+            <div class="nav-item-area">
+              <i class="nav-icon bi-search"></i>
+              <span>Search</span>
+            </div>
+          </a>
+          <a class="nav-item" href="/account">
+            <div class="nav-item-area">
+              <i class="nav-icon bi-person-circle"></i>
+              <span>Account</span>
+            </div>
+          </a>
+        </ul>
+      </nav>
     </div>
-      
-    
-</body>
+    <div class="main">
+      <div class="main-header">
+        <h1>Chat</h1>
+      </div>
+      <div class="main-content">
+        <div class="chat-messages-area">
+					<div class="messages">
+						<div class="message-area-bot">
+							<div class="message-avatar">
+								<i class="bi-robot"></i>
+							</div>
+							<div class="message-box">
+								<span class="message">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, maxime obcaecati. Obcaecati sint laborum repellendus, quas tempore error. Laboriosam ratione vitae, iure minus perspiciatis ipsa dicta placeat rerum recusandae numquam?</span>
+							</div>
+						</div>
+						<div class="message-area-user">
+							<div class="message-avatar">
+								<i class="bi-person"></i>
+							</div>
+							<div class="message-box">
+								<span class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto odio iure, corporis nemo minus sequi, illo soluta voluptatum eaque accusamus, explicabo blanditiis fuga enim ex fugiat molestiae pariatur quia rerum!</span>
+							</div>
+						</div>
+          </div>
+
+        <div class="chat-input-area">
+					<textarea
+					cols="50"
+					spellcheck="false"
+					class="chat-input"
+					placeholder="Type your message here..."
+				></textarea>
+          <button class="chat-send-btn">
+            <i class="bi-send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+		<script src="js/script.js"></script>
+  </body>
 </html>
