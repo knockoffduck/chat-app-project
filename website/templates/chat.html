@@ -1,0 +1,23 @@
+{% extends "base.html"%} {% block title %} Chat {% endblock %} {% block
+content_header %}Chat{%endblock%} {% block content %}
+<div class="main-content">
+  <div class="chat-messages-area">
+    <div class="messages">
+      <div class="message-area-bot"></div>
+
+      <div class="chat-input-area">
+        <textarea
+          cols="50"
+          spellcheck="false"
+          class="chat-input"
+          placeholder="Type your message here..."
+        ></textarea>
+        <button class="chat-send-btn">
+          <i class="bi-send"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
