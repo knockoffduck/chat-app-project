@@ -33,5 +33,3 @@ This is a Flask web application that uses the OpenAI API to create a chatbot. Th
 6. Enter a prompt in the chat input field and click the send button to get a response from the chatbot.
 
 7. The chat history is stored in the `chats/history.json` file, which is loaded and saved automatically by the `generate_text` function. You can view the chat history by opening the file in a text editor or by reading the contents of the file in your Python code.
-
-Also Testing
