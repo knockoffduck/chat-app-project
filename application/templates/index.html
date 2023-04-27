@@ -1,0 +1,80 @@
+{$ extend 'layout.html' $}
+
+{$ block content $}
+
+
+    <div class="side-pane">
+      <nav>
+        <a href="/" class="logo-area">
+          <img class="logo" src="images/Chatbot logo.svg" alt="ChatBot Logo" />
+          <h1 class="logo-text">realChat</h1>
+        </a>
+        <ul class="nav-items">
+          <a class="nav-item" href="/home">
+            <div class="nav-item-area">
+              <i class="nav-icon bi-house"></i>
+              <span>Home</span>
+            </div>
+          </a>
+
+          <a class="nav-item" href="/chat">
+            <div class="nav-item-area">
+              <i class="nav-icon bi-chat"></i>
+              <span>Chat</span>
+            </div>
+          </a>
+          <a class="nav-item" href="/search">
+            <div class="nav-item-area">
+              <i class="nav-icon bi-search"></i>
+              <span>Search</span>
+            </div>
+          </a>
+          <a class="nav-item" href="/account">
+            <div class="nav-item-area">
+              <i class="nav-icon bi-person-circle"></i>
+              <span>Account</span>
+            </div>
+          </a>
+        </ul>
+      </nav>
+    </div>
+    <div class="main">
+      <div class="main-header">
+        <h1>Chat</h1>
+      </div>
+      <div class="main-content">
+        <div class="chat-messages-area">
+					<div class="messages">
+						<div class="message-area-bot">
+							<div class="message-avatar">
+								<i class="bi-robot"></i>
+							</div>
+							<div class="message-box">
+								<span class="message">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, maxime obcaecati. Obcaecati sint laborum repellendus, quas tempore error. Laboriosam ratione vitae, iure minus perspiciatis ipsa dicta placeat rerum recusandae numquam?</span>
+							</div>
+						</div>
+						<div class="message-area-user">
+							<div class="message-avatar">
+								<i class="bi-person"></i>
+							</div>
+							<div class="message-box">
+								<span class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto odio iure, corporis nemo minus sequi, illo soluta voluptatum eaque accusamus, explicabo blanditiis fuga enim ex fugiat molestiae pariatur quia rerum!</span>
+							</div>
+						</div>
+          </div>
+
+        <div class="chat-input-area">
+					<textarea
+					cols="50"
+					spellcheck="false"
+					class="chat-input"
+					placeholder="Type your message here..."
+				></textarea>
+          <button class="chat-send-btn">
+            <i class="bi-send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+{# endblock #}
