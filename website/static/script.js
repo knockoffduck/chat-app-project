@@ -75,4 +75,13 @@ $(document).ready(function () {
     $("#test2").toggleClass("d-none");
   });
   */
+
+ $('.icon').click(() => {
+  let x = document.getElementById("side-panel");
+  if (x.className === "side-pane") {
+    x.className = x.className + " responsive";
+  } else {
+    x.className = "side-pane";
+  }
+});
 });
