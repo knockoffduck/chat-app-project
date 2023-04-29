@@ -18,10 +18,14 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css')}}"
     />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>{% block title%} Home {% endblock %}</title>
   </head>
   <body>
-    <div class="side-pane">
+    <div class="side-pane", id="side-panel">
       <nav>
         <a href="/" class="logo-area">
           <img
@@ -62,6 +66,9 @@
     </div>
 
     <div class="main">
+      <div class="burger">
+        <button class="icon"><i class="fa fa-bars"></i></button>
+      </div>
       <div class="main-header">
         <h1>{% block content_header %}Chat{% endblock %}</h1>
         <div class="username-input-area">
@@ -76,7 +83,9 @@
           </button>
         </div>
       </div>
+      <div class="content">
       {% block content %} {% endblock %}
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

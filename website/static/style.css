@@ -192,6 +192,10 @@ p {
   gap: 1.5rem;
   font-style: normal;
 }
+.burger {
+  float: none;
+  display: none;
+}
 
 @media (max-width: 768px) {
   .side-pane {
@@ -221,8 +225,50 @@ p {
   .side-pane {
     display: none;
   }
+  .burger {
+    display: block;
+    background-color: white;
+    height: 30px;
+  }
+  .icon {
+    border: none;
+    background-color: white;
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+  }
+  .main-header {
+    height: 110px;
+  }
   .main {
     margin-left: 0px;
     width: 100vw;
   }
+  .side-pane.responsive {
+    position: relative;
+    display: block;
+  }
+  .side-pane.responsive a {
+    display: block;
+  }
+  .logo-area {
+    height: 140px;
+  }
+  .logo {
+    margin-left: 25px;
+    margin-top: 45px;
+  }
+  .username-input {
+    height: 2.5rem;
+  }
+  .username-send-btn {
+    width: 2rem;
+    height: 2rem;
+  }
+  .username-input-area {
+    width: 20rem;
+  }
+}
+
+.content {
+  padding: 1rem;
 }
