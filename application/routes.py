@@ -1,19 +1,21 @@
 from application import app
-from flask import render_template, request, url_for
+from flask import render_template, request, url_for, redirect
 
 @app.route('/')
 @app.route('/homepage')
 def index():
-    return render_template('hompage.html')
-app.route('Logup')
+    return render_template('homepage.html')
+
+@app.route('/login')
 def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         # perform login validation here
-        return redirect('/Chat')
+        return redirect('/chat')
     else:
         return render_template('login.html')
+    
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -30,16 +32,15 @@ def signup():
         # do any validation or processing here
 
         # redirect to a new page after successful signup
-        return redirect('/Chat')
+        return redirect('/chat')
 
     # render the signup form for GET requests
     return render_template('signup.html')
-@app.route('/Chat')
-def submit():
-    message = request.form.get("message")
-    return render_template("chat.html", message=message)
 
-#@app.route('')
-# @app.route('/button')
-# def button():
-#     return render_template('button.html', title = "Button")
+@app.route('/chat')
+def submit():
+    # if request.method == 'POST':
+    #     message = request.form.get("message")
+    #     return render_template("chat.html", message=message)
+    # else:
+    return render_template("chat.html")
