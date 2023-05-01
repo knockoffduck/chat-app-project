@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css')}}"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <title>{% block title%} Home {% endblock %}</title>
+  </head>
+  <body>
+    <div class="bg-blur">
+      <div class="top-navbar">
+        <nav>
+          <a href="/" class="logo-text">
+            <span>MindMate</span>
+          </a>
+        </nav>
+      </div>
+      <div class="side-navbar">
+        <nav>
+          <ul>
+            <li>
+              <a href="/chat">
+                <i
+                  class="bi-chat"
+                  style="font-size: 26px; -webkit-text-stroke: 1px"
+                ></i>
+                <span>Chat</span>
+              </a>
+            </li>
+            <li>
+              <a href="/history">
+                <i
+                  class="bi-bookshelf"
+                  style="font-size: 26px; -webkit-text-stroke: 1px"
+                ></i>
+                <span>History</span>
+              </a>
+            </li>
+            <li>
+              <a href="/account">
+                <i
+                  class="bi-person-circle"
+                  style="font-size: 26px; -webkit-text-stroke: 1px"
+                ></i>
+                <span>Profile</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="main-content">
+        <div class="content-area">
+          <div class="chat-message">
+            <div class="avatar">
+              <img
+                src="{{ url_for('static', filename='images/pfp.jpg')}}"
+                alt="Profile Pic"
+              />
+              <p>2:13 AM</p>
+            </div>
+            <div class="chat-bubble">
+              <div class="triangle"></div>
+              <div class="bubble">
+                <p>Hi Daffa, how are you doing today?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>
