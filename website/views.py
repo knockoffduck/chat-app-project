@@ -52,3 +52,7 @@ def generate_text():
 
     # Return the assistant's response as a JSON object
     return jsonify({"generated_text": reply})
+
+@views.route("/account")
+def account():
+    return render_template("account.html")

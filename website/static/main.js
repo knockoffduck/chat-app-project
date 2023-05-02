@@ -1,3 +1,4 @@
+// This code waits for the document to be fully loaded and then executes the enclosed function
 $(document).ready(function () {
   // Get the current URL
   var url = window.location.href;
@@ -18,6 +19,7 @@ $(document).ready(function () {
     }
   });
 
+  // This resizes the message-input textarea dynamically based on its content
   $('.message-input').on('input', function () {
     $(this).css('overflow-y', 'hidden');
     $(this).css('height', 'auto');
@@ -26,6 +28,8 @@ $(document).ready(function () {
       $(this).css('overflow-y', 'auto');
     }
   });
+
+  // This listens for the 'keydown' event on the message-input textarea
   $('.message-input').on('keydown', function (e) {
     // Check if the Enter key is pressed
     if (e.key === 'Enter') {
@@ -33,7 +37,6 @@ $(document).ready(function () {
       if (!e.shiftKey) {
         e.preventDefault();
         // Submit the text
-        // Replace this with your own submission logic
         onSubmit();
         // Clear the textarea
         $(this).val('');
@@ -41,6 +44,7 @@ $(document).ready(function () {
     }
   });
 
+  // This function returns the current time in a formatted string
   function getCurrentTime() {
     const now = new Date();
     let hours = now.getHours();
