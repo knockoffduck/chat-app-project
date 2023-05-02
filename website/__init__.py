@@ -1,4 +1,14 @@
 from flask import Flask
+from .views import Config
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from flask_login import LoginManager
+
+db = SQLAlchemy()
+migrate = Migrate()
+login = LoginManager()
+login.login_view = 'auth.login'
+# login.login_message = _l('Please log in to access this page.')
 
 # Define a function to create the Flask application
 def create_app():
@@ -7,6 +17,16 @@ def create_app():
 
     # Set a secret key for the application (used for encryption and other security features)
     app.config["SECRET_KEY"] = "this is a test"
+
+    # Database setup
+    app.config.from_object(Config)
+
+    db.init_app(app)
+    migrate.init_app(app, db)
+    login.init_app(app)
+    app.app_context().push()
+
+    from website import views, auth, models
 
     # Import the views and auth blueprints
     from .views import views

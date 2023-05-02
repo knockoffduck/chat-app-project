@@ -3,6 +3,7 @@ import json
 import openai
 import os
 from dotenv import load_dotenv
+from flask_login import login_required
 
 # Import the add_data and get_response functions from the utilities module
 from .utilities import add_data, get_response
@@ -14,18 +15,30 @@ views = Blueprint("views", __name__)
 load_dotenv()
 openai.api_key = os.getenv("API_KEY")
 
+#Database setup
+basedir = os.path.abspath(os.path.dirname(__file__))
+class Config(object):
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
 # Route for the home page
 @views.route("/")
 def home():
     return render_template("home.html")
 
+
 # Route for the chat page
 @views.route("/chat/")
+@login_required
 def chat_route():
     return render_template("chat.html")
 
+
 # Route for generating text
 @views.route("/chat/prompt", methods=["POST"])
+@login_required
 def generate_text():
     # Get the username and input from the request form
     username = request.form["username"]
@@ -49,3 +62,8 @@ def generate_text():
 
     # Return the assistant's response as a JSON object
     return jsonify({"generated_text": reply})
+
+@views.route("/account")
+@login_required
+def account():
+    return render_template("account.html")
