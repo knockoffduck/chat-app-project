@@ -1,35 +1,68 @@
-{% extends "base.html"%} {% block title %} Home {% endblock %} {% block
-content_header %}Home{%endblock%} {% block content %}
+{% extends "base.html"%} {% block css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='home/style.css') }}"
+/>
+{% endblock %} {% block script %}
+<script src="{{ url_for('static', filename='home/script.js') }}"></script>
+{% endblock %} {% block title %} Home {% endblock %} {% block topbar %}
+<a href="/chat/" class="chatBtn">Chat Now</a>
+{% endblock %} {% block content %}
 
-<div>
-  <p>
-    Welcome to our AI-powered therapist chat app [name]! This app is designed to
-    provide a safe and anonymous space for individuals to talk about their
-    thoughts, feelings, and concerns with an AI-powered chatbot. Our chatbot is
-    here to listen, provide support, and offer guidance on a variety of topics,
-    including anxiety, depression, stress, relationships, and more.
-  </p>
+<div class="mainheader">
+  <div class="info">
+    <h1 class="hidden">
+      The support you need, right at your
+      <br />
+      fingertips
+    </h1>
+    <p class="hidden">
+      The AI-enhanced therapy chat app that provides a supportive and empowering
+      space for individuals to work through emotional struggles and build
+      resilience.
+    </p>
+    <div class="btnWrapper hidden">
+      <a href="/chat/" class="chatBtn"><span>Chat Now</span></a>
+    </div>
+  </div>
+  <div class="image">
+    <img
+      src="{{ url_for('static', filename='images/mainHeader-pic.png') }}"
+      alt="Man Meditating"
+    />
+  </div>
+</div>
 
-  <p>
-    Our AI chatbot is designed to help patients by providing personalized and
-    evidence-based guidance and support. It uses natural language processing and
-    machine learning algorithms to understand patients' concerns and provide
-    tailored responses and resources. Whether you need help managing stress,
-    coping with anxiety, or dealing with relationship issues, our AI chatbot is
-    here to assist you.
-  </p>
-  <p>
-    To get started, simply create an account and log in to the app. From there,
-    you'll be able to initiate a chat session with our AI chatbot via text. 
-    Our AI chatbot will ask you a series of questions to better understand your 
-    concerns and provide personalized guidance and resources based on your needs.
-  </p>
-  <p>
-    All of your chats are confidential and secure, and our AI chatbot adheres to
-    strict professional and ethical guidelines to ensure that you receive the
-    best possible care. We understand that seeking help can be difficult, but
-    we're here to support you every step of the way.
-  </p>
+<div class="bg">
+  <div class="secondheader">
+    <img
+      src="{{ url_for('static', filename='images/layered-waves.svg') }}"
+      alt="stuff"
+    />
+    <div class="contain">
+      <div class="image">
+        <img
+          src="{{ url_for('static', filename='images/secondHeader.svg') }}"
+          alt="Man Meditating"
+        />
+      </div>
+      <div class="info">
+        <h1 class="hidden">
+          Deep learning algorithms
+          <br />
+          for personalized therapy
+        </h1>
+        <p class="hidden">
+          Our AI-powered therapy chat app intelligently tailors the messages you
+          receive to meet your specific needs. Answer a few questions and access
+          our neural network of data, all of which are designed to provide
+          personalized and effective therapy. With our app, you can be confident
+          that you're getting support that is tailored to you.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
