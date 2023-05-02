@@ -47,12 +47,14 @@ def get_response(username, data_list):
             ]
 
             # Insert a system message at the beginning of the message list
-            """
-            message.insert(0, {
+
+            message.insert(
+                0,
+                {
                     "role": "system",
                     "content": "I want you to act as a therapist. I will present you with various prompts, questions, and scenarios on my mental well being and you will provide guidance on how to overcome, solve and help. Your responses should be conversational like a real therapist, which means that the responses should be short but also provide additional questions to ask the user. Do not ask whether I have spoken to a professional or a therapist, instead I would like you to be my therapist. So that means getting deep into the roots of the problem of where the problem occurs so that it can be solved.",
-                })
-            """
+                },
+            )
 
             # Call the chatbot API to get a response
             response = openai.ChatCompletion.create(
