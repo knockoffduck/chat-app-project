@@ -49,11 +49,8 @@ $(document).ready(function () {
     const now = new Date();
     let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    const formattedTime =
-      String(hours).padStart(2, '0') + ':' + minutes + ' ' + ampm;
+    hours = hours < 10 ? '0' + hours : hours;
+    const formattedTime = hours + ':' + minutes;
     return formattedTime;
   }
 
@@ -72,15 +69,15 @@ $(document).ready(function () {
           // Append the chatbot's response to the messages area
           const text = response.generated_text;
           $('.messages').append(`
-          <div class="chat-message-bot">
+          <div class="chat-message bot">
             <div class="info">
                 <div class="avatar"></div>
-                <p>${getCurrentTime()}</p>
+                <span>${getCurrentTime()}</span>
             </div>
-          <div class="chat-bubble-bot">
+          <div class="chat-bubble bot">
             <div class="triangle"></div>
             <div class="bubble">
-              <p>${text}</p>
+              <span>${text}</span>
             </div>
           </div>
         </div>
@@ -92,18 +89,18 @@ $(document).ready(function () {
       });
       // Append the user's input to the messages area
       $('.messages').append(`
-      <div class="chat-message-user">
-      <div class="chat-bubble-user">
+      <div class="chat-message user">
+      <div class="chat-bubble">
         <div class="bubble">
-          <p>
+          <span>
             ${result}
-          </p>
+          </span>
         </div>
         <div class="triangle"></div>
       </div>
         <div class="info">
             <div class="avatar"></div>
-            <p>${getCurrentTime()}</p>
+            <span>${getCurrentTime()}</span>
         </div>
     </div>
       `);

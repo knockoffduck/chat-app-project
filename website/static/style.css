@@ -1,4 +1,3 @@
-/* Option 2: Import via CSS */
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -11,80 +10,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-input {
-  background-color: transparent;
-  border: 1px solid #727a87;
-  border-radius: 4px;
-  color: white;
-  padding-left: 10px;
-}
-
 input::placeholder {
   color: #727a87;
 }
 
-.chat-area {
-  position: relative;
-  height: 100%;
-  max-height: 100%;
-}
-
-.messages {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 90%;
-  max-height: 90%;
-  overflow-y: auto;
-  padding-bottom: 60px;
-}
-
-.input {
-  bottom: 0;
-  width: 100%;
-  max-width: 100%; /* set max-width to limit width */
-}
-
-.message-input {
-  background-color: transparent;
-  padding: 20px;
-  resize: none;
-  overflow-y: hidden;
-  max-height: calc(30 * 1.2em);
-  border: 1px rgba(0, 0, 0, 0.2) solid;
-  border-radius: 9px;
-  outline: none;
-  font-size: 16px;
-  min-height: 30px;
-  max-height: 280px;
-  cursor: auto;
-  width: 100%;
-}
-
-.message-input::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-.message-input::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 5px;
-  width: 6px;
-  height: 6px;
-  padding: 2px;
-}
-
-.message-input::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-
-.message-input::-webkit-scrollbar-thumb:active {
-  background-color: #333;
-  cursor: pointer; /* Change the cursor to a pointer */
-}
-
 .bg-blur {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(1.25rem);
   background-color: rgba(255, 255, 255, 0.7);
   margin: 0;
   width: 100%;
@@ -92,264 +23,39 @@ input::placeholder {
 }
 
 .top-navbar {
-  height: 80px;
+  height: 5rem;
   background-color: #1c1d1f;
   width: 100%;
   display: flex;
   align-content: center;
-  padding-left: 40px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-left: 2.5rem;
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
 }
 
 .top-navbar nav {
   align-content: center;
   display: flex;
-  gap: 70px;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 4.375rem;
+  width: 100%;
+  padding-left: 4rem;
+  padding-right: 2rem;
 }
 
 .logo-text {
   display: flex;
   align-items: center;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   color: white;
 }
 
-.top-navbar nav ul {
-  list-style-type: none;
-}
-
-.top-navbar nav li a {
-  color: white;
-  text-align: center;
-  text-decoration: none;
-}
-
-.side-navbar {
-  height: calc(100vh - 80px);
-  width: 280px;
-
-  float: left;
-}
-.side-navbar nav {
-  height: 100%;
-}
-
-.side-navbar nav ul {
-  list-style-type: none;
-  padding-top: 50px;
-  padding-left: 25px;
-  padding-right: 25px;
-  color: #727a87;
-}
-.active-nav a {
-  color: black;
-}
-
-.active-nav {
-  background-color: #e9e8ec;
-  border-radius: 9px;
-}
-
-.side-navbar li:hover {
-  background-color: #e9e8ec;
-  border-radius: 9px;
-}
-
-.side-navbar nav li {
-  padding: 10px;
-  padding-left: 27px;
-  transition: all ease-in-out 0.25s;
-}
-
-.side-navbar ul {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.side-navbar nav a {
-  display: flex;
-  align-content: center;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 800;
-  gap: 15px;
-  color: #727a87;
-}
-nav .active-nav a {
-  color: black;
-}
-
-.side-navbar i {
-  font-size: 26px;
-  -webkit-text-stroke: 1px;
-  display: flex;
-  justify-content: center;
-}
-
-.side-navbar nav li a span {
-  display: flex;
-  align-items: center;
-}
-
-.content-area {
-  height: 100%;
-  width: 100%;
-  padding: 50px;
-  padding-bottom: 30px;
-  border-radius: 21px;
-
-  background-color: white;
-}
-
-.main-content {
-  height: calc(100vh - 80px);
-  margin-left: 280px;
-  padding: 20px;
-}
-
-.main-content h1 {
-  font-size: 36px;
-  margin-top: 0;
-}
-
-.chat-message-bot {
-  display: flex;
-  max-width: 1500px;
-}
-
-.messages .avatar {
-  display: flex;
-  align-content: center;
-  flex-direction: column;
-  font-size: 10px;
-  color: #727a87;
-  width: 50px;
-  text-align: center;
-}
-
-.messages .avatar img {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-}
-
-.chat-bubble-bot {
-  display: flex;
-  height: 100%;
-}
-
-.chat-bubble-bot .bubble {
-  min-width: 100px;
-  min-height: 100%;
-  background-color: #d8fc4c;
-  border-radius: 0px 8px 8px 8px;
-  padding-top: 20px;
-  padding-left: 25px;
-  padding-right: 20px;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.chat-bubble-bot .triangle {
-  background-image: url('images/Vector 1.png');
-  background-size: cover;
-  height: 17px;
-  width: 17px;
-}
-
-.chat-message-user {
-  justify-content: flex-end;
-  display: flex;
-  max-width: 1500px;
-}
-
-.messages .avatar {
-  background-size: cover;
-  display: flex;
-  align-content: center;
-  flex-direction: column;
-  color: #727a87;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-}
-
-.info {
-  font-size: 10px;
-  text-align: center;
-}
-
-.chat-message-bot .avatar {
-  background-image: url('images/Bot-pfp.png');
-}
-.chat-message-user .avatar {
-  background-image: url('images/pfp.jpg');
-}
-
-.chat-bubble-user {
-  display: flex;
-  justify-content: flex-end;
-  height: 100%;
-}
-
-.bubble {
-  font-family: 'Montserrat';
-  max-width: 90%;
-}
-
-.chat-bubble-user .bubble {
-  color: white;
-  min-width: 100px;
-  min-height: 100%;
-  background-color: #5333ed;
-  border-radius: 8px 0px 8px 8px;
-  padding-top: 20px;
-  padding-left: 25px;
-  padding-right: 20px;
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.chat-bubble-user .triangle {
-  background-image: url('images/rightAngleTriangleleft.svg');
-  background-size: cover;
-  height: 17px;
-  width: 17px;
-}
-/* Chrome, Edge and Safari */
-.messages::-webkit-scrollbar {
-  width: 9px;
-  width: 9px;
-}
-.messages::-webkit-scrollbar-track {
-  border-radius: 4px;
-  background-color: #ffffff;
-}
-
-.messages::-webkit-scrollbar-track:hover {
-  background-color: #ffffff;
-}
-
-.messages::-webkit-scrollbar-track:active {
-  background-color: #f3f3f3;
-}
-
-.messages::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background-color: transparent;
-  border: 2px solid #ffffff;
-}
-
-.messages::-webkit-scrollbar-thumb:hover {
-  background-color: #727a87;
-}
-
-.messages::-webkit-scrollbar-thumb:active {
-  background-color: #727a87;
+@media (min-width: 768px) {
+  .username-input {
+    display: block;
+  }
 }

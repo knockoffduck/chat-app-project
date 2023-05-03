@@ -4,7 +4,7 @@
   type="text/css"
   href="{{ url_for('static', filename='home/style.css') }}"
 />
-{% endblock %} {% block script %}
+{% endblock %} {% block home_script %}
 <script src="{{ url_for('static', filename='home/script.js') }}"></script>
 {% endblock %} {% block title %} Home {% endblock %} {% block topbar %}
 <a href="/chat/" class="chatBtn">Chat Now</a>
@@ -12,17 +12,17 @@
 
 <div class="mainheader">
   <div class="info">
-    <h1 class="hidden">
+    <h1 class="inactive">
       The support you need, right at your
       <br />
       fingertips
     </h1>
-    <p class="hidden">
+    <p class="inactive">
       The AI-enhanced therapy chat app that provides a supportive and empowering
       space for individuals to work through emotional struggles and build
       resilience.
     </p>
-    <div class="btnWrapper hidden">
+    <div class="btnWrapper inactive">
       <a href="/chat/" class="chatBtn"><span>Chat Now</span></a>
     </div>
   </div>
@@ -34,33 +34,28 @@
   </div>
 </div>
 
-<div class="bg">
-  <div class="secondheader">
-    <img
-      src="{{ url_for('static', filename='images/layered-waves.svg') }}"
-      alt="stuff"
-    />
-    <div class="contain">
-      <div class="image">
-        <img
-          src="{{ url_for('static', filename='images/secondHeader.svg') }}"
-          alt="Man Meditating"
-        />
-      </div>
-      <div class="info">
-        <h1 class="hidden">
-          Deep learning algorithms
-          <br />
-          for personalized therapy
-        </h1>
-        <p class="hidden">
-          Our AI-powered therapy chat app intelligently tailors the messages you
-          receive to meet your specific needs. Answer a few questions and access
-          our neural network of data, all of which are designed to provide
-          personalized and effective therapy. With our app, you can be confident
-          that you're getting support that is tailored to you.
-        </p>
-      </div>
+<div class="secondheader">
+  <div class="spacer layer1"></div>
+  <div class="contain">
+    <div class="image">
+      <img
+        src="{{ url_for('static', filename='images/secondHeader.svg') }}"
+        alt="Man Meditating"
+      />
+    </div>
+    <div class="info">
+      <h1 class="inactive">
+        Deep learning algorithms
+        <br />
+        for personalized therapy
+      </h1>
+      <p class="inactive">
+        Our AI-powered therapy chat app intelligently tailors the messages you
+        receive to meet your specific needs. Answer a few questions and access
+        our neural network of data, all of which are designed to provide
+        personalized and effective therapy. With our app, you can be confident
+        that you're getting support that is tailored to you.
+      </p>
     </div>
   </div>
 </div>

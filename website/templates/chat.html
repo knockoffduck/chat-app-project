@@ -1,19 +1,42 @@
-{% extends "app.html" %} {% block topbar %}
-<input id="username" type="text" placeholder="Enter Username..." />
+{% extends "app.html" %} {% block page_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='chat/style.css') }}"
+/>
+{% endblock %} {% block script %}
+<script src="{{ url_for('static', filename='chat/script.js') }}"></script>
 {% endblock %} {% block app_content %}
 
 <div class="chat-area">
   <div class="messages">
-    <div class="chat-message-bot">
+    <div class="chat-message bot">
       <div class="info">
         <div class="avatar"></div>
-        <p>2:13 AM</p>
+        <span>2:13</span>
       </div>
-      <div class="chat-bubble-bot">
+      <div class="chat-bubble">
         <div class="triangle"></div>
         <div class="bubble">
-          <p>Hi Daffa, how are you doing today?</p>
+          <span>Hi Daffa, how are you doing today?</span>
         </div>
+      </div>
+    </div>
+    <div class="chat-message user">
+      <div class="chat-bubble">
+        <div class="bubble">
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+            corporis assumenda blanditiis laboriosam. Provident libero officiis
+            delectus, magni nesciunt possimus quam unde? Similique sit earum ab
+            aspernatur asperiores debitis molestias!
+          </span>
+        </div>
+        <div class="triangle"></div>
+      </div>
+      <div class="info">
+        <div class="avatar"></div>
+        <span>22:46</span>
       </div>
     </div>
   </div>
@@ -26,6 +49,9 @@
       rows="1"
       placeholder="Send a message."
     ></textarea>
+    <button>
+      <i class="bi-send"></i>
+    </button>
   </div>
 
   {% endblock %}
