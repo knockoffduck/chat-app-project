@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <title>Chat History</title>
     </head>
     <body>
-
+        <h1>Chat History</h1>
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
