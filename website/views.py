@@ -24,6 +24,10 @@ def home():
 def chat_route():
     return render_template("chat.html")
 
+@views.route("/history")
+def history():
+    return render_template("history.html")
+
 # Route for generating text
 @views.route("/chat/prompt", methods=["POST"])
 def generate_text():
