@@ -14,10 +14,12 @@ views = Blueprint("views", __name__)
 load_dotenv()
 openai.api_key = os.getenv("API_KEY")
 
+
 # Route for the home page
 @views.route("/")
 def home():
     return render_template("home.html")
+
 
 # Route for the chat page
 @views.route("/chat/")
@@ -53,3 +55,7 @@ def generate_text():
 
     # Return the assistant's response as a JSON object
     return jsonify({"generated_text": reply})
+
+@views.route("/account")
+def account():
+    return render_template("account.html")
