@@ -28,7 +28,18 @@ def chat_route():
 
 @views.route("/history")
 def history():
-    return render_template("history.html")
+    messages = []
+    if os.path.exists("chats/history.json"):
+        with open("chats/history.json", "r") as f:
+            messages = json.load(f)
+
+    last_messages = []
+    for message in messages:
+        last_message = message['data'][-1]['content']
+        last_messages.append({'username': message['username'], 'last_message': last_message})
+
+    print(messages) #Check if it prints to the console
+    return render_template('history.html', messages=messages)
 
 # Route for generating text
 @views.route("/chat/prompt", methods=["POST"])
