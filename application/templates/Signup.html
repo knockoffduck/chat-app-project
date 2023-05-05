@@ -1,56 +1,64 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
+{% extends 'base.html' %}
 
-    <meta name="viewport" content="width=1920, maximum-scale=1.0" />
-    <meta name="og:type" content="website" />
-    <meta name="twitter:card" content="photo" />
-    <link rel="stylesheet" type="text/css" href="application/static/css/Signup-login.css" />
- 
-  </head>
-  <body style="margin: 0">
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Signup-login.css') }}" />
+  <style>
+    body {
+      background-image: url('{{ url_for("static", filename="images/Background.png") }}');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+{% endblock %}
 
-    <div id="container">
-      <img src="logo.png" alt="logo" id="logo">
-      <h1>Create Account</h1>
-      <form action="/signup" method="POST"action="{{ url_for('signup') }}">
-        <div class="form-row">
-          <label for="first_name">First Name:</label>
-          <input type="text" id="first_name" name="first_name" required>
-          <label for="last_name">Last Name:</label>
-          <input type="text" id="last_name" name="last_name" required>
-        </div>
+{% block body %}
 
-        <div class="form-row">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <a href="{{ url_for('index') }}">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="mb-3" style="max-width: 100%;">
+        </a>
+        <h1 class="text-center mb-4">Create Account</h1>
+        <form action="/signup" method="POST">
+          <div class="form-row">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+          </div>
 
-        <div class="form-row">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-          <label for="confirm_password">Confirm Password:</label>
-          <input type="password" id="confirm_password" name="confirm_password" required>
-        </div>
+          <div class="form-row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
 
-        <div class="form-row"> <!-- Added -->
-          <label for="dob">Date of Birth:</label>
-          <input type="date" id="dob" name="dob" required>
-          <label for="country">Country:</label>
-          <input type="text" id="country" name="country" required>
-          <label for="gender">Gender:</label>
-          <select id="gender" name="gender" required>
-            <option value="">--Select--</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+          <div class="form-row">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+          </div>
 
-        <button type="submit">Sign Up</button>
-      </form>
+          <div class="form-row"> <!-- Added -->
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+              <option value="">--Select--</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
     </div>
-  </body>
-
-</html>
+  </div>
+</div>
+{% endblock %}

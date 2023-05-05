@@ -1,0 +1,58 @@
+body {
+    background: #f0f0f0 url('{{ url_for("static", filename="images/Background.png") }}') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#container {
+  background-color: white;
+  border-radius: 5px;
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+label {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+input[type="option"]
+input[type="date"],
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid black;
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+input[type="submit"] {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-row input[type="password"] {
+  margin-left: 20px;
+}
+.h1{
+  text-align: center;
+}

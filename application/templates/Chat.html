@@ -1,80 +1,84 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    
-    <link rel="stylesheet" type="text/css" href="application/static/css/Chat.css" />
-    <link rel="stylesheet" type="text/css" href="application/static/css/styleguide.css" />
-    <link rel="stylesheet" type="text/css" href="application/static/css/globals.css" />
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Chat.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/application/static/js/account-popup.js"></script> 
-    <script src="/application/static/js/chat.js"></script> 
+    <script src="{{ url_for('static', filename='js/chat.js') }}" ></script> 
+    <script src="{{ url_for('static', filename='js/account-popup.js') }}"></script>
 
-  </head>
-  <body style="margin: 0">
-    <input type="hidden" id="anPageName" name="page" value="background" />
-    <div class="container-center-horizontal">
-      <div class="background screen">
-        <div class="group-container">
-          <!-- upbar contain tille web, profile picture, user name -->
-          <div class="upbar"><h1 class="title">MindMate</h1></div>
-          <div class="group-10">
-            <div class="profile-pic"></div>
-            <div class="username">Daffa Fathurohman</div>
-            
-          </div>
-          
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <style>
+      /* Set the height of the chat area to fill the remaining space */
+      .chat-area {
+        height: calc(100vh - 100px);
+      }
+    </style>
+{% endblock %}
+{% block body %}
+
+<input type="hidden" id="anPageName" name="page" value="background" />
+<div class="container-fluid p-0">
+  <!-- upbar contain title web, profile picture, user name -->
+  <div class="upbar bg-light py-2">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <h1 class="title">MindMate</h1>
         </div>
-        <!-- flex-row is navigator row -->
-        <div class="flex-row">
-          <!-- form to link navigator row -->
-          <form action=""></form>
-          <div class="group-container-1">
-            <div class="group">
-            
-              <div class="place roboto-extra-bold-raven-20px">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
+        <div class="col-auto">
+          <div class="profile-pic"></div>
+        </div>
+        <div class="col-auto">
+          <div class="username">Daffa Fathurohman</div>
+        </div>
+        <div class="col">
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">Go</button>
               </div>
             </div>
-
-            <div class="chat-container">
-              <div class="chat">Chat</div>
-            </div>
-            <!-- doing draft make history html later -->
-            <div class="group">  
-              <div class="history roboto-extra-bold-raven-20px">
-                  <li><a href="{{ url_for('index') }}">History</a></li>                 
-              </div>
-            </div>
-            <div class="group-4">
-             
-              <div class="account roboto-extra-bold-raven-20px">
-                <li><a href="#" onclick="showAccountPopup()">Account</a></li>
-              </div>
-            </div>
-          </div>
-          <!-- for chat -->
-          <div class="flex-col">
-            <div class="group-container-2">
-              <div class="group-5">
-                <!-- form for chat input -->
-                <form action="/chat" method="POST">
-                  <div class="chat-input">
-                  <div id="input-box">
-                    <input id="message-input"  type="text" placeholder="Type your message...">
-                  </div>                  
-                  <div class="message"><div class="place-1">
-                    <button id="send-button">Send</button>
-                  </div>
-                </form>
-              </div> 
-              <!-- still doing -->
-              
-              
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+  <!-- Navigator bar -->
+  <div class="row no-gutters">
+    <div class="col-md-3 bg-light">
+      <div class="nav-container py-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Chat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showAccountPopup()">Account</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Chat area -->
+    <div class="col-md-9">
+      <div class="chat-area">
+        <form action="/chat" method="POST">
+          <div class="chat-input">
+            <div id="input-box">
+              <input id="message-input"  type="text" placeholder="Type your message...">
+              <button type="submit" id="send-message-button">Send</button>
+            </div>
+          </div>
+        </form>
+      </div> 
+    </div> 
+  </div> 
+</div> 
+{% endblock %}                 

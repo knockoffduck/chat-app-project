@@ -1,30 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
-    <meta name="og:type" content="website" />
-    <meta name="twitter:card" content="photo" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Signup-login.css') }}" />
+{% extends 'base.html' %}
 
-  </head>
-  <body style="margin: 0">
-    <div id="container">
-      <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" id="logo">
-      <h1>Login</h1>
-      <form method="POST" action="{{ url_for('login') }}">
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Signup-login.css') }}" />
+  <style>
+		body {
+			background-image: url('{{ url_for("static", filename="images/Background.png") }}');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+{% endblock %}
 
-        <div class="form-row">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-row">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Log in</button>
-      </form>
+{% block body %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <a href="{{ url_for('index') }}">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="mb-3" style="max-width: 100%;">
+        </a>
+        <h1 class="text-center mb-4">Login</h1>
+        <form method="POST" action="{{ url_for('login') }}">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </form>
+      </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+{% endblock %}
