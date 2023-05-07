@@ -1,11 +1,10 @@
 {% extends "app.html" %}
-{% block head %}
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/history.css')}}">
-  </head>
+{% block page_css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='history/history.css')}}">
 {% endblock %}
 
 {% block app_content %}
+  <h2>Chat History</h2>
   <ul class="message-list">
     {% for message in messages %}
     <!--Allows user to redirect to the chat page by clicking on a stored message.-->
