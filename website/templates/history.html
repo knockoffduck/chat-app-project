@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
+{% block head %}
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/history.css')}}">
+  </head>
 {% block content %}
+
   <h1>Chat History</h1> <!--Title-->
   <ul>
     {% for message in messages %}
