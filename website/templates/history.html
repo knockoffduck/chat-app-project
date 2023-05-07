@@ -11,4 +11,15 @@
       <li class="message-box"><a href="{{ url_for('views.chat_route') }}">{{ message.username }}: {{ message.data[-1].content }}</a></li>
     {% endfor %}
   </ul>
+
+  <!--Add pagination buttons to history page-->
+  <div class="pagination">
+    {% if page > 1 %}
+      <a href="{{ url_for('views.history', page=page-1) }}">Previous</a>
+    {% endif %}
+
+    {% if messages|length >= page_size %}
+      <a href="{{ url_for('views.history', page=page+1) }}">Next</a>
+    {% endif %}
+  </div>
 {% endblock %}
