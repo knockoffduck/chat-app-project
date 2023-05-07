@@ -8,7 +8,8 @@
 {% block app_content %}
   <ul class="message-list">
     {% for message in messages %}
-      <li class="message-box">{{ message.username }}: {{ message.data[-1].content }}</li>
+    <!--Allows user to redirect to the chat page by clicking on a stored message.-->
+      <li class="message-box"><a href="{{ url_for('views.chat_route') }}">{{ message.username }}: {{ message.data[-1].content }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
