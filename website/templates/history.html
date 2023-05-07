@@ -1,15 +1,14 @@
-{% extends "base.html" %}
-
+{% extends "app.html" %}
 {% block head %}
   <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/history.css')}}">
   </head>
-{% block content %}
+{% endblock %}
 
-  <h1>Chat History</h1> <!--Title-->
-  <ul>
+{% block app_content %}
+  <ul class="message-list">
     {% for message in messages %}
-      <li>{{ message.username }}: {{ message.data[-1].content }}</li>
+      <li class="message-box">{{ message.username }}: {{ message.data[-1].content }}</li>
     {% endfor %}
   </ul>
 {% endblock %}
