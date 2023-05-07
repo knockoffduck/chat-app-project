@@ -1,12 +1,20 @@
 .message-box {
     background-color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
+    border: 0.06rem solid black;
+    border-radius: 0.6rem;
+    padding: 0.6rem;
+    margin-bottom: 0.6rem;
 }
 
 .message-list {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.message-list a {
+    text-decoration: none;
+    color: black;
 }
 
