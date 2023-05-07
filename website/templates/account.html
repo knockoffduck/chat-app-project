@@ -1,10 +1,1 @@
-{% extends "base.html" %}
 
-{% block content %}
-  <h1>Chat History</h1> <!--Title-->
-  <ul>
-    {% for message in messages %}
-      <li>{{ message.username }}: {{ message.data[-1].content }}</li>
-    {% endfor %}
-  </ul>
-{% endblock %}
