@@ -1,21 +1,23 @@
 body {
-    background-image: url('application/static/images/sean-sinclair-gai1yb3umda-unsplash-1.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#container {
-  background-color: white;
-  border-radius: 5px;
-  width: 400px;
-  margin: auto;
-  margin-top: 50px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('{{ url_for("static", filename="images/bg.png") }}');
+  background-size: cover;
+  height: 100vh;
 }
+.upbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #333;
+  color: #fff;
+  z-index: 999;
+}
+
 #logo {
   position: absolute;
   top: 20px;
@@ -42,7 +44,7 @@ input[type="submit"] {
   background-color: blue;
   color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }

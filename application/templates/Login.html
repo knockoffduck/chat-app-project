@@ -1,38 +1,50 @@
 {% extends 'base.html' %}
 
-{% block head %}
+{% block css %}
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Signup-login.css') }}" />
-  <style>
-		body {
-			background-image: url('{{ url_for("static", filename="images/Background.png") }}');
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-	</style>
 {% endblock %}
 
 {% block body %}
-<div class="row justify-content-center">
-  <div class="col-md-8 col-lg-6">
-    <div class="card">
-      <div class="card-body">
-        <a href="{{ url_for('index') }}">
-          <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="mb-3" style="max-width: 100%;">
-        </a>
-        <h1 class="text-center mb-4">Login</h1>
-        <form method="POST" action="{{ url_for('login') }}">
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" class="form-control" required>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Log in</button>
-        </form>
+
+  <!-- upbar contain title web-->
+  <div class="upbar bg-dark text-white py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <a href="{{ url_for('index') }}" style="position: fixed; top: 2vh; left: 1vh;">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="mb-3" style="max-width: 100%;">
+            <h3 class="title mb-0 ms-3" style="position: fixed; top: 1.5vh; left: 10vh;">MindMate</h3>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="fixed-box">
+      <div class="card" style="width: 50vh; height: 50vh;">
+        <div class="card-body">
+          <h1 class="text-center mb-4">Login</h1>
+          <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+              <label for="email" class="text-center">Email:</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="password" class="text-center">Password:</label>
+              <input type="password" id="password" name="password" class="form-control" required>
+              <div class="text-center mt-2">
+                <a href="#" class="text-primary small">Forgot Password?</a>
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary mt-4">Sign Up</button>
+              <div class="mt-2">
+                <a href="/signup" class="text-primary small">Create New Account</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}

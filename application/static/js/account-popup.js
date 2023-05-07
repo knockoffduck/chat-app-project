@@ -7,6 +7,8 @@ function showAccountPopup() {
   const popup = document.createElement("div");
   popup.innerHTML = popupContent;
   popup.style.position = "fixed";
+  popup.style.width = "61vh";
+  popup.style.height = "40vh"; 
   popup.style.top = "50%";
   popup.style.left = "50%";
   popup.style.transform = "translate(-50%, -50%)";
@@ -22,11 +24,7 @@ function showAccountPopup() {
     console.log("Signing out...");
     // Remove the popup from the page
     document.body.removeChild(popup);
+    // Redirect to homepage
+    window.location.href = "/";
   });
 }
-
-$(document).ready(function() {
-  // code for handling click events here
-});
-
-// Additional code for interacting with the input and send button elements could go here

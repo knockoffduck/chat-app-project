@@ -1,60 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% extends 'base.html' %}
-    {% block head %}
-    {% endblock %}
-    <title>My Chat App</title>
-    <style>
-      body {
-        background-image: url('{{ url_for("static", filename="images/Background.png") }}');
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/signup">Sign up</a></li>
-        <li><a href="/login">Log in</a></li>
-        <li><a href="/discover">Discover</a></li>
-        <li><a href="/help">Help</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/chat">chat</a></li>
-      </ul>
-    </nav>
-    <div>
-      <p>
-        Welcome to our AI-powered therapist chat app! This app is designed to
-        provide a safe and anonymous space for individuals to talk about their
-        thoughts, feelings, and concerns with an AI-powered chatbot. Our chatbot is
-        here to listen, provide support, and offer guidance on a variety of topics,
-        including anxiety, depression, stress, relationships, and more.
-      </p>
-    
-      <p>
-        Our AI chatbot is designed to help patients by providing personalized and
-        evidence-based guidance and support. It uses natural language processing and
-        machine learning algorithms to understand patients' concerns and provide
-        tailored responses and resources. Whether you need help managing stress,
-        coping with anxiety, or dealing with relationship issues, our AI chatbot is
-        here to assist you.
-      </p>
-      <p>
-        To get started, simply create an account and log in to the app. From there,
-        you'll be able to initiate a chat session with our AI chatbot via text,
-        voice, or video, depending on your preferences. Our AI chatbot will ask you
-        a series of questions to better understand your concerns and provide
-        personalized guidance and resources based on your needs.
-      </p>
-      <p>
-        All of your chats are confidential and secure, and our AI chatbot adheres to
-        strict professional and ethical guidelines to ensure that you receive the
-        best possible care. We understand that seeking help can be difficult, but
-        we're here to support you every step of the way.
-      </p>
-    </div>
-  </body>
-</html>
+
+{% extends 'base.html' %}
+
+{% block body %}
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/signup">Sign up</a></li>
+      <li><a href="/login">Log in</a></li>
+      <li><a href="/discover">Discover</a></li>
+      <li><a href="/help">Help</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/chat">chat</a></li>
+    </ul>
+  </nav>
+  <div>
+    <p>
+      Welcome to our AI-powered therapist chat app! This app is designed to
+      provide a safe and anonymous space for individuals to talk about their
+      thoughts, feelings, and concerns with an AI-powered chatbot. Our chatbot is
+      here to listen, provide support, and offer guidance on a variety of topics,
+      including anxiety, depression, stress, relationships, and more.
+    </p>
+
+    <p>
+      Our AI chatbot is designed to help patients by providing personalized and
+      evidence-based guidance and support. It uses natural language processing and
+      machine learning algorithms to understand patients' concerns and provide
+      tailored responses and resources. Whether you need help managing stress,
+      coping with anxiety, or dealing with relationship issues, our AI chatbot is
+      here to assist you.
+    </p>
+    <p>
+      To get started, simply create an account and log in to the app. From there,
+      you'll be able to initiate a chat session with our AI chatbot via text,
+      voice, or video, depending on your preferences. Our AI chatbot will ask you
+      a series of questions to better understand your concerns and provide
+      personalized guidance and resources based on your needs.
+    </p>
+    <p>
+      All of your chats are confidential and secure, and our AI chatbot adheres to
+      strict professional and ethical guidelines to ensure that you receive the
+      best possible care. We understand that seeking help can be difficult, but
+      we're here to support you every step of the way.
+    </p>
+  </div>
+{% endblock %}
