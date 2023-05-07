@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block app_content %}
-  <h2>Chat History</h2>
+  <h2 class="title">Chat History</h2>
   <ul class="message-list">
     {% for message in messages %}
     <!--Allows user to redirect to the chat page by clicking on a stored message.-->
@@ -15,11 +15,15 @@
   <!--Add pagination buttons to history page-->
   <div class="pagination">
     {% if page > 1 %}
+    <div class="Previous-Button">
       <a href="{{ url_for('views.history', page=page-1) }}">Previous</a>
+    </div>
     {% endif %}
 
     {% if messages|length >= page_size %}
+    <div class="Next-Button">
       <a href="{{ url_for('views.history', page=page+1) }}">Next</a>
+    </div>
     {% endif %}
   </div>
 {% endblock %}

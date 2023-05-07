@@ -18,3 +18,45 @@
     color: black;
 }
 
+.Previous-Button a {
+    background-color: #d8fc4c; 
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0.94rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    margin-right: 0.63rem;
+    width: 6.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Next-Button a {
+    background-color: #d8fc4c; 
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0.94rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    margin-left: 0.63rem;
+    width: 6.3rem;
+}
+
+/* Convert to rem later
+.Previous-Button:hover { 
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+*/
+
+/* Convert to rem later
+.Next-Button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+*/
