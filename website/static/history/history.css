@@ -49,6 +49,16 @@
     width: 6.3rem;
 }
 
+.Next-Button.First-Page {
+    margin-left: -0.6rem;
+}
+
+.message-box a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
 /* Convert to rem later
 .Previous-Button:hover { 
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
