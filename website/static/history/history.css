@@ -1,9 +1,10 @@
 .message-box {
-    background-color: white;
-    border: 0.06rem solid black;
+    background-color: #f0f5ff;
+    border: none;
     border-radius: 0.6rem;
     padding: 0.6rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1), 0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1), 0 1.2rem 1.2rem rgba(0, 0, 0, 0.1);
 }
 
 .message-list {
@@ -17,6 +18,15 @@
     text-decoration: none;
     color: black;
 }
+
+/* Move buttons to the RHS of the page */
+.pagination { 
+    display: flex;
+    justify-content: flex-end; /*Chat-GPT*/
+    margin-top: 1rem;
+    margin-left: auto;
+  }
+  
 
 .Previous-Button a {
     background-color: #d8fc4c; 
@@ -59,14 +69,3 @@
     width: 100%;
 }
 
-/* Convert to rem later
-.Previous-Button:hover { 
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-*/
-
-/* Convert to rem later
-.Next-Button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-*/
