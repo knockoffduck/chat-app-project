@@ -1,1 +1,1 @@
-[{"username": "", "data": [{"role": "user", "content": "test", "datetime": "2023-05-09 22:48:21"}, {"role": "assistant", "content": "Hello! Is there a topic you\u2019d like to discuss?", "datetime": "2023-05-09 22:48:23"}]}]
+[{"username": "", "data": [{"role": "user", "content": "hi", "datetime": "2023-05-09 22:54:28"}, {"role": "assistant", "content": "Hello! Welcome to our therapy session. How can I assist you today?", "datetime": "2023-05-09 22:54:31"}]}]
