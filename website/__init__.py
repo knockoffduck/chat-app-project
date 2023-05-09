@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 
 # Define a function to create the Flask application
 def create_app():
@@ -17,4 +18,4 @@ def create_app():
     app.register_blueprint(auth, url_prefix="/auth")
 
     # Return the Flask application instance
-    return app
+    return CORS(app)
