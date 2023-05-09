@@ -1,5 +1,6 @@
 import time
 import openai
+import json
 
 
 # Function to get the current timestamp
@@ -12,6 +13,11 @@ def get_time():
 
     # Return the timestamp string
     return timestamp_str
+
+def is_json_empty(filename):
+    with open(filename, 'r') as f:
+        data = json.load(f)
+        return not bool(data)
 
 
 # Function to add new data to the data list for a given username
