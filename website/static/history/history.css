@@ -1,9 +1,12 @@
 .message-box {
     background-color: #f0f5ff;
-    border: none;
+    border: 0.05rem solid rgb(205, 205, 205);
     border-radius: 0.6rem;
     padding: 0.6rem;
     margin-bottom: 1rem;
+}
+
+.message-box:hover {
     box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1), 0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1), 0 1.2rem 1.2rem rgba(0, 0, 0, 0.1);
 }
 
