@@ -18,4 +18,5 @@ def create_app():
     app.register_blueprint(auth, url_prefix="/auth")
 
     # Return the Flask application instance
-    return CORS(app)
+    CORS(app)
+    return app
