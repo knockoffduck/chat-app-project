@@ -52,10 +52,11 @@ $(function () {
   const onSubmit = () => {
     const result = $('.message-input').val().trim();
     const username = $('#username').val();
+    const api_url = `http://${window.location.host}/chat/prompt`;
     if (result) {
       try {
         $.ajax({
-          url: 'http://127.0.0.1:5000/chat/prompt',
+          url: api_url,
           type: 'POST',
           data: { input: result, username: username },
           success: function (response) {
