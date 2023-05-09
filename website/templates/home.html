@@ -9,7 +9,6 @@
 {% endblock %} {% block title %} Home {% endblock %} {% block topbar %}
 <a href="/chat/" class="chatBtn">Chat Now</a>
 {% endblock %} {% block content %}
-
 <div class="mainheader">
   <div class="info">
     <h1 class="inactive">
@@ -29,6 +28,9 @@
   <div class="image">
     <img
       src="{{ url_for('static', filename='images/mainHeader-pic.png') }}"
+      srcset="{{ url_for('static', filename='images/main-header-pic-mobile.png') }} 320w,
+      {{ url_for('static', filename='images/mainHeader-pic.png') }} 810w
+      "
       alt="Man Meditating"
     />
   </div>

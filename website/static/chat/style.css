@@ -33,21 +33,22 @@
   border-radius: 10px;
   border: none;
   width: 3rem;
-  background-color: rgba(83, 51, 237, 0.5);
-  border: #5333ed solid 1px;
+  background-color: rgba(var(--primary-rgba));
+  border: var(--primary) solid 2px;
   transition: all ease-in-out 0.25s;
 }
 
 .input button:hover {
-  background-color: rgba(83, 51, 237, 1);
+  background-color: rgba(var(--primary-rgba));
 }
 
 .message-input {
+  color: var(--dark-text);
   position: static;
   background-color: transparent;
   padding: 0.5rem;
   resize: none;
-  border: 0.0625rem rgba(0, 0, 0, 0.2) solid;
+  border: 0.0625rem rgba(var(--border-rgba)) solid;
   border-radius: 0.5625rem;
   outline: none;
   font-size: 1rem;
@@ -113,6 +114,7 @@
 
 .chat-message {
   display: flex;
+  gap: 1rem;
 }
 
 .chat-message .avatar {
@@ -131,6 +133,7 @@
 }
 
 .info span {
+  color: var(--dark-text);
   font-size: 0.65rem;
   text-align: center;
 }
@@ -163,22 +166,19 @@
 .user .avatar {
   background-image: url('../images/pfp.jpg');
 }
-.user .chat-bubble .triangle {
-  background-image: url('../images/rightAngleTriangleleft.svg');
-}
 .user .bubble {
-  color: white;
-  background-color: #5333ed;
+  color: var(--user-text);
+  background-color: rgba(var(--primary-rgba));
+  border: 1px solid var(--primary);
   border-radius: 0.5rem 0rem 0.5rem 0.5rem;
 }
 .bot .avatar {
   background-image: url('../images/Bot-pfp.png');
 }
-.bot .chat-bubble .triangle {
-  background-image: url('../images/Vector 1.png');
-}
 .bot .bubble {
-  background-color: #d8fc4c;
+  color: var(--bot-text-colour);
+  background-color: rgba(var(--secondary-rgba));
+  border: 1px solid rgba(var(--secondary-rgba-solid));
   border-radius: 0rem 0.5rem 0.5rem 0.5rem;
 }
 

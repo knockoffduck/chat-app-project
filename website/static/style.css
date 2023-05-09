@@ -2,8 +2,48 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+:root {
+  --primary: #5333ed;
+  --primary-rgba: 83, 51, 237, 1;
+  /*
+  --border-rgba: 114, 122, 135, 0.6 */
+  --border-rgba: 114, 122, 135, 1;
+  --border: #727a87;
+  --topbar: black;
+  --dark-text: black;
+  --user-text: white;
+  --secondary: #d8fc4c;
+  --secondary-rgba: 216, 252, 76, 1;
+  --bg-app: white;
+  --bg: white;
+  --bg-rgb: 255, 255, 255;
+  --logo: white;
+  --active-nav: 233, 232, 236, 1;
+  --active-nav-border: var(--active-nav);
+  --transparent-border: 114, 122, 135, 1;
+}
+
+.dark {
+  --primary-rgba: 83, 51, 237, 0.15;
+  --border-rgba: 114, 122, 135, 0.6;
+  --dark-text: white;
+  --user-text: #765df0;
+  --bot-text-colour: #70a8a2;
+  --secondary-rgba: 56, 109, 105, 0.3;
+  --secondary-rgba-solid: 56, 109, 105, 1;
+  --topbar: #2b2b36;
+  --bg-app: #1e1f28;
+  --bg: black;
+  --bg-rgb: 0, 0, 0;
+
+  --active-nav: 83, 51, 237, 0.15;
+  --active-nav-border: 83, 51, 237, 1;
+
+  --transparent-border: 0, 0, 0, 0;
+}
+
 body {
-  background-image: url('images/wallpaper.png');
+  background-image: url('images/wallpaper.webp');
   margin: 0;
   width: 100%;
   height: 100%;
@@ -11,12 +51,34 @@ body {
 }
 
 input::placeholder {
-  color: #727a87;
+  color: var(--border);
+}
+
+#loading-screen {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background-color: var(--bg-app);
+  z-index: 99;
+}
+
+#lottie-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 10rem;
+  width: 10rem;
+  font-size: 24px;
 }
 
 .bg-blur {
   backdrop-filter: blur(1.25rem);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(var(--bg-rgb), 0.7);
   margin: 0;
   width: 100%;
   height: 100%;
@@ -24,7 +86,7 @@ input::placeholder {
 
 .top-navbar {
   height: 5rem;
-  background-color: #1c1d1f;
+  background-color: var(--topbar);
   width: 100%;
   display: flex;
   align-content: center;
@@ -33,7 +95,7 @@ input::placeholder {
   padding-bottom: 1.125rem;
 }
 
-.top-navbar nav {
+.top-navbar > nav {
   align-content: center;
   display: flex;
   justify-content: space-between;
@@ -47,15 +109,22 @@ input::placeholder {
 .logo-text {
   display: flex;
   align-items: center;
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  color: white;
+  color: var(--logo);
+}
+
+.logo-text > #full {
+  display: none;
 }
 
 @media (min-width: 768px) {
   .username-input {
+    display: block;
+  }
+  .logo-text > #full {
     display: block;
   }
 }

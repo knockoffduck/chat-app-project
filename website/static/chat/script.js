@@ -1,86 +1,77 @@
-// This code waits for the document to be fully loaded and then executes the enclosed function
-$(document).ready(function () {
+// Wait for the document to be fully loaded and then execute the enclosed function
+$(function () {
   // Get the current URL
-  var url = window.location.href;
+  const url = window.location.href;
   console.log(url);
 
-  // Loop through each anchor tag in the navigation
+  // Highlight the active link in the navigation
   $('nav ul li a').each(function () {
-    // Get the value of the href attribute
-    var href = $(this).attr('href');
-
-    // Check if the current URL contains the href value
+    const href = $(this).attr('href');
     if (url.indexOf(href) > -1) {
-      // Add the active-nav class to the parent li element
       $(this).closest('li').addClass('active-nav');
     } else {
-      // Remove the active-nav class from the parent li element
       $(this).closest('li').removeClass('active-nav');
     }
   });
 
-  // This resizes the message-input textarea dynamically based on its content
+  // Resize the message-input textarea dynamically based on its content
   $('.message-input').on('input', function () {
-    $(this).css('overflow-y', 'hidden');
-    $(this).css('height', 'auto');
-    $(this).css('height', this.scrollHeight + 'px');
-    if (this.scrollHeight > this.clientHeight) {
-      $(this).css('overflow-y', 'auto');
+    const $this = $(this);
+    $this.css({
+      'overflow-y': 'hidden',
+      height: 'auto',
+    });
+
+    const scrollHeight = this.scrollHeight;
+    $this.css('height', scrollHeight + 'px');
+
+    if (scrollHeight > this.clientHeight) {
+      $this.css('overflow-y', 'auto');
     }
   });
 
-  // This listens for the 'keydown' event on the message-input textarea
+  // Submit the message on 'Enter' key press
   $('.message-input').on('keydown', function (e) {
-    // Check if the Enter key is pressed
-    if (e.key === 'Enter') {
-      // Prevent the default behavior (newline) if Shift is not pressed
-      if (!e.shiftKey) {
-        e.preventDefault();
-        // Submit the text
-        onSubmit();
-        // Clear the textarea
-        $(this).val('');
-      }
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      onSubmit();
+      $(this).val('');
     }
   });
 
-  // This function returns the current time in a formatted string
+  // Get the current time in a formatted string
   function getCurrentTime() {
     const now = new Date();
-    let hours = now.getHours();
+    const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
-    hours = hours < 10 ? '0' + hours : hours;
-    const formattedTime = hours + ':' + minutes;
+    const formattedTime = `${hours}:${minutes}`;
     return formattedTime;
   }
 
+  // Handle message submission
   const onSubmit = () => {
-    // Get the user's input and username
-    const result = $('.message-input').val();
+    const result = $('.message-input').val().trim();
     const username = $('#username').val();
-    // Check that the input is not empty
-    if (!/^\s*$/.test(result)) {
-      // Send the user's input and username to the server to generate a response
+    if (result) {
       $.ajax({
         url: 'http://127.0.0.1:5000/chat/prompt',
         type: 'POST',
         data: { input: result, username: username },
         success: function (response) {
-          // Append the chatbot's response to the messages area
           const text = response.generated_text;
+          // Append the chatbot's response to the messages area
           $('.messages').append(`
-          <div class="chat-message bot">
-            <div class="info">
-                <div class="avatar"></div>
-                <span>${getCurrentTime()}</span>
+            <div class="chat-message bot">
+              <div class="info">
+                  <div class="avatar"></div>
+                  <span>${getCurrentTime()}</span>
+              </div>
+              <div class="chat-bubble bot">
+                <div class="bubble">
+                  <span>${text}</span>
+                </div>
+              </div>
             </div>
-          <div class="chat-bubble bot">
-            <div class="triangle"></div>
-            <div class="bubble">
-              <span>${text}</span>
-            </div>
-          </div>
-        </div>
           `);
         },
         error: function (error) {
@@ -89,20 +80,17 @@ $(document).ready(function () {
       });
       // Append the user's input to the messages area
       $('.messages').append(`
-      <div class="chat-message user">
-      <div class="chat-bubble">
-        <div class="bubble">
-          <span>
-            ${result}
-          </span>
+        <div class="chat-message user">
+          <div class="chat-bubble">
+            <div class="bubble">
+              <span>${result}</span>
+            </div>
+          </div>
+          <div class="info">
+              <div class="avatar"></div>
+              <span>${getCurrentTime()}</span>
+          </div>
         </div>
-        <div class="triangle"></div>
-      </div>
-        <div class="info">
-            <div class="avatar"></div>
-            <span>${getCurrentTime()}</span>
-        </div>
-    </div>
       `);
     }
   };
