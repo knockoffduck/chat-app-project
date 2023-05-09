@@ -53,31 +53,37 @@ $(function () {
     const result = $('.message-input').val().trim();
     const username = $('#username').val();
     if (result) {
-      $.ajax({
-        url: 'http://127.0.0.1:5000/chat/prompt',
-        type: 'POST',
-        data: { input: result, username: username },
-        success: function (response) {
-          const text = response.generated_text;
-          // Append the chatbot's response to the messages area
-          $('.messages').append(`
-            <div class="chat-message bot">
-              <div class="info">
-                  <div class="avatar"></div>
-                  <span>${getCurrentTime()}</span>
-              </div>
-              <div class="chat-bubble bot">
-                <div class="bubble">
-                  <span>${text}</span>
+      try {
+        $.ajax({
+          url: 'http://127.0.0.1:5000/chat/prompt',
+          type: 'POST',
+          data: { input: result, username: username },
+          success: function (response) {
+            const text = response.generated_text;
+            // Append the chatbot's response to the messages area
+            $('.messages').append(`
+              <div class="chat-message bot">
+                <div class="info">
+                    <div class="avatar"></div>
+                    <span>${getCurrentTime()}</span>
+                </div>
+                <div class="chat-bubble bot">
+                  <div class="bubble">
+                    <span>${text}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          `);
-        },
-        error: function (error) {
-          console.error(error);
-        },
-      });
+            `);
+          },
+          error: function (error) {
+            console.error(error);
+            console.log(error);
+          },
+        });
+      } catch (e) {
+        console.log(e);
+      }
+
       // Append the user's input to the messages area
       $('.messages').append(`
         <div class="chat-message user">
