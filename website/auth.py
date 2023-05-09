@@ -7,19 +7,15 @@ from werkzeug.urls import url_parse
 
 auth = Blueprint("auth", __name__)
 
-# @auth.route("/login")
-# def login():
-#     return render_template("login.html")
-
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('views.home'))
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
+        user = User.query.filter_by(email=form.email.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
+            flash('Invalid email or password. Please try again.')
             return redirect(url_for('auth.login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
@@ -28,20 +24,10 @@ def login():
         return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
 
-
-# @auth.route("/logout")
-# def logout():
-#     return "<h1>Logout</h1>"
-
 @auth.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('views.home'))
-
-
-# @auth.route("/signup")
-# def signup():
-#     return "<h1>SignUp</h1>"
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -49,10 +35,12 @@ def signup():
         return redirect(url_for('views.home'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
+        user = User(firstname=form.firstname.data, lastname=form.lastname.data, 
+                    email=form.email.data, dob=form.dob.data, country=form.country.data, 
+                    gender=form.gender.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('auth.login'))
-    return render_template('sign_up.html', title='Sign Uppy', form=form)
+    return render_template('sign_up.html', title='Sign Up', form=form)
