@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField
+from wtforms.fields import DateField,DateTimeField 
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from website.models import User
 
@@ -16,9 +17,9 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
-    dob = StringField('Date Of Birth', validators=[DataRequired()])
+    dob = DateField('Date Of Birth', format='%Y-%m-%d', validators=[DataRequired()])
     country = StringField('Country', validators=[DataRequired()])
-    gender = StringField('Gender', validators=[DataRequired()])
+    gender = SelectField('Gender', choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')], validators=[DataRequired()])
     submit = SubmitField('Register')
 
 
@@ -26,3 +27,11 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Email address already registered.')
+        
+class EditProfileForm(FlaskForm):
+    firstname = StringField('First Name', validators=[DataRequired()])
+    lastname = StringField('Last Name', validators=[DataRequired()])
+    dob = DateField('Date Of Birth', format='%Y-%m-%d', validators=[DataRequired()])
+    country = StringField('Country', validators=[DataRequired()])
+    gender = SelectField('Gender', choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')], validators=[DataRequired()])
+    submit = SubmitField('Submit')
