@@ -1,4 +1,5 @@
-from website import db, login
+from website import db
+from .__init__ import login
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -9,7 +10,7 @@ class User(UserMixin, db.Model):
     lastname = db.Column(db.String(40))
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    dob = db.Column(db.String(12))
+    dob = db.Column(db.DateTime)
     country = db.Column(db.String(20))
     gender = db.Column(db.String(10))
     chat = db.relationship('Chat', backref='author', lazy='dynamic')
