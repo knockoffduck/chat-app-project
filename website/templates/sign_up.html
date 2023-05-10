@@ -48,7 +48,7 @@
         </p>
         <p>
             {{ form.dob.label }}<br>
-            {{ form.dob(size=32) }}<br>
+            {{ form.dob }}<br>
             {% for error in form.dob.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
@@ -62,7 +62,7 @@
         </p>
         <p>
             {{ form.gender.label }}<br>
-            {{ form.gender(size=32) }}<br>
+            {{ form.gender }}<br>
             {% for error in form.gender.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
