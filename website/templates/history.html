@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block app_content %}
-  <h2 class="title">Chat History</h2>
+  <h2 class="title">Chat History</h2><br>
   <ul class="message-list">
     {% for message in messages %}
     <!--Allows user to redirect to the chat page by clicking on a stored message.-->
@@ -12,10 +12,6 @@
       <a href="{{ url_for('views.chat_route') }}">
         <div class="message-box">
           <div class="message-actions">
-            <!--Pin button to pin message-->
-
-            <!--Delete button tot delete message-->
-            
           </div>
           <div class="username-message">{{ message.username }}: {{ message.data[-1].content }}</div>
         </div>
