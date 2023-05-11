@@ -38,6 +38,26 @@ def home():
 def chat_route():
     return render_template("chat.html")
 
+@views.route("/history/<int:page>")
+def history(page=1):
+    messages = []
+    if os.path.exists("chats/history.json"):
+        with open("chats/history.json", "r") as f:
+            messages = json.load(f)
+
+    page_size = 5
+    start_index = (page - 1) * 5
+    end_index = start_index + page_size
+    page_messages = messages[start_index:end_index]
+
+    last_messages = []
+    for message in page_messages:
+        last_message = message['data'][-1]['content']
+        last_messages.append({'username': message['username'], 'last_message': last_message})
+
+
+    print(page_messages) #Check if it prints to the console
+    return render_template('history.html', messages=page_messages, page=page, page_size=page_size)
 
 # Route for generating text
 @views.route("/chat/prompt", methods=["POST"])
