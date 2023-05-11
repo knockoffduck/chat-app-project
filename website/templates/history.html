@@ -11,9 +11,8 @@
     <li>
       <a href="{{ url_for('views.chat_route') }}">
         <div class="message-box">
-          <div class="message-actions">
-          </div>
-          <div class="username-message">{{ message.username }}: {{ message.data[-1].content }}</div>
+          <div class="username">{{ message.username }}:  </div>
+          <div class="message-content">{{ message.data[-1].content }}</div>
         </div>
       </a>
     </li>
