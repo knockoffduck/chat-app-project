@@ -9,19 +9,7 @@
 {% endblock %} {% block app_content %}
 
 <div class="chat-area">
-  <div class="messages">
-    <div class="chat-message bot">
-      <div class="info">
-        <div class="avatar"></div>
-        <span>2:13</span>
-      </div>
-      <div class="chat-bubble">
-        <div class="bubble">
-          <span>Hi Daffa, how are you doing today?</span>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="messages"></div>
   <div class="input">
     <textarea
       class="message-input"
@@ -31,7 +19,7 @@
       rows="1"
       placeholder="Send a message."
     ></textarea>
-    <button>
+    <button id="send-input">
       <i class="bi-send icon"></i>
     </button>
   </div>

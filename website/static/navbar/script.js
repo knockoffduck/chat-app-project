@@ -17,11 +17,23 @@ $(document).ready(function () {
   });
 
   $('button.profile-dropdown').on('click', () => {
-    console.log('clicked');
     if ($('.dropdown').css('display') === 'block') {
-      $('.dropdown').css('display', 'none');
+      $('.dropdown').hide();
     } else {
-      $('.dropdown').css('display', 'block');
+      $('.dropdown').show();
+    }
+  });
+
+  $(document).mouseup((event) => {
+    const dropdownMenu = $('.dropdown');
+    const dropdownButton = $('button.profile-dropdown');
+    // If the clicked element is not a dropdown button or a dropdown menu item
+    if (
+      !dropdownMenu.is(event.target) &&
+      !dropdownButton.is(event.target) &&
+      dropdownMenu.has(event.target).length === 0
+    ) {
+      dropdownMenu.hide();
     }
   });
 

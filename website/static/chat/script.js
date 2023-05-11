@@ -39,6 +39,11 @@ $(function () {
     }
   });
 
+  $('#send-input').click(() => {
+    onSubmit();
+    $('.message-input').val('');
+  });
+
   // Get the current time in a formatted string
   function getCurrentTime() {
     const now = new Date();
@@ -55,25 +60,58 @@ $(function () {
     const api_url = window.location.href + 'prompt';
     if (result) {
       try {
+        // Append the user's input to the messages area
+        $('.messages').append(`
+                    <div class="chat-message user">
+                        <div class="chat-bubble">
+                            <div class="bubble">
+                                <span>${result}</span>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="avatar"></div>
+                            <span>${getCurrentTime()}</span>
+                        </div>
+                    </div>
+                `);
+
+        $('.messages').append(`
+                    <div class="chat-message bot" id="typing">
+                        <div class="info">
+                            <div class="avatar"></div>
+                            <span>${getCurrentTime()}</span>
+                        </div>
+                        <div class="chat-bubble bot">
+                            <div class="bubble typing-container">
+                                <div class="typing" id="typing-animation"></div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+
+        // Play the animation
+        const typingBubble = $('.chat-message.bot:last-child .typing')[0];
+        const animationInstance = bodymovin.loadAnimation({
+          container: typingBubble,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: '../static/images/typing-animation.json',
+        });
+
         $.ajax({
           url: api_url,
           type: 'POST',
           data: { input: result, username: username },
           success: function (response) {
+            animationInstance.destroy();
+            typingBubble.remove();
+            $('.chat-message.bot .bubble').removeClass('typing-container');
+
             const text = response.generated_text;
             // Append the chatbot's response to the messages area
-            $('.messages').append(`
-              <div class="chat-message bot">
-                <div class="info">
-                    <div class="avatar"></div>
-                    <span>${getCurrentTime()}</span>
-                </div>
-                <div class="chat-bubble bot">
-                  <div class="bubble">
-                    <span>${text}</span>
-                  </div>
-                </div>
-              </div>
+            $('.chat-message.bot:last-child .bubble').append(`
+              <span>${text}</span>
             `);
           },
           error: function (error) {
@@ -84,21 +122,6 @@ $(function () {
       } catch (e) {
         console.log(e);
       }
-
-      // Append the user's input to the messages area
-      $('.messages').append(`
-        <div class="chat-message user">
-          <div class="chat-bubble">
-            <div class="bubble">
-              <span>${result}</span>
-            </div>
-          </div>
-          <div class="info">
-              <div class="avatar"></div>
-              <span>${getCurrentTime()}</span>
-          </div>
-        </div>
-      `);
     }
   };
 });

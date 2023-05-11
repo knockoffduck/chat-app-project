@@ -182,6 +182,17 @@
   border-radius: 0rem 0.5rem 0.5rem 0.5rem;
 }
 
+.typing-container {
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.typing {
+  width: 4rem;
+  height: 2rem;
+}
+
 @media (min-width: 768px) {
   .bubble {
     font-size: 1rem;
