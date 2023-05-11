@@ -1,0 +1,75 @@
+.message-box {
+    background-color: #f0f5ff;
+    border: 0.05rem solid rgb(205, 205, 205);
+    border-radius: 0.6rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.message-box:hover {
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1), 0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1), 0 1.2rem 1.2rem rgba(0, 0, 0, 0.1);
+}
+
+.message-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.message-list a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Move buttons to the RHS of the page */
+.pagination { 
+    display: flex;
+    justify-content: flex-end; /*Chat-GPT*/
+    margin-top: 1rem;
+    margin-left: auto;
+  }
+  
+.Previous-Button a {
+    background-color: #d8fc4c; 
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0.94rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    margin-right: 0.63rem;
+    width: 6.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.Next-Button a {
+    background-color: #d8fc4c; 
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0.94rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    margin-left: 0.63rem;
+    width: 6.3rem;
+    font-weight: bold;
+}
+
+.Next-Button.First-Page {
+    margin-left: -0.6rem;
+}
+
+.message-box a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
