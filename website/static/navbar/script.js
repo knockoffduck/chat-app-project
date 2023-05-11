@@ -17,10 +17,12 @@ $(document).ready(function () {
   });
 
   $('button.profile-dropdown').on('click', () => {
-    if ($('.dropdown').css('display') === 'block') {
-      $('.dropdown').hide();
+    if ($('.dropdown').hasClass('show')) {
+      $('.dropdown').removeClass('show');
+      $('.dropdown').addClass('hide');
     } else {
-      $('.dropdown').show();
+      $('.dropdown').removeClass('hide');
+      $('.dropdown').addClass('show');
     }
   });
 
@@ -33,7 +35,7 @@ $(document).ready(function () {
       !dropdownButton.is(event.target) &&
       dropdownMenu.has(event.target).length === 0
     ) {
-      dropdownMenu.hide();
+      // dropdownMenu.hide();
     }
   });
 

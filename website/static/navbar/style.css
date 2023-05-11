@@ -42,13 +42,15 @@
 }
 
 .dropdown {
+  transform: scaleY(0);
+  transform-origin: bottom;
   color: var(--dark-text);
-  display: none;
   border-radius: 12px;
   z-index: 100;
   height: fit-content;
   background-color: var(--bg-app);
   border: 1px solid rgba(var(--border-rgba));
+  transition: all ease-in 0.25s;
 }
 .dropdown li.nav-item:hover {
   border: 1px solid gray;
@@ -174,10 +176,12 @@ section.burger-menu li a {
 }
 
 .show {
-  display: flex;
+  transform: scaleY(1);
+  transform-origin: top;
 }
 .hide {
-  display: none;
+  transform: scaleY(0);
+  transform-origin: bottom;
 }
 
 .icon {
