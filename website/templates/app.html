@@ -1,5 +1,78 @@
-{% extends "base.html" %} {% block content %}
-{% block page_css %}{% endblock %}
+{% extends "base.html" %} {% block css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='navbar/style.css') }}"
+/>
+{% block page_css %}{% endblock %}{% endblock %} {% block app_script %}
+<script src="{{ url_for('static', filename='navbar/script.js')}}"></script>
+
+{% block script %}{% endblock %} {% endblock %} {% block topbar %}
+<button class="button-square" id="burger-button">
+  <i class="bi-list"></i>
+</button>
+<button class="button-square" id="colour-selector" style="display: none">
+  <i class="bi-moon"></i>
+</button>
+<div class="profile-dropdown">
+  <button class="profile-dropdown">
+    <img
+      src="{{url_for('static', filename='images/pfp.jpg')}}"
+      alt="Profile Pic"
+      class="avatar"
+    />
+    <span>Daffa Fathurohman</span>
+    <i class="bi bi-caret-down-fill"></i>
+  </button>
+
+  <div class="dropdown">
+    <nav>
+      <ul>
+        <li>
+          Dark Mode
+          <input
+            class="dark-mode-switcher"
+            type="checkbox"
+            name=""
+            id="color-selector"
+          />
+        </li>
+        <div style="width: auto; border: 1px solid gray"></div>
+        <li class="nav-item">Profile</li>
+        <li class="nav-item">Logout</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<input
+  class="username-input"
+  id="username"
+  type="text"
+  placeholder="Enter Username..."
+/>
+
+{% endblock %} {% block content %}
+<section class="burger-menu hide" id="burger-menu-section">
+  <div class="topbar">
+    <a href="/" class="logo-text">
+      <span>MindMate</span>
+    </a>
+    <button class="button-square" id="close-button">
+      <i class="bi-x icon" style="color: black"></i>
+    </button>
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <a href="/chat/">Chat</a>
+      </li>
+      <li><a href="/history">History</a></li>
+      <li><a href="/account">Account</a></li>
+    </ul>
+  </nav>
+</section>
+
 <div class="side-navbar">
   <nav>
     <ul>
@@ -10,7 +83,8 @@
         </a>
       </li>
       <li>
-        <a href="/history/1"> <!--Changed route for history page to history/1-->
+        <a href="/history/1">
+          <!--Changed route for history page to history/1-->
           <i class="bi-bookshelf"></i>
           <span>History</span>
         </a>
@@ -18,7 +92,7 @@
       <li>
         <a href="/account">
           <i class="bi-person-circle"></i>
-          <span>Profile</span>
+          <span>Account</span>
         </a>
       </li>
     </ul>

@@ -1,5 +1,6 @@
 import time
 import openai
+import json
 
 
 # Function to get the current timestamp
@@ -12,6 +13,11 @@ def get_time():
 
     # Return the timestamp string
     return timestamp_str
+
+def is_json_empty(filename):
+    with open(filename, 'r') as f:
+        data = json.load(f)
+        return not bool(data)
 
 
 # Function to add new data to the data list for a given username
@@ -47,7 +53,7 @@ def get_response(username, data_list):
             ]
 
             # Insert a system message at the beginning of the message list
-
+            """
             message.insert(
                 0,
                 {
@@ -55,6 +61,7 @@ def get_response(username, data_list):
                     "content": "I want you to act as a therapist. I will present you with various prompts, questions, and scenarios on my mental well being and you will provide guidance on how to overcome, solve and help. Your responses should be conversational like a real therapist, which means that the responses should be short but also provide additional questions to ask the user. Do not ask whether I have spoken to a professional or a therapist, instead I would like you to be my therapist. So that means getting deep into the roots of the problem of where the problem occurs so that it can be solved.",
                 },
             )
+            """
 
             # Call the chatbot API to get a response
             response = openai.ChatCompletion.create(

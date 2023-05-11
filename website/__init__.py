@@ -8,6 +8,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()
 login.login_view = 'auth.login'
+from flask_cors import CORS
 
 # Define a function to create the Flask application
 def create_app(config_class=Config):
@@ -43,4 +44,5 @@ def create_app(config_class=Config):
     login.user_loader(load_user)
 
     # Return the Flask application instance
+    CORS(app)
     return app
