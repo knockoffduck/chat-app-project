@@ -48,21 +48,12 @@
         <a href="/" class="logo-text">
           <span id="full">MindMate</span>
         </a>
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+        {% endif %}
         <nav>{% block topbar %}{% endblock %}</nav>
-        <nav>
-          <a href="/" class="logo-text">
-            <span>MindMate</span>
-          </a>
-
-          <!-- testing -->
-          {% if current_user.is_anonymous %}
-          <a href="{{ url_for('auth.login') }}">Login</a>
-          {% else %}
-          <a href="{{ url_for('auth.logout') }}">Logout</a>
-          {% endif %}
-        
-          {% block topbar %}{% endblock %}
-        </nav>
       </div>
       {% block content %}{% endblock %}
     </div>
