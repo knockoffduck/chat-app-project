@@ -1,8 +1,7 @@
-from flask import request, jsonify, Blueprint, render_template, url_for, redirect
+from flask import request, jsonify, Blueprint, render_template
 import json
 import openai
 import os
-import uuid
 from dotenv import load_dotenv
 
 # Import the add_data and get_response functions from the utilities module
@@ -28,7 +27,7 @@ def chat_route():
     return render_template("chat.html")
 
 
-@views.route("/history/<int:page>")
+@views.route("/search/<int:page>")
 def history(page=1):
     messages = []
     if os.path.exists("chats/history.json"):
@@ -47,7 +46,7 @@ def history(page=1):
 
 
     print(page_messages) #Check if it prints to the console
-    return render_template('history.html', messages=page_messages, page=page, page_size=page_size)
+    return render_template('search.html', messages=page_messages, page=page, page_size=page_size)
 
 
 # Route for generating text
