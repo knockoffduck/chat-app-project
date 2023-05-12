@@ -100,7 +100,7 @@ def generate_text():
     # Load the chat history from the JSON file
     chatHistory = []
     try:
-        if is_json_empty(chatFile) != False:
+        if is_json_empty(chatFile) == False:
             with open(chatFile, "r") as readJson:
                 chatHistory = json.load(readJson)
 

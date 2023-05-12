@@ -1,51 +1,11 @@
 // Wait for the document to be fully loaded and then execute the enclosed function
 $(document).ready(function () {
-  let conversationData = JSON.parse(localStorage.getItem('conversation'));
-  let username = localStorage.getItem('username');
-  if (!username) {
-    window.location.href = '/account';
-  }
-  console.log(conversationData, username);
-  const api_url = window.location.origin + '/user';
-
-  if (username) {
-    $.ajax({
-      url: api_url,
-      type: 'POST',
-      data: { username: username },
-      success: function (response) {
-        $('.username-screen').hide();
-        localStorage.setItem(
-          'conversation',
-          JSON.stringify(response.conversation)
-        );
-        localStorage.setItem('username', username);
-      },
-    });
-  }
-
   const parseTime = (datetimeString) => {
     const timeComponents = datetimeString.split(' ')[1].split(':');
     const hour = timeComponents[0];
     const minute = timeComponents[1];
     return hour + ':' + minute;
   };
-
-  conversationData.forEach(async (message) => {
-    $('.messages').append(`
-    <div class="chat-message ${message.role}">
-    <div class="chat-bubble">
-    <div class="bubble">
-    <span>${message.content}</span>
-    </div>
-    </div>
-    <div class="info">
-    <div class="avatar"></div>
-    <span>${parseTime(message.datetime)}</span>
-    </div>
-    </div>
-    `);
-  });
 
   // Get the current URL
   const url = window.location.href;
@@ -92,6 +52,7 @@ $(document).ready(function () {
 
   // Handle message submission
   const onSubmit = () => {
+    console.log('submitting');
     const result = $('.message-input').val().trim();
     const username = localStorage.getItem('username');
     const api_url = window.location.origin + '/api/prompt';
