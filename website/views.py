@@ -1,4 +1,8 @@
-from flask import request, jsonify, Blueprint, render_template
+from flask import request, jsonify, Blueprint, render_template, redirect, flash, url_for
+from flask_login import login_required, current_user
+from website import db
+from .__init__ import login
+from website.forms import EditProfileForm
 import json
 import openai
 import os
@@ -35,6 +39,7 @@ def home():
 
 # Route for the chat page
 @views.route("/chat")
+@login_required
 def chat_route():
     return render_template("chat.html")
 
@@ -85,6 +90,7 @@ def history(page=1):
 
 # Route for generating text
 @views.route("/api/prompt", methods=["POST"])
+@login_required
 def generate_text():
     # Get the username and input from the request form
     username = request.form["username"]
@@ -119,10 +125,28 @@ def generate_text():
 
         # Return the assistant's response as a JSON object
         return jsonify({"generated_text": reply})
-    except Exception:
-        return Exception
+    except Exception as e:
+        print(handle_error(e))
+        return handle_error(e)
 
 
-@views.route("/account")
+@views.route("/account", methods=["GET", "POST"])
+@login_required
 def account():
-    return render_template("login.html")
+    form = EditProfileForm()
+    if form.validate_on_submit():
+        current_user.firstname = form.firstname.data
+        current_user.lastname = form.lastname.data
+        current_user.dob = form.dob.data
+        current_user.country = form.country.data
+        current_user.gender = form.gender.data
+        db.session.commit()
+        flash("Your changes have been saved.")
+        return redirect(url_for("views.account"))
+    elif request.method == "GET":
+        form.firstname.data = current_user.firstname
+        form.lastname.data = current_user.lastname
+        form.dob.data = current_user.dob
+        form.country.data = current_user.country
+        form.gender.data = current_user.gender
+    return render_template("account.html", title="Account", form=form)

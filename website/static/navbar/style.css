@@ -286,7 +286,7 @@ section.burger-menu li a {
   padding: 1rem;
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1200px) {
   .side-navbar {
     display: block;
   }

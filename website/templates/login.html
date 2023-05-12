@@ -1,78 +1,35 @@
-{% extends "app.html" %} {% block title %} Account {% endblock %} {% block
-content_header %} Login {% endblock %} {% block page_css %}
-<style>
-  .content-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .username-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+{% extends "base.html" %} {% block title %} Sign In {% endblock %} {% block
+content_header %} Login {% endblock %} {% block content %} {% with messages =
+get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %} {% endif %} {% endwith %}
 
-  .username-container > button {
-    width: 100%;
-  }
-
-  .username-container > .username-input {
-    background-color: transparent;
-    border: 0.0625rem solid #727a87;
-    border-radius: 0.25rem;
-    color: var(--dark-text);
-    padding-left: 0.625rem;
-    height: 3rem;
-    width: 10rem;
-  }
-</style>
-{% endblock %} {% block app_content %}
-<div class="username-container">
-  <input
-    class="username-input input"
-    id="username"
-    type="text"
-    placeholder="Enter Username..."
-  />
-  <button class="btn btn-primary">Enter</button>
-</div>
-
-{% endblock %} {% block script %}
-<script>
-  const SubmitUsername = (inputElement) => {
-    const username = inputElement.val().trim();
-    console.log(username + 'logged in');
-
-    const api_url = window.location.origin + '/user';
-
-    if (username) {
-      $.ajax({
-        url: api_url,
-        type: 'POST',
-        data: { username: username },
-        success: function (response) {
-          $('.username-screen').hide();
-          localStorage.setItem(
-            'conversation',
-            JSON.stringify(response.conversation)
-          );
-          localStorage.setItem('username', username);
-          window.location.href = '/chat';
-        },
-      });
-    }
-  };
-
-  $('.username-input').on('keydown', function (element) {
-    if (element.key === 'Enter') {
-      element.preventDefault();
-      SubmitUsername($(this));
-    }
-  });
-
-  $('.username-container > button').on('click', function () {
-    SubmitUsername($('.username-input'));
-  });
-</script>
+<h1>Login</h1>
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.email.label }}
+    <br />
+    {{ form.email(size=32) }}
+    <br />
+    {% for error in form.email.errors %}
+    <span style="color: red">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>
+    {{ form.password.label }}
+    <br />
+    {{ form.password(size=32) }}
+    <br />
+    {% for error in form.password.errors %}
+    <span style="color: red">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+  <p>{{ form.submit() }}</p>
+</form>
+<p>
+  New User?
+  <a href="{{ url_for('auth.signup') }}">Create New Account</a>
+</p>
 {% endblock %}

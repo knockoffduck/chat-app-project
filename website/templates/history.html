@@ -11,6 +11,12 @@
     <li>
       <a href="{{ url_for('views.chat_route') }}">
         <div class="message-box">
+          <div class="message-actions">
+            <!--Pin button to pin message-->
+
+            <!--Delete button tot delete message-->
+            
+          </div>
           <div class="username-message">{{ message.username }}: {{ message.data[-1].content }}</div>
         </div>
       </a>
