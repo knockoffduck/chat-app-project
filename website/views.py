@@ -9,13 +9,7 @@ import os
 from dotenv import load_dotenv
 
 # Import the add_data and get_response functions from the utilities module
-from .utilities import (
-    add_data,
-    get_response,
-    is_json_empty,
-    generate_unique_id,
-    get_time,
-)
+from .utilities import add_data, get_response, is_json_empty, get_chat_history
 
 # Set up the Flask blueprint for the views
 views = Blueprint("views", __name__)
@@ -26,9 +20,8 @@ openai.api_key = os.environ.get("API_KEY")
 
 @views.errorhandler(500)
 def handle_error(error):
-    response = jsonify({"error": error})
-    response.status_code = 500
-    return response
+    print("STATUS CODE 500")
+    return error
 
 
 # Route for the home page
@@ -38,15 +31,20 @@ def home():
 
 
 # Route for the chat page
-@views.route("/chat")
+@views.route("/chat", methods=["GET", "POST"])
 @login_required
 def chat_route():
-    return render_template("chat.html")
+    if request.method == "POST":
+        email = request.json["email"]
+        return jsonify(get_chat_history(email))
+    user_email = current_user.email
+    chat_history = json.dumps(get_chat_history(user_email))
+    return render_template("chat.html", email=user_email, chat_history=chat_history)
 
 
 @views.route("/user", methods=["POST"])
 def user():
-    username = request.form["username"]
+    email = request.form["email"]
     chatFile = "chats/history.json"
 
     chatHistory = []
@@ -55,7 +53,7 @@ def user():
             with open(chatFile, "r") as readJson:
                 chatHistory = json.load(readJson)
             for user in chatHistory:
-                if username == user["username"]:
+                if email == user["email"]:
                     chatHistory = user["data"]
 
         return jsonify({"conversation": chatHistory})
@@ -78,9 +76,7 @@ def history(page=1):
     last_messages = []
     for message in page_messages:
         last_message = message["data"][-1]["content"]
-        last_messages.append(
-            {"username": message["username"], "last_message": last_message}
-        )
+        last_messages.append({"email": message["email"], "last_message": last_message})
 
     print(page_messages)  # Check if it prints to the console
     return render_template(
@@ -92,30 +88,23 @@ def history(page=1):
 @views.route("/api/prompt", methods=["POST"])
 @login_required
 def generate_text():
-    # Get the username and input from the request form
-    username = request.form["username"]
+    # Get the email and input from the request form
+    email = request.form["email"]
     prompt = request.form["input"]
     chatFile = "chats/history.json"
 
     # Load the chat history from the JSON file
     chatHistory = []
     try:
-        if is_json_empty(chatFile) == False:
-            with open(chatFile, "r") as readJson:
-                chatHistory = json.load(readJson)
-
         # Add the user's input to the chat history and get a response
         add_data(
-            username,
+            email,
             {
                 "role": "user",
                 "content": prompt,
-                "datetime": get_time(),
-                "uuid": generate_unique_id(username),
             },
-            chatHistory,
         )
-        reply = get_response(username, chatHistory)
+        reply = get_response(email)
 
         # Save the updated chat history to the JSON file
         with open(chatFile, "w") as writeJson:

@@ -5,6 +5,10 @@
   href="{{ url_for('static', filename='chat/style.css') }}"
 />
 {% endblock %} {% block script %}
+<script type="text/javascript">
+  // Let's say current_user.email is "test@example.com"
+  let email = '{{ email }}';
+</script>
 <script src="{{ url_for('static', filename='chat/script.js') }}"></script>
 {% endblock %} {% block app_content %}
 

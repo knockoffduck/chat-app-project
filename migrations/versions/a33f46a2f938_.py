@@ -1,8 +1,8 @@
-"""tables
+"""empty message
 
-Revision ID: 239345c7d862
+Revision ID: a33f46a2f938
 Revises: 
-Create Date: 2023-05-10 20:57:25.730791
+Create Date: 2023-05-13 00:03:02.481357
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '239345c7d862'
+revision = 'a33f46a2f938'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,11 +23,13 @@ def upgrade():
     sa.Column('firstname', sa.String(length=30), nullable=True),
     sa.Column('lastname', sa.String(length=40), nullable=True),
     sa.Column('email', sa.String(length=120), nullable=True),
+    sa.Column('email_hash_id', sa.Integer(), nullable=True),
     sa.Column('password_hash', sa.String(length=128), nullable=True),
     sa.Column('dob', sa.DateTime(), nullable=True),
     sa.Column('country', sa.String(length=20), nullable=True),
     sa.Column('gender', sa.String(length=10), nullable=True),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('email_hash_id')
     )
     with op.batch_alter_table('user', schema=None) as batch_op:
         batch_op.create_index(batch_op.f('ix_user_email'), ['email'], unique=True)
@@ -36,8 +38,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('body', sa.String(length=140), nullable=True),
     sa.Column('timestamp', sa.DateTime(), nullable=True),
-    sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
+    sa.Column('user_email_hash_id', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['user_email_hash_id'], ['user.email_hash_id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     with op.batch_alter_table('chat', schema=None) as batch_op:
