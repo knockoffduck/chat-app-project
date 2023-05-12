@@ -8,6 +8,7 @@
 <script src="{{ url_for('static', filename='navbar/script.js')}}"></script>
 
 {% block script %}{% endblock %} {% endblock %} {% block topbar %}
+
 <button class="button-square" id="burger-button">
   <i class="bi-list"></i>
 </button>
@@ -37,22 +38,20 @@
             id="color-selector"
           />
         </li>
-        <div style="width: auto; border: 1px solid gray"></div>
-        <li class="nav-item">Profile</li>
-        <li class="nav-item">Logout</li>
+        <div
+          style="width: 100%; border-bottom: 1px solid rgba(var(--border-rgba))"
+        ></div>
+        <div class="nav-container">
+          <li class="nav-item">Profile</li>
+          <li class="nav-item" id="logout-button">Logout</li>
+        </div>
       </ul>
     </nav>
   </div>
 </div>
 
-<input
-  class="username-input"
-  id="username"
-  type="text"
-  placeholder="Enter Username..."
-/>
-
 {% endblock %} {% block content %}
+
 <section class="burger-menu hide" id="burger-menu-section">
   <div class="topbar">
     <a href="/" class="logo-text">
@@ -65,7 +64,7 @@
   <nav>
     <ul>
       <li>
-        <a href="/chat/">Chat</a>
+        <a href="/chat">Chat</a>
       </li>
       <li><a href="/history">History</a></li>
       <li><a href="/account">Account</a></li>

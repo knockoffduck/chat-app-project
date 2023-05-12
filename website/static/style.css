@@ -28,7 +28,7 @@
   --border-rgba: 114, 122, 135, 0.6;
   --dark-text: white;
   --user-text: #765df0;
-  --bot-text-colour: #70a8a2;
+  --assistant-text-colour: #468f63;
   --secondary-rgba: 56, 109, 105, 0.3;
   --secondary-rgba-solid: 56, 109, 105, 1;
   --topbar: #2b2b36;
@@ -52,28 +52,6 @@ body {
 
 input::placeholder {
   color: var(--border);
-}
-
-#loading-screen {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  background-color: var(--bg-app);
-  z-index: 99;
-}
-
-#lottie-animation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 10rem;
-  width: 10rem;
-  font-size: 24px;
 }
 
 .bg-blur {

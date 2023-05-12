@@ -1,5 +1,4 @@
 // This code waits for the document to be fully loaded and then executes the function
-
 $(document).ready(function () {
   // This creates a new IntersectionObserver object that takes a callback function as an argument
   const observer = new IntersectionObserver(function (entries) {

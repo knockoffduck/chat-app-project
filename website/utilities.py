@@ -1,6 +1,15 @@
 import time
 import openai
 import json
+import random
+
+
+def generate_unique_id(username):
+    timestamp = int(time.time() * 1000)  # Current timestamp in milliseconds
+    random_num = random.randint(0, 1000000)  # Random number between 0 and 1,000,000
+    username_hash = hash(username) & 0xFFFF  # Convert username to a 16-bit integer
+    unique_id = f"{timestamp}_{random_num}_{username_hash}"
+    return unique_id
 
 
 # Function to get the current timestamp
@@ -14,8 +23,9 @@ def get_time():
     # Return the timestamp string
     return timestamp_str
 
+
 def is_json_empty(filename):
-    with open(filename, 'r') as f:
+    with open(filename, "r") as f:
         data = json.load(f)
         return not bool(data)
 
@@ -45,7 +55,7 @@ def get_response(username, data_list):
     for users in data_list:
         if users["username"] == username:
             # Extract the messages for the user from the data list, removing any timestamps
-            message = [
+            messages = [
                 {k: v for k, v in d.items() if k != "datetime"}
                 if "datetime" in d
                 else d
@@ -53,31 +63,36 @@ def get_response(username, data_list):
             ]
 
             # Insert a system message at the beginning of the message list
-            """
-            message.insert(
+
+            messages.insert(
                 0,
                 {
                     "role": "system",
                     "content": "I want you to act as a therapist. I will present you with various prompts, questions, and scenarios on my mental well being and you will provide guidance on how to overcome, solve and help. Your responses should be conversational like a real therapist, which means that the responses should be short but also provide additional questions to ask the user. Do not ask whether I have spoken to a professional or a therapist, instead I would like you to be my therapist. So that means getting deep into the roots of the problem of where the problem occurs so that it can be solved.",
                 },
             )
-            """
 
-            # Call the chatbot API to get a response
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo", messages=message
-            )
+            messages = [{k: v for k, v in d.items() if k != "uuid"} for d in messages]
+            print(messages)
+            try:
+                # Call the chatbot API to get a response
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo", messages=messages
+                )
 
-            # Extract the response message from the API response
-            reply = response["choices"][0]["message"]["content"]
+                # Extract the response message from the API response
+                reply = response["choices"][0]["message"]["content"]
 
-            # Add the assistant's response to the user's data list with a timestamp
-            users["data"].append(
-                {"role": "assistant", "content": reply, "datetime": get_time()}
-            )
-
-            # Print the message list for debugging purposes
-            print(message)
-
-            # Return the assistant's response
-            return reply
+                # Add the assistant's response to the user's data list with a timestamp
+                users["data"].append(
+                    {
+                        "role": "assistant",
+                        "content": reply,
+                        "datetime": get_time(),
+                        "uuid": generate_unique_id(username),
+                    }
+                )
+                # Return the assistant's response
+                return reply
+            except Exception:
+                return Exception

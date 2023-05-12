@@ -1,4 +1,78 @@
-{% extends "base.html" %} {% block title %} Sign Up {% endblock %} {% block
-content_header %} Login {% endblock %} {% block content %}
-<h1>this is the login page</h1>
+{% extends "app.html" %} {% block title %} Account {% endblock %} {% block
+content_header %} Login {% endblock %} {% block page_css %}
+<style>
+  .content-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .username-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .username-container > button {
+    width: 100%;
+  }
+
+  .username-container > .username-input {
+    background-color: transparent;
+    border: 0.0625rem solid #727a87;
+    border-radius: 0.25rem;
+    color: var(--dark-text);
+    padding-left: 0.625rem;
+    height: 3rem;
+    width: 10rem;
+  }
+</style>
+{% endblock %} {% block app_content %}
+<div class="username-container">
+  <input
+    class="username-input input"
+    id="username"
+    type="text"
+    placeholder="Enter Username..."
+  />
+  <button class="btn btn-primary">Enter</button>
+</div>
+
+{% endblock %} {% block script %}
+<script>
+  const SubmitUsername = (inputElement) => {
+    const username = inputElement.val().trim();
+    console.log(username + 'logged in');
+
+    const api_url = window.location.origin + '/user';
+
+    if (username) {
+      $.ajax({
+        url: api_url,
+        type: 'POST',
+        data: { username: username },
+        success: function (response) {
+          $('.username-screen').hide();
+          localStorage.setItem(
+            'conversation',
+            JSON.stringify(response.conversation)
+          );
+          localStorage.setItem('username', username);
+          window.location.href = '/chat';
+        },
+      });
+    }
+  };
+
+  $('.username-input').on('keydown', function (element) {
+    if (element.key === 'Enter') {
+      element.preventDefault();
+      SubmitUsername($(this));
+    }
+  });
+
+  $('.username-container > button').on('click', function () {
+    SubmitUsername($('.username-input'));
+  });
+</script>
 {% endblock %}
