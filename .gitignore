@@ -1,2 +1,6 @@
 .env
 .vercel
+venv/
+*.pyc
+*.Identifier
+__pycache__/

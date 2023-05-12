@@ -1,0 +1,204 @@
+/* Option 2: Import via CSS */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.chat-area {
+  position: relative;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  padding-bottom: 3.75rem;
+}
+
+.input {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%; /* set max-width to limit width */
+}
+.input button {
+  color: white;
+  border-radius: 10px;
+  border: none;
+  width: 3rem;
+  background-color: rgba(var(--primary-rgba));
+  border: var(--primary) solid 2px;
+  transition: all ease-in-out 0.25s;
+}
+
+.input button:hover {
+  background-color: rgba(var(--primary-rgba));
+}
+
+.message-input {
+  color: var(--dark-text);
+  position: static;
+  background-color: transparent;
+  padding: 0.5rem;
+  resize: none;
+  border: 0.0625rem rgba(var(--border-rgba)) solid;
+  border-radius: 0.5625rem;
+  outline: none;
+  font-size: 1rem;
+  min-height: 1.875rem;
+  height: auto;
+  cursor: auto;
+  width: 100%;
+}
+
+.message-input::-webkit-scrollbar {
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+.message-input::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 0.3125rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  padding: 0.125rem;
+}
+
+.message-input::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.message-input::-webkit-scrollbar-thumb:active {
+  background-color: #333;
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+
+/* Chrome, Edge and Safari */
+.messages::-webkit-scrollbar {
+  width: 0.5625rem;
+}
+.messages::-webkit-scrollbar-track {
+  border-radius: 0.25rem;
+  background-color: transparent;
+}
+
+.messages::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+.messages::-webkit-scrollbar-track:active {
+  background-color: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  border-radius: 1.25rem;
+  background-color: transparent;
+  border: 0.125rem solid transparent;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background-color: #727a87;
+}
+
+.messages::-webkit-scrollbar-thumb:active {
+  background-color: #727a87;
+}
+
+.chat-message {
+  display: flex;
+  gap: 1rem;
+}
+
+.chat-message.assistant {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.chat-message .avatar {
+  background-size: cover;
+  display: flex;
+  align-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  border-radius: 100%;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info span {
+  color: var(--dark-text);
+  font-size: 0.65rem;
+  text-align: center;
+}
+.chat-bubble {
+  display: flex;
+}
+.chat-bubble .triangle {
+  background-size: cover;
+  height: 1.0625rem;
+  width: 1.0625rem;
+}
+.bubble {
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat';
+  max-width: 90%;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  height: fit-content;
+}
+.user {
+  justify-content: flex-end;
+}
+.user .chat-bubble {
+  justify-content: flex-end;
+}
+.user .avatar {
+  background-image: url('../images/pfp.jpg');
+}
+.user .bubble {
+  color: var(--user-text);
+  background-color: rgba(var(--primary-rgba));
+  border: 1px solid var(--primary);
+  border-radius: 0.5rem 0rem 0.5rem 0.5rem;
+}
+.assistant .avatar {
+  background-image: url('../images/assistant-pfp.png');
+}
+.assistant .bubble {
+  color: var(--assistant-text-colour);
+  background-color: rgba(var(--secondary-rgba));
+  border: 1px solid rgba(var(--secondary-rgba-solid));
+  border-radius: 0rem 0.5rem 0.5rem 0.5rem;
+}
+
+.typing-container {
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.typing {
+  width: 4rem;
+  height: 2rem;
+}
+
+@media (min-width: 768px) {
+  .bubble {
+    font-size: 1rem;
+  }
+}
