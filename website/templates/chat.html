@@ -1,22 +1,15 @@
-{% extends "app.html" %} {% block topbar %}
-<input id="username" type="text" placeholder="Enter Username..." />
+{% extends "app.html" %} {% block page_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='chat/style.css') }}"
+/>
+{% endblock %} {% block script %}
+<script src="{{ url_for('static', filename='chat/script.js') }}"></script>
 {% endblock %} {% block app_content %}
 
 <div class="chat-area">
-  <div class="messages">
-    <div class="chat-message-bot">
-      <div class="info">
-        <div class="avatar"></div>
-        <p>2:13 AM</p>
-      </div>
-      <div class="chat-bubble-bot">
-        <div class="triangle"></div>
-        <div class="bubble">
-          <p>Hi Daffa, how are you doing today?</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="messages"></div>
   <div class="input">
     <textarea
       class="message-input"
@@ -26,6 +19,9 @@
       rows="1"
       placeholder="Send a message."
     ></textarea>
+    <button id="send-input">
+      <i class="bi-send icon"></i>
+    </button>
   </div>
 
   {% endblock %}
