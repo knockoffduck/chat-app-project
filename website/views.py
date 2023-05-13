@@ -43,8 +43,6 @@ def home():
 def chat_route():
     return render_template("chat.html")
 
-
-@views.route("/search/<int:page>")
 @views.route("/user", methods=["POST"])
 def user():
     username = request.form["username"]
@@ -64,8 +62,8 @@ def user():
         return Exception
 
 
-@views.route("/history/<int:page>")
-def history(page=1):
+@views.route("/search/<int:page>")
+def search(page=1):
     messages = []
     if os.path.exists("chats/history.json"):
         with open("chats/history.json", "r") as f:
@@ -85,7 +83,7 @@ def history(page=1):
 
     print(page_messages)  # Check if it prints to the console
     return render_template(
-        "history.html", messages=page_messages, page=page, page_size=page_size
+        "search.html", messages=page_messages, page=page, page_size=page_size
     )
 
 
