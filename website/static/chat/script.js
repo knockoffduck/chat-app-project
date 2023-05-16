@@ -1,18 +1,15 @@
 // Wait for the document to be fully loaded and then execute the enclosed function
-$(function () {
+$(document).ready(function () {
+  const parseTime = (datetimeString) => {
+    const timeComponents = datetimeString.split(' ')[1].split(':');
+    const hour = timeComponents[0];
+    const minute = timeComponents[1];
+    return hour + ':' + minute;
+  };
+
   // Get the current URL
   const url = window.location.href;
   console.log(url);
-
-  // Highlight the active link in the navigation
-  $('nav ul li a').each(function () {
-    const href = $(this).attr('href');
-    if (url.indexOf(href) > -1) {
-      $(this).closest('li').addClass('active-nav');
-    } else {
-      $(this).closest('li').removeClass('active-nav');
-    }
-  });
 
   // Resize the message-input textarea dynamically based on its content
   $('.message-input').on('input', function () {
@@ -55,9 +52,10 @@ $(function () {
 
   // Handle message submission
   const onSubmit = () => {
+    console.log('submitting');
     const result = $('.message-input').val().trim();
-    const username = $('#username').val();
-    const api_url = window.location.href + 'prompt';
+    const username = localStorage.getItem('username');
+    const api_url = window.location.origin + '/api/prompt';
     if (result) {
       try {
         // Append the user's input to the messages area
@@ -76,21 +74,22 @@ $(function () {
                 `);
 
         $('.messages').append(`
-                    <div class="chat-message bot" id="typing">
-                        <div class="info">
-                            <div class="avatar"></div>
-                            <span>${getCurrentTime()}</span>
-                        </div>
-                        <div class="chat-bubble bot">
+                    <div class="chat-message assistant" id="typing">
+
+                        <div class="chat-bubble assistant">
                             <div class="bubble typing-container">
                                 <div class="typing" id="typing-animation"></div>
                             </div>
+                        </div>
+                        <div class="info">
+                            <div class="avatar"></div>
+                            <span>${getCurrentTime()}</span>
                         </div>
                     </div>
                 `);
 
         // Play the animation
-        const typingBubble = $('.chat-message.bot:last-child .typing')[0];
+        const typingBubble = $('.chat-message.assistant:last-child .typing')[0];
         const animationInstance = bodymovin.loadAnimation({
           container: typingBubble,
           renderer: 'svg',
@@ -106,11 +105,13 @@ $(function () {
           success: function (response) {
             animationInstance.destroy();
             typingBubble.remove();
-            $('.chat-message.bot .bubble').removeClass('typing-container');
+            $('.chat-message.assistant .bubble').removeClass(
+              'typing-container'
+            );
 
             const text = response.generated_text;
             // Append the chatbot's response to the messages area
-            $('.chat-message.bot:last-child .bubble').append(`
+            $('.chat-message.assistant:last-child .bubble').append(`
               <span>${text}</span>
             `);
           },

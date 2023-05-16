@@ -1,20 +1,6 @@
-$('#loading-screen-app').show();
 $(document).ready(function () {
   let dark_mode = localStorage.getItem('dark_mode');
   let body = $('body');
-
-  setTimeout(() => {
-    $('#loading-screen-app').fadeOut(500);
-    console.log('fading out');
-  }, 2000);
-
-  const animation = bodymovin.loadAnimation({
-    container: $('#loading-screen-app.lottie-animation')[0],
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: '../static/images/loading.json',
-  });
 
   $('button.profile-dropdown').on('click', () => {
     if ($('.dropdown').hasClass('show')) {
@@ -36,6 +22,22 @@ $(document).ready(function () {
       dropdownMenu.has(event.target).length === 0
     ) {
       // dropdownMenu.hide();
+    }
+  });
+
+  // Highlight the active link in the navigation
+  // Get current page URL
+  const url = window.location.pathname;
+
+  // Iterate over all nav links
+  $('.side-navbar a').each(function () {
+    // Get href of the link
+    const href = $(this).attr('href');
+
+    // Check if the href matches the current URL
+    if (url.includes(href)) {
+      // If it matches, add class
+      $(this).parent().addClass('active-nav');
     }
   });
 
