@@ -96,3 +96,14 @@ def get_response(username, data_list):
                 return reply
             except Exception:
                 return Exception
+
+def is_json_empty(file_path):
+    try:
+        with open(file_path, "r") as f:
+            data = f.read().strip()
+            if len(data) == 0:
+                return True
+            json.loads(data)
+            return False
+    except (FileNotFoundError, json.JSONDecodeError):
+        return True
