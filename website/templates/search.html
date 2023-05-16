@@ -2,7 +2,9 @@
 {% block page_css %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search/search.css')}}">
 {% endblock %}
-
+{% block script %} 
+    <script src="{{ url_for('static', filename='search.js') }}"></script>
+{% endblock %}
 {% block app_content %}
   <h2 class="title">Chats</h2>
   <ul class="message-list">
