@@ -10,8 +10,8 @@
   .content-area {
     height: 100%;
     width: 100%;
-    padding: 20px;
-    border-radius: 21px;
+    padding: 1.25rem;
+    border-radius: 1.3rem;
     background-color: white;
   }
 
@@ -28,11 +28,11 @@
 input, select {
     color: black;
     width: 100%;
-    padding: 5px 10px;
-    margin: 8px 0;
+    padding: 0.3rem 0.625rem;
+    margin: 0.5rem 0rem;
     box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+    border: 0.125rem solid #ccc;
+    border-radius: 0.25rem;
     color: black;
   }
     
@@ -41,16 +41,16 @@ input, select {
     background-color: #d8fc4c;
     width: auto;
     color: black;
-    padding: 10px 15px;
-    margin: 8px 0;
+    padding: 0.625rem 1rem;
+    margin: 0.5rem 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     cursor: pointer;
     }
     
 /* Styling for form submit button on hover */
 .submit-button:hover {
-    background-color: #45a049;
+    background-color: #5333ed;
     color: white;
     }
     
@@ -58,3 +58,9 @@ input, select {
 .error-message {
     color: red;
     }
+
+.flashed-messages {
+  color:black;
+  padding-left: 1.25rem;
+  padding-top: 1.25rem;
+}
