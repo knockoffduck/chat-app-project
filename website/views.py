@@ -103,7 +103,7 @@ def account():
         current_user.country = form.country.data
         current_user.gender = form.gender.data
         db.session.commit()
-        flash('Your changes have been saved.')
+        flash('Success! Your changes have been saved.')
         return redirect(url_for('views.account'))
     elif request.method == 'GET':
         form.firstname.data = current_user.firstname

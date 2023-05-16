@@ -1,33 +1,55 @@
 {% extends "base.html" %} {% block title %} Sign In {% endblock %} {% block
-content_header %} Login {% endblock %} {% block content %}
+    content_header %} Login {% endblock %} {% block content %}
 
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-        <p>{{ message }}</p>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}" />
+{% endblock %}
 
-<h1>Login</h1>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.email.label }}<br>
-            {{ form.email(size=32) }}<br>
-            {% for error in form.email.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="fixed-box" id="login-box">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <p class="fmessage">{{ message }}</p>
             {% endfor %}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}<br>
-            {% for error in form.password.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
-    </form>
-    <p>New User? <a href="{{ url_for('auth.signup') }}">Create New Account</a></p>
+        {% endif %}
+      {% endwith %}
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center mb-4">Login</h1>
+          <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+              <p>
+                {{ form.email.label(class="text-center") }}
+                {{ form.email(id="email", class="form-control") }}
+                {% for error in form.email.errors %}
+                <span class="errors">[{{ error }}]</span>
+                {% endfor %}
+              </p>
+            </div>
+            <div class="form-group">
+              <p>
+                {{ form.password.label(class="text-center") }}
+                {{ form.password(id="password", class="form-control") }}
+                {% for error in form.password.errors %}
+                <span class="errors">[{{ error }}]</span>
+                {% endfor %}
+              </p>
+            </div>
+            <div class="form-group">
+              <p class="remember">{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            </div>
+            <div class="form-group text-center">
+              <p>{{ form.submit(class="btn btn-primary mt-4") }}</p>
+              <div class="mt-2">
+                <p>New User? <a href="{{ url_for('auth.signup') }}" class="text-primary small">Create New Account</a></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
