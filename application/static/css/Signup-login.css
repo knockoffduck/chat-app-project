@@ -1,0 +1,61 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('{{ url_for("static", filename="images/bg.png") }}');
+  background-size: cover;
+  height: 100vh;
+}
+.upbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #333;
+  color: #fff;
+  z-index: 999;
+}
+
+#logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+label {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+input[type="option"]
+input[type="date"],
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid black;
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+input[type="submit"] {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-row input[type="password"] {
+  margin-left: 20px;
+}
+.h1{
+  text-align: center;
+}

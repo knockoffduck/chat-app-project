@@ -1,12 +1,14 @@
-from website import create_app, db
-from website.models import User, Chat
+from application import app
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+import os
 
-app = create_app()
+CORS(app)
+
+#@app.route('/home')
+#def home():
+#    return 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
-
-@app.shell_context_processor
-def make_shell_context():
-    return {'db': db, 'User': User, 'Chat': Chat}
+    port = os.environ.get('PORT', 5000)
+    app.run(debug = True, host = '0.0.0.0', port = port)
