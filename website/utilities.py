@@ -97,6 +97,7 @@ def get_response(username, data_list):
             except Exception:
                 return Exception
 
+#Response when history.json file is empty
 def is_json_empty(file_path):
     try:
         with open(file_path, "r") as f:
