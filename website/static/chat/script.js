@@ -1,15 +1,46 @@
 // Wait for the document to be fully loaded and then execute the enclosed function
 $(document).ready(function () {
+  const api_url = window.location.origin + '/api/prompt';
+
+  console.log(email + ' is logged in');
+
+  $.ajax({
+    url: window.location.origin + '/chat',
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify({ email: email }),
+    success: function (data) {
+      $.each(data, function (index, message) {
+        var role = message.body.role;
+        var content = message.body.content;
+        var timestamp = message.timestamp;
+
+        $('.messages').append(`
+          <div class="chat-message ${role}">
+              <div class="chat-bubble">
+                  <div class="bubble">
+                      <span>${content}</span>
+                  </div>
+              </div>
+              <div class="info">
+                  <div class="avatar"></div>
+                  <span>${timestamp.split(' ')[0]}</span>
+              </div>
+          </div>
+        `);
+      });
+    },
+    error: function (error) {
+      console.log(error);
+    },
+  });
+
   const parseTime = (datetimeString) => {
     const timeComponents = datetimeString.split(' ')[1].split(':');
     const hour = timeComponents[0];
     const minute = timeComponents[1];
     return hour + ':' + minute;
   };
-
-  // Get the current URL
-  const url = window.location.href;
-  console.log(url);
 
   // Resize the message-input textarea dynamically based on its content
   $('.message-input').on('input', function () {
@@ -54,7 +85,6 @@ $(document).ready(function () {
   const onSubmit = () => {
     console.log('submitting');
     const result = $('.message-input').val().trim();
-    const username = localStorage.getItem('username');
     const api_url = window.location.origin + '/api/prompt';
     if (result) {
       try {
@@ -101,7 +131,7 @@ $(document).ready(function () {
         $.ajax({
           url: api_url,
           type: 'POST',
-          data: { input: result, username: username },
+          data: { input: result, email: email },
           success: function (response) {
             animationInstance.destroy();
             typingBubble.remove();

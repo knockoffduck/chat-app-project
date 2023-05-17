@@ -22,7 +22,7 @@
       alt="Profile Pic"
       class="avatar"
     />
-    <span>Daffa Fathurohman</span>
+    <span>{{current_user.firstname + " " + current_user.lastname}}</span>
     <i class="bi bi-caret-down-fill"></i>
   </button>
 
@@ -42,8 +42,18 @@
           style="width: 100%; border-bottom: 1px solid rgba(var(--border-rgba))"
         ></div>
         <div class="nav-container">
-          <li class="nav-item">Profile</li>
-          <li class="nav-item" id="logout-button">Logout</li>
+          <li class="nav-item">
+            <a href="{{ url_for('auth.logout') }}">
+              <i class="bi bi-person"></i>
+              Profile
+            </a>
+          </li>
+          <li class="nav-item" id="logout-button">
+            <a href="{{ url_for('auth.logout') }}">
+              <i class="bi bi-arrow-right-square"></i>
+              Logout
+            </a>
+          </li>
         </div>
       </ul>
     </nav>
