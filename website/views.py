@@ -81,7 +81,7 @@ def search(page=1):
         #Filer messages for current user
         current_user_messages = []
         for message in page_messages:
-            if message["username"] == current_user.firstname:
+            if message["username"] == current_user.email:
                 current_user_messages.append(message)
 
         last_messages = []
@@ -117,7 +117,7 @@ def generate_text():
             with open(chatFile, "r") as readJson:
                 chatHistory = json.load(readJson)
 
-        username = current_user.firstname 
+        username = current_user.email 
 
         # Add the user's input to the chat history and get a response
         add_data(
