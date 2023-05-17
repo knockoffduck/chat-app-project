@@ -24,6 +24,10 @@ body {
     height: 4rem;
 }
 
+.logo-text > #full {
+      display: block;
+    }
+
 p.fmessage {
     text-align: center;
 }
@@ -36,6 +40,13 @@ p.fmessage {
     height: auto;
     width: 21rem;
     margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.card {
+    border:1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #signup-box {
