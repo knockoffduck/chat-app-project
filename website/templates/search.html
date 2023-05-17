@@ -7,18 +7,20 @@
 {% endblock %}
 {% block app_content %}
   <h2 class="title">Chats</h2>
-  <ul class="message-list">
-    {% for message in messages %}
-    <!--Allows user to redirect to the chat page by clicking on a stored message.-->
-    <li>
-      <a href="{{ url_for('views.chat_route') }}">
-        <div class="message-box">
-          <div class="message-content">{{ message.data[-1].content }}</div>
-        </div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+  <div id="messageContainer">
+    <ul class="message-list">
+      {% for message in messages %}
+      <!--Allows user to redirect to the chat page by clicking on a stored message.-->
+      <li>
+        <a href="{{ url_for('views.chat_route') }}">
+          <div class="message-box">
+            <div class="message-content">{{ message.data[-1].content }}</div>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 
   <!--Add pagination buttons to history page-->
   <div class="pagination">
