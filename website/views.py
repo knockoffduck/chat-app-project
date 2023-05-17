@@ -7,6 +7,7 @@ import json
 import openai
 import os
 from dotenv import load_dotenv
+import traceback
 
 # Import the add_data and get_response functions from the utilities module
 from .utilities import (
@@ -64,27 +65,34 @@ def user():
 
 @views.route("/search/<int:page>")
 def search(page=1):
-    messages = []
-    if os.path.exists("chats/history.json"):
-        with open("chats/history.json", "r") as f:
-            messages = json.load(f)
+    try:
+        if os.path.exists("chats/history.json"):
+            with open("chats/history.json", "r") as f:
+                messages = json.load(f)
+        else:
+            messages = []
 
-    page_size = 5
-    start_index = (page - 1) * 5
-    end_index = start_index + page_size
-    page_messages = messages[start_index:end_index]
+        page_size = 5
+        start_index = (page - 1) * 5
+        end_index = start_index + page_size
+        page_messages = messages[start_index:end_index]
 
-    last_messages = []
-    for message in page_messages:
-        last_message = message["data"][-1]["content"]
-        last_messages.append(
-            {"username": message["username"], "last_message": last_message}
+        last_messages = []
+        for message in page_messages:
+            last_message = message["data"][-1]["content"]
+            last_messages.append(
+                {"username": message["username"], "last_message": last_message}
+            )
+
+        print(page_messages)  # Check if it prints to the console
+        return render_template(
+            "search.html", messages=page_messages, page=page, page_size=page_size
         )
-
-    print(page_messages)  # Check if it prints to the console
-    return render_template(
-        "search.html", messages=page_messages, page=page, page_size=page_size
-    )
+    
+    #Prints an error message on the web page when there are no stored messages
+    except Exception as e:
+        traceback.print_exc()
+        return "An error occurred while loading the search page - no messages to display."
 
 
 # Route for generating text
