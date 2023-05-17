@@ -135,7 +135,7 @@ def generate_text():
         # Save the updated chat history to the JSON file
         with open(chatFile, "w") as writeJson:
             # Convert the chat history to a JSON string and write it to the file
-            jsonExport = json.dumps(chatHistory)
+            jsonExport = json.dumps(chatHistory, indent=4) #Formatting of history.json file
             writeJson.write(jsonExport)
 
         # Return the assistant's response as a JSON object
