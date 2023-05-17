@@ -9,7 +9,13 @@ import os
 from dotenv import load_dotenv
 
 # Import the add_data and get_response functions from the utilities module
-from .utilities import add_data, get_response, is_json_empty, get_chat_history
+from .utilities import (
+    add_data,
+    get_response,
+    is_json_empty,
+    get_chat_history,
+    delete_conversations,
+)
 
 # Set up the Flask blueprint for the views
 views = Blueprint("views", __name__)
@@ -28,6 +34,13 @@ def handle_error(error):
 @views.route("/")
 def home():
     return render_template("home.html")
+
+
+@views.route("/clear_chat", methods=["POST"])
+def clear_chat():
+    email = request.form.get("email")
+    delete_conversations(email)
+    return jsonify({"message": "Chat cleared successfully!"})
 
 
 # Route for the chat page

@@ -29,21 +29,32 @@
   <div class="dropdown">
     <nav>
       <ul>
-        <li>
-          Dark Mode
-          <input
-            class="dark-mode-switcher"
-            type="checkbox"
-            name=""
-            id="color-selector"
-          />
-        </li>
+        <div class="nav-container">
+          <li>
+            <span>
+              <i class="bi bi-moon"></i>
+              Dark Mode
+            </span>
+            <input
+              class="dark-mode-switcher"
+              type="checkbox"
+              name=""
+              id="color-selector"
+            />
+          </li>
+          <li class="nav-item">
+            <button id="clear-conversation">
+              <i class="bi bi-trash"></i>
+              Clear Conversation
+            </button>
+          </li>
+        </div>
         <div
           style="width: 100%; border-bottom: 1px solid rgba(var(--border-rgba))"
         ></div>
         <div class="nav-container">
           <li class="nav-item">
-            <a href="{{ url_for('auth.logout') }}">
+            <a href="/account">
               <i class="bi bi-person"></i>
               Profile
             </a>
