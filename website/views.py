@@ -64,6 +64,7 @@ def user():
 
 
 @views.route("/search/<int:page>")
+@login_required
 def search(page=1):
     try:
         if os.path.exists("chats/history.json"):
@@ -77,8 +78,14 @@ def search(page=1):
         end_index = start_index + page_size
         page_messages = messages[start_index:end_index]
 
-        last_messages = []
+        #Filer messages for current user
+        current_user_messages = []
         for message in page_messages:
+            if message["username"] == current_user.firstname:
+                current_user_messages.append(message)
+
+        last_messages = []
+        for message in current_user_messages:
             last_message = message["data"][-1]["content"]
             last_messages.append(
                 {"username": message["username"], "last_message": last_message}
@@ -86,7 +93,7 @@ def search(page=1):
 
         print(page_messages)  # Check if it prints to the console
         return render_template(
-            "search.html", messages=page_messages, page=page, page_size=page_size
+            "search.html", messages=current_user_messages, page=page, page_size=page_size
         )
     
     #Prints an error message on the web page when there are no stored messages
@@ -100,7 +107,6 @@ def search(page=1):
 @login_required
 def generate_text():
     # Get the username and input from the request form
-    username = request.form["username"]
     prompt = request.form["input"]
     chatFile = "chats/history.json"
 
@@ -110,6 +116,8 @@ def generate_text():
         if is_json_empty(chatFile) == False:
             with open(chatFile, "r") as readJson:
                 chatHistory = json.load(readJson)
+
+        username = current_user.firstname 
 
         # Add the user's input to the chat history and get a response
         add_data(
