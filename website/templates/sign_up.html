@@ -1,123 +1,120 @@
-{% extends "base.html" %}{% block css %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename='Signup_login/style.css') }}"
-/>
+@@ -0,0 +1,119 @@
+{% extends "base.html" %} {% block title %} Sign Up {% endblock %} {% block
+    content_header %} Login {% endblock %} {% block content %}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}" />
 {% endblock %}
-{% block title %} Sign Up {% endblock %}
-{% block content_header %} Login {% endblock %}
-{% block content %}
 
-  {% with messages = get_flashed_messages() %}
-  {% if messages %}
-      {% for message in messages %}
-      <p>{{ message }}</p>
-      {% endfor %}
-  {% endif %}
-  {% endwith %}
-
-  
-  <div class="d-flex justify-content-center align-items-center" style="height: 85vh;">
-    <div class="fixed-box">
-        <div class="card "style="width: 60vh; height: 55vh;">
-          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-            <h1 class="text-center mb-4">Sign Up</h1>
-            <form action="" method="post" novalidate>
-              {{ form.hidden_tag() }}
-              <!-- f -->
-              <div class="row">
-                <div class="col-md-6 ml-auto ">
-                  <p>
-                    {{ form.firstname.label }}
-                    <br />
-                    {{ form.firstname(size=20) }}
-                    <br />
-                    {% for error in form.firstname.errors %}
-                    <span style="color: red">[{{ error }}]</span>
-                    {% endfor %}
-                  </p>
-                </div>
-                <div class="col-md-6 mr-auto ">
-                  <p>
-                    {{ form.lastname.label }}
-                    <br />
-                    {{ form.lastname(size=20) }}
-                    <br />
-                    {% for error in form.lastname.errors %}
-                    <span style="color: red">[{{ error }}]</span>
-                    {% endfor %}
-                  </p>
-                </div>
-              </div>
-              <!-- f -->
-              <div class="form-group ">
-                {{ form.email.label }}<br>
-                {{ form.email(size=46) }}<br>
-                {% for error in form.email.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-              </div>
-              <!-- f -->
-              <div class="row">
-                <div class="col-md-6 mr-auto ">
-                  <p>
-                  {{ form.password.label }}<br>
-                  {{ form.password(size=20) }}<br>
-                  {% for error in form.password.errors %}
-                  <span style="color: red;">[{{ error }}]</span>
-                  {% endfor %}
-                  </p>
-                </div>
-                <div class="col-md-6 mr-auto ">
-                  <p>
-                    {{ form.password2.label }}<br>
-                    {{ form.password2(size=20) }}<br>
-                    {% for error in form.password2.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                    {% endfor %}
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4 mr-auto ">
-                  <p>
-                  {{ form.dob.label }}<br>
-                  {{ form.dob }}<br>
-                  {% for error in form.dob.errors %}
-                  <span style="color: red;">[{{ error }}]</span>
-                  {% endfor %}
-                  </p>
-                </div>
-                <div class="col-md-4 mr-auto ">
-                  <p>
-                  {{ form.country.label }}<br>
-                  {{ form.country(size=10) }}<br>
-                  {% for error in form.country.errors %}
-                  <span style="color: red;">[{{ error }}]</span>
-                  {% endfor %}
-                  </p>
-                </div>
-                <div class="col-md-4 mr-auto ">
-                  <p>
-                  {{ form.gender.label }}<br>
-                  {{ form.gender }}<br>
-                  {% for error in form.gender.errors %}
-                  <span style="color: red;">[{{ error }}]</span>
-                  {% endfor %}
-                  </p>
-                </div>
-              </div>
-              <div class="form-group">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="fixed-box" id="signup-box">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center mb-4">Create Account</h1>
+          <p class="fmessage">To access the benefits of MindMate, simply create an account below:</p>
+          <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-row">
+              <div class="col form-group" id="col">
                 <p>
-                {{ form.submit() }}
+                    {{ form.firstname.label }}
+                    {{ form.firstname(id="first_name", class="form-control") }}
+                    {% for error in form.firstname.errors %}
+                    <span class="errors">[{{ error }}]</span>
+                    {% endfor %}
                 </p>
               </div>
-            </form>
-            <p>Already a User? <a href="{{ url_for('auth.login')}}">Login</a></p>
-          </div>
+              <div class="col form-group" id="col">
+                <p>
+                    {{ form.lastname.label }}
+                    {{ form.lastname(id="last_name", class="form-control") }}
+                    {% for error in form.lastname.errors %}
+                    <span class="errors">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+              </div>
+            </div>            
+
+            <div class="form-group"  id="col">
+              <p>
+              {{ form.email.label }}
+              {{ form.email(id="email", class="form-control") }}
+              {% for error in form.email.errors %}
+              <span class="errors">[{{ error }}]</span>
+              {% endfor %}
+              </p>
+            </div>
+
+            <div class="form-row">
+              <div class="col form-group" id="col">
+                <p>
+                  {{ form.password.label }}
+                  {{ form.password(id="password", class="form-control") }}
+                  {% for error in form.password.errors %}
+                  <span class="errors">[{{ error }}]</span>
+                  {% endfor %}
+                </p>
+              </div>
+              <div class="col form-group" id="col">
+                <p>
+                  {{ form.password2.label }}
+                  {{ form.password2(id="confirm_password", class="form-control") }}
+                  {% for error in form.password2.errors %}
+                  <span class="errors">[{{ error }}]</span>
+                  {% endfor %}
+                </p>
+              </div>
+            </div>
+
+            <div class="form-group"  id="col">
+              <p>
+                {{ form.dob.label }}
+                {{ form.dob(id="dob", class="form-control") }}
+                {% for error in form.dob.errors %}
+                <span class="errors">[{{ error }}]</span>
+                {% endfor %}
+              </p>
+            </div>
+
+            <div class="form-row">
+              <div class="col form-group" id="col">
+                <p>
+                  {{ form.country.label }}
+                  {{ form.country(id="country", class="form-control") }}
+                  {% for error in form.country.errors %}
+                  <span class="errors">[{{ error }}]</span>
+                  {% endfor %}
+                </p>
+              </div>
+              <div class="col form-group" id="col">
+                <p>
+                  {{ form.gender.label }}
+                  {{ form.gender(id="gender", class="form-control") }}
+                  {% for error in form.gender.errors %}
+                  <span class="errors">[{{ error }}]</span>
+                  {% endfor %}
+                </p>
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <p>{{ form.submit(class="btn btn-primary mt-4") }}</p>
+              <div class="mt-2">
+                <p>Already A User? <a href="{{ url_for('auth.login') }}" class="text-primary small">Login</a></p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
-  {% endblock %}
+
+
+{% endblock %}
