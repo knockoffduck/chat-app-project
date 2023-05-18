@@ -79,7 +79,7 @@ def search(page=1):
                 current_user_messages.append(message)
 
         return render_template(
-            "search.html", page=page, search_query=search_query
+            "search.html", messages = current_user_messages, page=page, search_query=search_query
         )
     
     #Prints an error message on the web page when there are no stored messages

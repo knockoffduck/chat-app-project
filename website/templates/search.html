@@ -7,18 +7,28 @@
 {% endblock %}
 {% block app_content %}
   <h2 class="title">Chats</h2>
+  <div id="searchContainer">
+    <form action = "{{ url_for('views.search', page=page) }}" method="get">
+      <input type="text" name="q" value="{{ search_query}}" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
   <div id="messageContainer">
     <ul class="message-list">
+      {% if messages %}
       {% for message in messages %}
       <!--Allows user to redirect to the chat page by clicking on a stored message.-->
       <li>
         <a href="{{ url_for('views.chat_route') }}">
           <div class="message-box">
-            <div class="message-content">{{ message.data[-1].content }}</div>
+            <div class="message-content">{{ message["data"] }}</div>
           </div>
         </a>
       </li>
       {% endfor %}
+    {% else %}
+      <p>No matching messages found.</p>
+    {% endif %}
     </ul>
   </div>
 {% endblock %}
