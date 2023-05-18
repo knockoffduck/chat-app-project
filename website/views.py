@@ -65,6 +65,10 @@ def user():
 @login_required
 def search(page=1):
     search_query = request.args.get("q", "") #Get the search query from the request parameters
+    
+    if not search_query:
+        return render_template("search.html", search_query=search_query, page=page)
+    
     try:
         if os.path.exists("chats/history.json"):
             with open("chats/history.json", "r") as f:
@@ -75,7 +79,13 @@ def search(page=1):
         #Filer messages for current user
         current_user_messages = []
         for message in messages:
-            if message["username"] == current_user.email and any(search_query.lower() in data["content"].lower() for data in message["data"]):
+            if (
+                message["username"] == current_user.email 
+                and any(
+                    search_query.lower() in data["content"].lower() 
+                    for data in message["data"]
+                )
+            ):
                 current_user_messages.append(message)
 
         return render_template(
