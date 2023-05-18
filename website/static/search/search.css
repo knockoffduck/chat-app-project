@@ -53,3 +53,8 @@
 .title {
     font-family: 'Montserrat', sans-serif;
 }
+
+#searchContainer input[type="text"] {
+    width: 45rem; /* Adjust the width value as needed */
+}
+  

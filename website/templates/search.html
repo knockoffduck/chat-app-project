@@ -9,8 +9,7 @@
   <h2 class="title">Chats</h2>
   <div id="searchContainer">
     <form action = "{{ url_for('views.search', page=page) }}" method="get">
-      <input type="text" name="q" value="{{ search_query}}" placeholder="Search...">
-      <button type="submit">Search</button>
+      <input type="text" name="q" value="{{ search_query}}" placeholder="Look for messages...">
     </form>
   </div>
   <div id="messageContainer">
