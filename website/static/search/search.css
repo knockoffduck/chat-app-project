@@ -57,4 +57,16 @@
 #searchContainer input[type="text"] {
     width: 45rem; /* Adjust the width value as needed */
 }
-  
+
+#search {
+    border-radius: 0.5rem;
+    border: 0.1rem solid black;
+    padding-left: 0.5rem;
+    height: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.noMessages {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1rem;
+}
