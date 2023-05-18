@@ -3,13 +3,13 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search/search.css')}}">
 {% endblock %}
 {% block script %} 
-    <script src="{{ url_for('static', filename='search.js') }}"></script>
+    <script src="{{ url_for('static', filename='search/search.js') }}"></script>
 {% endblock %}
 {% block app_content %}
   <h2 class="title">Chats</h2>
   <div id="searchContainer">
     <form action = "{{ url_for('views.search', page=page) }}" method="get">
-      <input type="text" name="q" value="{{ search_query}}" placeholder="Look for messages...">
+      <input id="search" type="text" name="q" value="{{ search_query}}" placeholder="🔍︎ Search...">
     </form>
   </div>
   <div id="messageContainer">
