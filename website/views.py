@@ -110,7 +110,9 @@ def generate_text():
     chatFile = "chats/history.json"
 
     # Load the chat history from the JSON file
-    chatHistory = []
+    with open(chatFile, "r") as f:
+        chatHistory = json.load(f)
+
     try:
         # Add the user's input to the chat history and get a response
         add_data(
@@ -121,6 +123,18 @@ def generate_text():
             },
         )
         reply = get_response(email)
+
+        # Append the new message to the chat history
+        chatHistory.append({
+            "username": email,
+            "data": [{
+                "role": "user",
+                "content": prompt
+            }, {
+                "role": "assistant",
+                "content": reply
+            }]
+        })
 
         # Save the updated chat history to the JSON file
         with open(chatFile, "w") as writeJson:
