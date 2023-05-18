@@ -5,7 +5,7 @@
     padding-bottom: 1.9rem;
     border-radius: 1.3rem;
     background-color: white;
-    overflow: hidden; /* Prevents content from overflowing */
+    overflow: auto; /* Prevents content from overflowing */
     position: relative;
 }
 
@@ -16,6 +16,7 @@
     border-radius: 0.6rem;
     padding: 0.6rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     font-family: 'Montserrat', sans-serif;
 }
 

@@ -82,7 +82,7 @@ def search(page=1):
             if (
                 message["username"] == current_user.email 
                 and any(
-                    search_query.lower() in data["content"].lower() 
+                    search_query.lower() in data["content"].lower() #Reference: ChatGPT
                     for data in message["data"]
                 )
             ):
