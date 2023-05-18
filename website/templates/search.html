@@ -21,19 +21,4 @@
       {% endfor %}
     </ul>
   </div>
-
-  <!--Add pagination buttons to history page-->
-  <div class="pagination">
-    {% if page > 1 %}
-    <div class="Previous-Button">
-      <a href="{{ url_for('views.history', page=page-1) }}">Previous</a>
-    </div>
-    {% endif %}
-
-    {% if messages|length >= page_size %}
-    <div class="Next-Button{% if page == 1 %} First-Page{% endif %}">
-      <a href="{{ url_for('views.history', page=page+1) }}">Next</a>
-    </div>
-    {% endif %}
-  </div>
 {% endblock %}

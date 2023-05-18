@@ -64,6 +64,7 @@ def user():
 @views.route("/search/<int:page>")
 @login_required
 def search(page=1):
+    search_query = request.args.get("q", "") #Get the search query from the request parameters
     try:
         if os.path.exists("chats/history.json"):
             with open("chats/history.json", "r") as f:
@@ -71,27 +72,14 @@ def search(page=1):
         else:
             messages = []
 
-        page_size = 5
-        start_index = (page - 1) * 5
-        end_index = start_index + page_size
-        page_messages = messages[start_index:end_index]
-
         #Filer messages for current user
         current_user_messages = []
-        for message in page_messages:
-            if message["username"] == current_user.email:
+        for message in messages:
+            if message["username"] == current_user.email and any(search_query.lower() in data["content"].lower() for data in message["data"]):
                 current_user_messages.append(message)
 
-        last_messages = []
-        for message in current_user_messages:
-            last_message = message["data"][-1]["content"]
-            last_messages.append(
-                {"username": message["username"], "last_message": last_message}
-            )
-
-        print(page_messages)  # Check if it prints to the console
         return render_template(
-            "search.html", messages=current_user_messages, page=page, page_size=page_size
+            "search.html", page=page, search_query=search_query
         )
     
     #Prints an error message on the web page when there are no stored messages
