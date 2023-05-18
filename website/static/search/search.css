@@ -42,59 +42,7 @@
     text-decoration: none;
     color: black;
 }
-
-/* Move buttons to the RHS of the page */
-.pagination { 
-    display: flex;
-    justify-content: flex-end; /*Chat-GPT*/
-    margin-top: 1rem;
-    margin-left: auto;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-bottom: 2rem;
-    margin-right: 3.1rem;
-  }
-  
-.Previous-Button a {
-    background-color: #d8fc4c; 
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 0.94rem 2rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-    margin-right: 0.63rem;
-    width: 6.3rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: 0.099rem;
-}
-
-.Next-Button a {
-    background-color: #d8fc4c; 
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 0.94rem 2rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-    margin-left: 0.63rem;
-    width: 6.3rem;
-    font-weight: bold;
-}
-
-.Next-Button.First-Page {
-    margin-left: -0.6rem;
-}
-
+ 
 .message-box a {
     display: block;
     height: 100%;
@@ -103,17 +51,4 @@
 
 .title {
     font-family: 'Montserrat', sans-serif;
-}
-
-.Previous-Button {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.Next-Button {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.username {
-    font-weight: bold;
-    margin-right: 0.5rem;
 }
