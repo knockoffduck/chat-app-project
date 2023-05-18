@@ -55,7 +55,7 @@
 }
 
 #searchContainer input[type="text"] {
-    width: 45rem; /* Adjust the width value as needed */
+    width: 15.6rem; /* Adjust the width value as needed */
 }
 
 #search {
@@ -64,6 +64,14 @@
     padding-left: 0.5rem;
     height: 2.5rem;
     font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width: 1024px) {
+    /* Adjust the styling for larger screens */
+    #searchContainer #search {
+      /* Modify the styles for larger screens */
+      width: 45rem
+    }
 }
 
 .noMessages {
