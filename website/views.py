@@ -6,7 +6,6 @@ from website.forms import EditProfileForm
 import json
 import openai
 import os
-from dotenv import load_dotenv
 
 # Import the add_data and get_response functions from the utilities module
 from .utilities import (
