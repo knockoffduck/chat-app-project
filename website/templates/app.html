@@ -18,7 +18,7 @@
 <div class="profile-dropdown">
   <button class="profile-dropdown">
     <img
-      src="{{url_for('static', filename='images/pfp.jpg')}}"
+      src="{{ url_for('static', filename='images/profile-pictures/' ~ current_user.email_hash_id ~ '.webp') }}"
       alt="Profile Pic"
       class="avatar"
     />
@@ -103,7 +103,8 @@
         </a>
       </li>
       <li>
-        <a href="/search/1"> <!--Changed route for search page to search/1-->
+        <a href="/search/1">
+          <!--Changed route for search page to search/1-->
           <i class="bi-search"></i>
           <span>Search</span>
         </a>

@@ -8,6 +8,7 @@ import openai
 import os
 from dotenv import load_dotenv
 import traceback
+from PIL import Image
 
 # Import the add_data and get_response functions from the utilities module
 from .utilities import (
@@ -79,37 +80,14 @@ def user():
 @login_required
 def search(page=1):
     try:
-        if os.path.exists("chats/history.json"):
-            with open("chats/history.json", "r") as f:
-                messages = json.load(f)
-        else:
-            messages = []
+        messages = get_chat_history(current_user.email)
+        search_term = "how are you"
 
-        page_size = 5
-        start_index = (page - 1) * 5
-        end_index = start_index + page_size
-        page_messages = messages[start_index:end_index]
-
-        # Filer messages for current user
-        current_user_messages = []
-        for message in page_messages:
-            if message["username"] == current_user.firstname:
-                current_user_messages.append(message)
-
-        last_messages = []
-        for message in current_user_messages:
-            last_message = message["data"][-1]["content"]
-            last_messages.append(
-                {"username": message["username"], "last_message": last_message}
-            )
-
-        print(page_messages)  # Check if it prints to the console
-        return render_template(
-            "search.html",
-            messages=current_user_messages,
-            page=page,
-            page_size=page_size,
-        )
+        for message in messages:
+            if search_term in message["body"]["content"]:
+                print(message)
+        # Check if it prints to the console
+        return render_template("search.html")
 
     # Prints an error message on the web page when there are no stored messages
     except Exception as e:
@@ -158,9 +136,38 @@ def generate_text():
         return handle_error(e)
 
 
+@views.route("/api/avatar_upload", methods=["POST"])
+def upload():
+    try:
+        # Grab the file from the request
+        file = request.files["avatar"]
+        # Open the image file with Pillow
+        image = Image.open(file)
+
+        # Get the current user's hashed email ID
+        email_hash_id = current_user.email_hash_id
+
+        # Convert the image to RGB (necessary for the WebP format)
+        converted_image = image.convert("RGB")
+
+        # Save the converted image in the 'website/static/images/profile-pictures' directory
+        # with a filename based on the user's hashed email ID, and in the WebP format
+        converted_image.save(
+            f"website/static/images/profile-pictures/{email_hash_id}.webp", "WEBP"
+        )
+        # Return a success message
+        return jsonify({"message": "File uploaded successfully!"})
+    except Exception as e:
+        print(handle_error(e))
+        return handle_error(e)
+
+
 @views.route("/account", methods=["GET", "POST"])
 @login_required
 def account():
+    profile_picture = (
+        f"./static/images/profile-pictures/{current_user.email_hash_id}.webp"
+    )
     form = EditProfileForm()
     if form.validate_on_submit():
         current_user.firstname = form.firstname.data
@@ -177,4 +184,9 @@ def account():
         form.dob.data = current_user.dob
         form.country.data = current_user.country
         form.gender.data = current_user.gender
-    return render_template("account.html", title="Account", form=form)
+    return render_template(
+        "account.html",
+        title="Account",
+        form=form,
+        profile_picture=profile_picture,
+    )
