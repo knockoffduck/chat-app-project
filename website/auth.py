@@ -4,6 +4,7 @@ from website import db
 from website.forms import LoginForm, RegistrationForm
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
+# from urllib.parse import urlsplit
 
 auth = Blueprint("auth", __name__)
 
