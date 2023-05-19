@@ -68,5 +68,10 @@ Then run the following command in the terminal to have a coverage report returne
 Have the application running on local host `http://127.0.0.1:5000/` and open a new terminal.
 In this new terminal, to run the Selenium Tests, run the following command:
 
+   ```
+   python tests/test_selenium.py
+   ```
+
+
 ## Commit Logs
 ...
