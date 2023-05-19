@@ -1,4 +1,4 @@
-import unittest
+import unittest, datetime
 from website import create_app, db
 from website.models import User, Chat
 from config import Config, TestingConfig
@@ -7,6 +7,9 @@ class RouteTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app(TestingConfig)
         self.app_context = self.app.app_context()
+        u1 = User(firstname='Bob',lastname='Test',email='test@email.net',dob=datetime.datetime(2020,1,2),country="Aus",gender="Other")
+        u1.set_password('password')
+        db.session.add(u1)
         self.app_context.push()
         self.client = self.app.test_client()
         db.create_all()
@@ -50,6 +53,20 @@ class RouteTestCase(unittest.TestCase):
         assert b'Create Account' in response.data
         assert b'To access the benefits of' in response.data
         assert b'Country' in response.data
+
+    def test_chat_route(self):
+        # Simulate the login process
+        with self.client:
+            response = self.client.post('/auth/login', data={'email': 'test@email.net', 'password': 'password'})
+            self.assertEqual(response.status_code, 200)
+
+            # Assuming the login is successful, you can access the chat route
+            response = self.client.get('/chat')
+            self.assertEqual(response.status_code, 200)
+
+        assert b'Chat' in response.data
+        assert b'Send a message.' in response.data
+
 
 
 if __name__ == '__main__':
