@@ -14,7 +14,6 @@ from PIL import Image
 from .utilities import (
     add_data,
     get_response,
-    is_json_empty,
     get_chat_history,
     delete_conversations,
 )
