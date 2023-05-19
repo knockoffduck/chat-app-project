@@ -8,7 +8,7 @@
             },
             {
                 "role": "assistant",
-                "content": "Hi there! How can I help you today?"
+                "content": "Hello! How can I assist you today?"
             }
         ]
     },
@@ -17,24 +17,24 @@
         "data": [
             {
                 "role": "user",
-                "content": "I'm feeling down"
+                "content": "I'm feeling a bit down today"
             },
             {
                 "role": "assistant",
-                "content": "I'm sorry to hear that. It's okay to feel down sometimes. Can you tell me a bit more about how you are feeling?"
+                "content": "I'm sorry to hear that. Can you share with me what's been going on that's been making you feel down?"
             }
         ]
     },
     {
-        "username": "test2@example.com",
+        "username": "test@example.com",
         "data": [
             {
                 "role": "user",
-                "content": "Hello, I'm not feeling too well"
+                "content": "It's cold"
             },
             {
                 "role": "assistant",
-                "content": "Hi there, I'm sorry to hear that. Can you tell me what's been going on? What are some symptoms that you have been experiencing?"
+                "content": "I see. Are you feeling down just because of the cold weather or is there anything else on top of that?"
             }
         ]
     },
@@ -47,7 +47,7 @@
             },
             {
                 "role": "assistant",
-                "content": "Hello! How are you feeling today?"
+                "content": "Hello! How can I assist you today in terms of your mental well-being?"
             }
         ]
     },
@@ -56,76 +56,11 @@
         "data": [
             {
                 "role": "user",
-                "content": "I'm feeling alright"
+                "content": "My mental health is pretty good"
             },
             {
                 "role": "assistant",
-                "content": "That's great to hear. But I'm here to help you manage your depression symptoms. Could you please tell me about your experience with depression? How long have you been feeling depressed and what are some symptoms you are experiencing?"
-            }
-        ]
-    },
-    {
-        "username": "test2@example.com",
-        "data": [
-            {
-                "role": "user",
-                "content": "I've been feeling depressed for 5 seconds now"
-            },
-            {
-                "role": "assistant",
-                "content": "Oh ok, I see. If you ever feel like you are experiencing symptoms of depression, such as persistent sadness, lack of interest in activities you typically enjoy, changes in appetite and sleep patterns, feelings of hopelessness or worthlessness, it's important to seek professional help. I'm guessing this conversation isn't a reflection of what you're experiencing, but please feel free to talk to me about anything you might be going through."
-            }
-        ]
-    },
-    {
-        "username": "test2@example.com",
-        "data": [
-            {
-                "role": "user",
-                "content": "Okay thank you for being helpful"
-            },
-            {
-                "role": "assistant",
-                "content": "You're welcome. Remember that it's always important to seek help when dealing with mental health issues. If you ever feel like you're struggling with managing your emotions or mental health, don't hesitate to reach out to a qualified mental health professional who can provide you with the support you need. They can offer you techniques like cognitive behavioral therapy, mindfulness, and meditation that can help you manage your symptoms and improve your overall wellbeing."
-            }
-        ]
-    },
-    {
-        "username": "test2@example.com",
-        "data": [
-            {
-                "role": "user",
-                "content": "Could you recommend some good helplines?"
-            },
-            {
-                "role": "assistant",
-                "content": "Certainly! Here are some helplines that offer confidential and supportive services:\n\n- National Suicide Prevention Lifeline: 1-800-273-TALK (1-800-273-8255)\n- Crisis Text Line: Text HOME to 741741\n- SAMHSA (Substance Abuse and Mental Health Services Administration) National Helpline: 1-800-662-4357\n- National Alliance on Mental Illness (NAMI) Helpline: 1-800-950-NAMI (1-800-950-6264)\n- Mental Health America Helpline: 1-800-969-6642\n\nRemember that seeking help is a sign of strength, not weakness. Don't hesitate to reach out to these services if you ever need support."
-            }
-        ]
-    },
-    {
-        "username": "test2@example.com",
-        "data": [
-            {
-                "role": "user",
-                "content": "Can these be accessed from anywhere in the world?"
-            },
-            {
-                "role": "assistant",
-                "content": "While some of these helplines may be US-based, most of them can provide support to people all around the world. However, if you are looking for helplines that are specific to your country, there may be local helplines available that offer support and resources in your native language.\n\nYou can do a quick online search or contact your country's mental health organization to find out about local helplines that may be available to you.\n\nRegardless of where you're located, remember that there are always resources and support available to help you manage your mental health. Don't hesitate to reach out for help if you need it!"
-            }
-        ]
-    },
-    {
-        "username": "test@example.com",
-        "data": [
-            {
-                "role": "user",
-                "content": "Hello, I'm feeling a bit sad today"
-            },
-            {
-                "role": "assistant",
-                "content": "Hi there. I'm sorry to hear that you're feeling sad. Can you tell me what's been going on that's contributing to these feelings?"
+                "content": "That's great to hear! However, remember that maintaining good mental health is an ongoing process. Is there anything in particular that you feel you would like to discuss or explore in order to enhance your overall mental well-being?"
             }
         ]
     }

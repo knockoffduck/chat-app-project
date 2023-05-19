@@ -95,9 +95,12 @@ def search(page=1):
         # Filer messages for current user
         current_user_messages = []
         for message in messages:
-            if message["username"] == current_user.email and any(
-                search_query.lower() in data["content"].lower()  # Reference: ChatGPT
-                for data in message["data"]
+            if ( 
+                message["username"] == current_user.email 
+                and any(
+                    search_query.lower() in data["content"].lower()  # Reference: ChatGPT
+                    for data in message["data"]
+                )
             ):
                 current_user_messages.append(message)
 
@@ -123,6 +126,11 @@ def generate_text():
     # Get the email and input from the request form
     email = request.form["email"]
     prompt = request.form["input"]
+    chatFile = "chats/history.json"
+
+    with open(chatFile, "r") as f:
+        chatHistory = json.load(f)
+
     try:
         # Add the user's input to the chat history and get a response
         add_data(
@@ -132,7 +140,27 @@ def generate_text():
                 "content": prompt,
             },
         )
+
         reply = get_response(email)
+
+        # Append the new message to the chat history
+        chatHistory.append({
+            "username": email,
+            "data": [{
+                "role": "user",
+                "content": prompt
+            }, {
+                "role": "assistant",
+                "content": reply
+            }]
+        })
+
+        # Save the updated chat history to the JSON file
+        with open(chatFile, "w") as writeJson:
+            # Convert the chat history to a JSON string and write it to the file
+            jsonExport = json.dumps(chatHistory, indent=4) #Formatting of history.json file
+            writeJson.write(jsonExport)
+
         # Return the assistant's response as a JSON object
         return jsonify({"generated_text": reply})
     except Exception as e:
