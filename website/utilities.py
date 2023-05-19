@@ -15,14 +15,6 @@ def delete_conversations(email):
     db.session.commit()
 
 
-def generate_unique_id(email):
-    timestamp = int(time.time() * 1000)  # Current timestamp in milliseconds
-    random_num = random.randint(0, 1000000)  # Random number between 0 and 1,000,000
-    username_hash = hash(email) & 0xFFFF  # Convert email to a 16-bit integer
-    unique_id = f"{timestamp}_{random_num}_{username_hash}"
-    return unique_id
-
-
 def get_hash_id(email):
     user = User.query.filter_by(email=email).first()
     if user:
