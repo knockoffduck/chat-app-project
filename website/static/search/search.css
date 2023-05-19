@@ -4,7 +4,7 @@
     padding: 3.1rem;
     padding-bottom: 1.9rem;
     border-radius: 1.3rem;
-    background-color: white;
+    background-color: var(--bg-app);
     overflow-y: auto; /* Prevents content from overflowing */
     position: relative;
 }
@@ -52,6 +52,7 @@
 
 .title {
     font-family: 'Montserrat', sans-serif;
+    color: var(--dark-text);
 }
 
 #searchContainer input[type="text"] {
@@ -65,6 +66,15 @@
     height: 2.5rem;
     font-family: 'Montserrat', sans-serif;
 }
+
+#search {
+    background-color: var(--search-background-color, white);
+  }
+  
+.dark #search {
+    background-color: rgb(171, 171, 171);
+    border: 0.1rem solid;
+}  
 
 @media (min-width: 1024px) {
     /* Adjust the styling for larger screens */
