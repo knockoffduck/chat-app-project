@@ -12,7 +12,7 @@
     width: 100%;
     padding: 1.25rem;
     border-radius: 1.3rem;
-    background-color: white;
+    background-color: var(--bg-app);
   }
 
 .content {
@@ -26,15 +26,17 @@
 
 /* Styling for form inputs */
 input, select {
-    color: black;
     width: 100%;
     padding: 0.3rem 0.625rem;
     margin: 0.5rem 0rem;
     box-sizing: border-box;
-    border: 0.125rem solid #ccc;
-    border-radius: 0.25rem;
-    color: black;
-  }
+    color: var(--dark-text);
+    background-color: transparent;
+    border: 0.0625rem rgba(var(--border-rgba)) solid;
+    border-radius: 0.5625rem;
+    outline: none;
+}
+
     
 /* Styling for form submit button */
 .submit-button {
@@ -63,4 +65,8 @@ input, select {
   color:black;
   padding-left: 1.25rem;
   padding-top: 1.25rem;
+}
+
+h1, label {
+  color: var(--dark-text);
 }
