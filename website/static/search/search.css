@@ -11,7 +11,7 @@
 
 .message-box {
   display: flex;
-  background-color: #f0f5ff;
+  background-color: var(--message-box-background, #f0f5ff);
   border: 0.05rem solid rgb(205, 205, 205);
   border-radius: 0.6rem;
   padding: 0.6rem;
@@ -25,6 +25,10 @@
     0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1),
     0 0.15rem 0.15rem rgba(0, 0, 0, 0.1);
   border-radius: 0.6rem;
+}
+
+.dark .message-box {
+  background-color: var(--message-box-background, #1e1f28);
 }
 
 .message-list {
@@ -66,11 +70,11 @@
 }
 
 #search {
-  background-color: var(--search-background-color, white);
+  background-color: var(--search-background-color, rgb(244, 244, 244));
 }
 
 .dark #search {
-  border: 0.1rem solid;
+  border: 0.1rem solid black;
 }
 
 @media (min-width: 1024px) {
@@ -143,4 +147,12 @@
 
 .message-prefix {
   font-weight: bold;
+}
+
+.dark .message-prefix {
+  color: var(--dark-text, white);
+}
+
+.dark .message-content {
+  color: var(--dark-text, white);
 }
