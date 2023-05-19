@@ -22,45 +22,45 @@
       <button class="btn btn-primary" id="upload-avatar-button">Upload</button>
     </div>
 
-    <form action="" method="POST">
+    <form action="#" method="POST">
       {{ form.hidden_tag() }}
       <p>
         {{ form.firstname.label }}
-        <br />
-        {{ form.firstname(size=32) }}
-        <br />
+        <br>
+        {{ form.firstname }}
+        <br>
         {% for error in form.firstname.errors %}
         <span class="error-message">[{{ error }}]</span>
         {% endfor %}
       </p>
       <p>
         {{ form.lastname.label }}
-        <br />
-        {{ form.lastname(size=32) }}
-        <br />
+        <br>
+        {{ form.lastname }}
+        <br>
         {% for error in form.lastname.errors %}
         <span class="error-message">[{{ error }}]</span>
         {% endfor %}
       </p>
       <p>
         {{ form.dob.label }}
-        <br />
+        <br>
         {{ form.dob }}
-        <br />
+        <br>
         {% for error in form.dob.errors %}
         <span class="error-message">[{{ error }}]</span>
         {% endfor %}
       </p>
       <p>
         {{ form.country.label }}
-        <br />
-        {{ form.country(size=32) }}
-        <br />
+        <br>
+        {{ form.country }}
+        <br>
         {% for error in form.country.errors %}
         <span class="error-message">[{{ error }}]</span>
         {% endfor %}
       </p>
-      <p>
+      <!-- <p>
         {{ form.gender.label }}
         <br />
         {{ form.gender }}
@@ -68,7 +68,19 @@
         {% for error in form.gender.errors %}
         <span class="error-message">[{{ error }}]</span>
         {% endfor %}
+            </p> -->
+      <p>
+        {{ form.gender.label }}<br>
+        <select id="gender" name="gender" size="1">
+          {% for value, label in form.gender.choices %}
+          <option value="{{ value }}">{{ label }}</option>
+          {% endfor %}
+        </select><br>
+        {% for error in form.gender.errors %}
+        <span class="error-message">[{{ error }}]</span>
+        {% endfor %}
       </p>
+
       <p>{{ form.submit(class="submit-button") }}</p>
     </form>
   </div>
