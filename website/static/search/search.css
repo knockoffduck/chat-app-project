@@ -72,7 +72,6 @@
   }
   
 .dark #search {
-    background-color: rgb(171, 171, 171);
     border: 0.1rem solid;
 }  
 
@@ -87,7 +86,9 @@
 .noMessages {
     font-family: 'Montserrat', sans-serif;
     margin-top: 1rem;
+    color: var(--dark-text)
 }
+
 
 /* Copied from chat/style.css */
 .content-area::-webkit-scrollbar {
