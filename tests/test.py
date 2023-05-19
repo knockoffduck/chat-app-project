@@ -8,11 +8,13 @@
 import unittest
 from tests.unit.test_unit import UserModelCase
 from tests.functional.test_routes import RouteTestCase
+# from tests import SystemTest
 
 # Create a TestSuite and add all test cases
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(UserModelCase))
 suite.addTest(unittest.makeSuite(RouteTestCase))
+# suite.addTest(unittest.makeSuite(SystemTest))
 
 # Create a TestRunner and run the TestSuite
 runner = unittest.TextTestRunner(verbosity=2)
