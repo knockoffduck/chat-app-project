@@ -115,5 +115,18 @@
                 "content": "While some of these helplines may be US-based, most of them can provide support to people all around the world. However, if you are looking for helplines that are specific to your country, there may be local helplines available that offer support and resources in your native language.\n\nYou can do a quick online search or contact your country's mental health organization to find out about local helplines that may be available to you.\n\nRegardless of where you're located, remember that there are always resources and support available to help you manage your mental health. Don't hesitate to reach out for help if you need it!"
             }
         ]
+    },
+    {
+        "username": "test@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "Hello, I'm feeling a bit sad today"
+            },
+            {
+                "role": "assistant",
+                "content": "Hi there. I'm sorry to hear that you're feeling sad. Can you tell me what's been going on that's contributing to these feelings?"
+            }
+        ]
     }
 ]
