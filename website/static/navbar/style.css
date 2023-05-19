@@ -199,8 +199,9 @@ section.burger-menu button:hover {
   background-color: #727a87;
 }
 
-section.burger-menu .logo-text {
+section.burger-menu .logo-text > h1 {
   color: black;
+  font-weight: 600;
 }
 
 section.burger-menu ul {
