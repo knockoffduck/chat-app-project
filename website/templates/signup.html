@@ -2,7 +2,7 @@
     content_header %} Login {% endblock %} {% block content %}
 
 {% block css %}
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}">
 {% endblock %}
 
   <div class="d-flex justify-content-center align-items-center">
@@ -18,12 +18,12 @@
         <div class="card-body">
           <h1 class="text-center mb-4">Create Account</h1>
           <p class="fmessage">To access the benefits of MindMate, simply create an account below:</p>
-          <form action="" method="POST">
+          <form action="{{ url_for('auth.signup') }}" method="POST">
             {{ form.hidden_tag() }}
             <div class="form-row">
               <div class="col form-group" id="col">
                 <p>
-                    {{ form.firstname.label }}
+                    {{ form.firstname.label(for="first_name") }}
                     {{ form.firstname(id="first_name", class="form-control") }}
                     {% for error in form.firstname.errors %}
                     <span class="errors">[{{ error }}]</span>
@@ -32,7 +32,7 @@
               </div>
               <div class="col form-group" id="col">
                 <p>
-                    {{ form.lastname.label }}
+                    {{ form.lastname.label(for="last_name") }}
                     {{ form.lastname(id="last_name", class="form-control") }}
                     {% for error in form.lastname.errors %}
                     <span class="errors">[{{ error }}]</span>
@@ -43,7 +43,7 @@
 
             <div class="form-group"  id="col">
               <p>
-              {{ form.email.label }}
+              {{ form.email.label(for="email") }}
               {{ form.email(id="email", class="form-control") }}
               {% for error in form.email.errors %}
               <span class="errors">[{{ error }}]</span>
@@ -54,7 +54,7 @@
             <div class="form-row">
               <div class="col form-group" id="col">
                 <p>
-                  {{ form.password.label }}&emsp;&emsp;&emsp;
+                  {{ form.password.label(for="password") }}&emsp;&emsp;&emsp;
                   {{ form.password(id="password", class="form-control") }}
                   {% for error in form.password.errors %}
                   <span class="errors">[{{ error }}]</span>
@@ -63,7 +63,7 @@
               </div>
               <div class="col form-group" id="col">
                 <p>
-                  {{ form.password2.label }}
+                  {{ form.password2.label(for="confirm_password") }}
                   {{ form.password2(id="confirm_password", class="form-control") }}
                   {% for error in form.password2.errors %}
                   <span class="errors">[{{ error }}]</span>
@@ -74,7 +74,7 @@
 
             <div class="form-group"  id="col">
               <p>
-                {{ form.dob.label }}
+                {{ form.dob.label(for="dob") }}
                 {{ form.dob(id="dob", class="form-control") }}
                 {% for error in form.dob.errors %}
                 <span class="errors">[{{ error }}]</span>
@@ -85,8 +85,8 @@
             <div class="form-row">
               <div class="col form-group" id="col">
                 <p>
-                  {{ form.country.label }}
-                  {{ form.country(id="country", class="form-control") }}
+                  {{ form.country.label(for="country") }}
+                  {{ form.country(id="country", class="form-control", required=true) }}
                   {% for error in form.country.errors %}
                   <span class="errors">[{{ error }}]</span>
                   {% endfor %}
@@ -94,8 +94,8 @@
               </div>
               <div class="col form-group" id="col">
                 <p>
-                  {{ form.gender.label }}
-                  {{ form.gender(id="gender", class="form-control") }}
+                  {{ form.gender.label(for="gender") }}
+                  {{ form.gender(id="gender", class="form-control", required=true) }}
                   {% for error in form.gender.errors %}
                   <span class="errors">[{{ error }}]</span>
                   {% endfor %}
@@ -114,6 +114,4 @@
       </div>
     </div>
   </div>
-
-
 {% endblock %}
