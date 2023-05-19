@@ -76,7 +76,7 @@ span.errors {
     margin-bottom: 10px;
 }
 
-#col {
+#first, #second, #third, #fourth, #fifth, #sixth, #seventh, #eighth {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }

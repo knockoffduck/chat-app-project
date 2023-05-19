@@ -2,7 +2,7 @@
     content_header %} Login {% endblock %} {% block content %}
 
 {% block css %}
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}">
 {% endblock %}
 
   <div class="d-flex justify-content-center align-items-center">
@@ -18,22 +18,22 @@
         <div class="card-body">
           <h1 class="text-center mb-4">Create Account</h1>
           <p class="fmessage">To access the benefits of MindMate, simply create an account below:</p>
-          <form action="" method="POST">
+          <form action="#" method="POST">
             {{ form.hidden_tag() }}
             <div class="form-row">
-              <div class="col form-group" id="col">
+              <div class="col form-group" id="first">
                 <p>
                     {{ form.firstname.label }}
-                    {{ form.firstname(id="first_name", class="form-control") }}
+                    {{ form.firstname(id="firstname", class="form-control") }}
                     {% for error in form.firstname.errors %}
                     <span class="errors">[{{ error }}]</span>
                     {% endfor %}
                 </p>
               </div>
-              <div class="col form-group" id="col">
+              <div class="col form-group" id="second">
                 <p>
                     {{ form.lastname.label }}
-                    {{ form.lastname(id="last_name", class="form-control") }}
+                    {{ form.lastname(id="lastname", class="form-control") }}
                     {% for error in form.lastname.errors %}
                     <span class="errors">[{{ error }}]</span>
                     {% endfor %}
@@ -41,7 +41,7 @@
               </div>
             </div>            
 
-            <div class="form-group"  id="col">
+            <div class="form-group"  id="third">
               <p>
               {{ form.email.label }}
               {{ form.email(id="email", class="form-control") }}
@@ -52,7 +52,7 @@
             </div>
 
             <div class="form-row">
-              <div class="col form-group" id="col">
+              <div class="col form-group" id="fourth">
                 <p>
                   {{ form.password.label }}&emsp;&emsp;&emsp;
                   {{ form.password(id="password", class="form-control") }}
@@ -61,10 +61,10 @@
                   {% endfor %}
                 </p>
               </div>
-              <div class="col form-group" id="col">
+              <div class="col form-group" id="fifth">
                 <p>
                   {{ form.password2.label }}
-                  {{ form.password2(id="confirm_password", class="form-control") }}
+                  {{ form.password2(id="password2", class="form-control") }}
                   {% for error in form.password2.errors %}
                   <span class="errors">[{{ error }}]</span>
                   {% endfor %}
@@ -72,7 +72,7 @@
               </div>
             </div>
 
-            <div class="form-group"  id="col">
+            <div class="form-group"  id="sixth">
               <p>
                 {{ form.dob.label }}
                 {{ form.dob(id="dob", class="form-control") }}
@@ -83,7 +83,7 @@
             </div>
 
             <div class="form-row">
-              <div class="col form-group" id="col">
+              <div class="col form-group" id="seventh">
                 <p>
                   {{ form.country.label }}
                   {{ form.country(id="country", class="form-control") }}
@@ -92,14 +92,18 @@
                   {% endfor %}
                 </p>
               </div>
-              <div class="col form-group" id="col">
+              <div class="col form-group" id="eighth">
                 <p>
-                  {{ form.gender.label }}
-                  {{ form.gender(id="gender", class="form-control") }}
+                  {{ form.gender.label }}<br>
+                  <select class='form-control' id="gender" name="gender" size="1">
+                      {% for value, label in form.gender.choices %}
+                          <option value="{{ value }}">{{ label }}</option>
+                      {% endfor %}
+                  </select><br>
                   {% for error in form.gender.errors %}
-                  <span class="errors">[{{ error }}]</span>
+                      <span class="error-message">[{{ error }}]</span>
                   {% endfor %}
-                </p>
+              </p>
               </div>
             </div>
 
