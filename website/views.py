@@ -7,6 +7,7 @@ import json
 import openai
 import os
 from dotenv import load_dotenv
+import traceback
 
 # Import the add_data and get_response functions from the utilities module
 from .utilities import (
@@ -74,27 +75,48 @@ def user():
         return Exception
 
 
-@views.route("/history/<int:page>")
-def history(page=1):
-    messages = []
-    if os.path.exists("chats/history.json"):
-        with open("chats/history.json", "r") as f:
-            messages = json.load(f)
+@views.route("/search/<int:page>")
+@login_required
+def search(page=1):
+    try:
+        if os.path.exists("chats/history.json"):
+            with open("chats/history.json", "r") as f:
+                messages = json.load(f)
+        else:
+            messages = []
 
-    page_size = 5
-    start_index = (page - 1) * 5
-    end_index = start_index + page_size
-    page_messages = messages[start_index:end_index]
+        page_size = 5
+        start_index = (page - 1) * 5
+        end_index = start_index + page_size
+        page_messages = messages[start_index:end_index]
 
-    last_messages = []
-    for message in page_messages:
-        last_message = message["data"][-1]["content"]
-        last_messages.append({"email": message["email"], "last_message": last_message})
+        # Filer messages for current user
+        current_user_messages = []
+        for message in page_messages:
+            if message["username"] == current_user.firstname:
+                current_user_messages.append(message)
 
-    print(page_messages)  # Check if it prints to the console
-    return render_template(
-        "history.html", messages=page_messages, page=page, page_size=page_size
-    )
+        last_messages = []
+        for message in current_user_messages:
+            last_message = message["data"][-1]["content"]
+            last_messages.append(
+                {"username": message["username"], "last_message": last_message}
+            )
+
+        print(page_messages)  # Check if it prints to the console
+        return render_template(
+            "search.html",
+            messages=current_user_messages,
+            page=page,
+            page_size=page_size,
+        )
+
+    # Prints an error message on the web page when there are no stored messages
+    except Exception as e:
+        traceback.print_exc()
+        return (
+            "An error occurred while loading the search page - no messages to display."
+        )
 
 
 # Route for generating text
@@ -109,6 +131,8 @@ def generate_text():
     # Load the chat history from the JSON file
     chatHistory = []
     try:
+        username = current_user.firstname
+
         # Add the user's input to the chat history and get a response
         add_data(
             email,
@@ -122,7 +146,9 @@ def generate_text():
         # Save the updated chat history to the JSON file
         with open(chatFile, "w") as writeJson:
             # Convert the chat history to a JSON string and write it to the file
-            jsonExport = json.dumps(chatHistory)
+            jsonExport = json.dumps(
+                chatHistory, indent=4
+            )  # Formatting of history.json file
             writeJson.write(jsonExport)
 
         # Return the assistant's response as a JSON object

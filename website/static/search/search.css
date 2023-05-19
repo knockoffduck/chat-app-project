@@ -1,13 +1,31 @@
+.content-area {
+    height: 100%;
+    width: 100%;
+    padding: 3.1rem;
+    padding-bottom: 1.9rem;
+    border-radius: 1.3rem;
+    background-color: white;
+    overflow: hidden; /* Prevents content from overflowing */
+    position: relative;
+}
+
 .message-box {
+    display: flex;
     background-color: #f0f5ff;
     border: 0.05rem solid rgb(205, 205, 205);
     border-radius: 0.6rem;
     padding: 0.6rem;
     margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .message-box:hover {
-    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1), 0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1), 0 1.2rem 1.2rem rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 0.1rem 0.2rem rgba(0, 0, 0, 0.1), 
+        0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 
+        0 0.6rem 0.6rem rgba(0, 0, 0, 0.1), 
+        0 0.15rem 0.15rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.6rem;
 }
 
 .message-list {
@@ -15,6 +33,9 @@
     margin: 0;
     padding: 0;
     text-align: left;
+    max-height: calc(100% - 2.5rem);
+    overflow-y: auto;
+    margin-bottom: 0.6rem;
 }
 
 .message-list a {
@@ -28,6 +49,11 @@
     justify-content: flex-end; /*Chat-GPT*/
     margin-top: 1rem;
     margin-left: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 2rem;
+    margin-right: 3.1rem;
   }
   
 .Previous-Button a {
@@ -46,6 +72,8 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    margin-left: auto;
+    margin-right: 0.099rem;
 }
 
 .Next-Button a {
@@ -73,3 +101,19 @@
     width: 100%;
 }
 
+.title {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Previous-Button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Next-Button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.username {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
