@@ -7,33 +7,39 @@ parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Add the parent directory to the Python path
 sys.path.append(parent_dir)
 
-import unittest, os, time, datetime
+import unittest, os, time, datetime, tracemalloc
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from website import create_app, db
 from website.models import User, Chat
-from config import Config, TestingConfig, basedir
-from selenium.webdriver.common.by import By
+from config import basedir
 
+
+from selenium.webdriver.chrome.service import Service
 
 class SystemTest(unittest.TestCase):
   driver = None
   service = None
   
+  @classmethod
+  def setUpClass(cls):
+      cls.service = Service(executable_path=os.path.join(basedir, 'drivers/chromedriver'))
+  
   def setUp(self):
-    self.app = create_app()
-    self.client = self.app.test_client
-    self.driver = webdriver.Chrome(executable_path=os.path.join(basedir,'drivers/chromedriver'))
-    with self.app.app_context():
-      db.create_all()
-      u1 = User(firstname='Bob',lastname='Test',email='test@email.net',
-                dob=datetime.datetime(2020,1,2),country="Aus",gender="Other")
-      u1.set_password('password')
-      db.session.add(u1)
-      db.session.commit()
-      self.driver.maximize_window()
-      self.driver.get('http://localhost:5000/')
-    if not self.driver:
-      self.skipTest("Web browser not available")
+      self.app = create_app()
+      self.client = self.app.test_client()
+      self.driver = webdriver.Chrome(service=self.service)
+      with self.app.app_context():
+        db.create_all()
+        u1 = User(firstname='Bob',lastname='Test',email='test@email.net',
+                  dob=datetime.datetime(2020,1,2),country="Aus",gender="Other")
+        u1.set_password('password')
+        db.session.add(u1)
+        db.session.commit()
+        self.driver.maximize_window()
+        self.driver.get('http://localhost:5000/')
+      if not self.driver:
+        self.skipTest("Web browser not available")
 
   def tearDown(self):
     if self.driver:
@@ -41,6 +47,10 @@ class SystemTest(unittest.TestCase):
       db.session.query(User).delete()
       db.session.commit()
       db.session.remove()
+      self.driver.quit()
+
+    if self.service:
+      self.service.stop()
 
 
   def test_register(self):
@@ -85,4 +95,5 @@ class SystemTest(unittest.TestCase):
     self.assertEqual(u.email,'test@email.net', msg='logged in')
 
 if __name__=='__main__':
+  tracemalloc.start()
   unittest.main(verbosity=2)
