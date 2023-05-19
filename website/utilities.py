@@ -56,12 +56,6 @@ def get_time():
     return timestamp_str
 
 
-def is_json_empty(filename):
-    with open(filename, "r") as f:
-        data = json.load(f)
-        return not bool(data)
-
-
 # Function to add new data to the data list for a given email
 def add_data(email, new_data):
     user = User.query.filter_by(email=email).first()

@@ -76,25 +76,6 @@ def chat_route():
     )
 
 
-@views.route("/user", methods=["POST"])
-def user():
-    email = request.form["email"]
-    chatFile = "chats/history.json"
-
-    chatHistory = []
-    try:
-        if is_json_empty(chatFile) == False:
-            with open(chatFile, "r") as readJson:
-                chatHistory = json.load(readJson)
-            for user in chatHistory:
-                if email == user["email"]:
-                    chatHistory = user["data"]
-
-        return jsonify({"conversation": chatHistory})
-    except Exception:
-        return Exception
-
-
 @views.route("/search/<int:page>")
 @login_required
 def search(page=1):
@@ -117,6 +98,7 @@ def search(page=1):
 
 
 # Route for generating text
+@views.route("/api/prompt", methods=["POST"])
 @views.route("/api/prompt", methods=["POST"])
 @login_required
 def generate_text():
@@ -192,7 +174,7 @@ def account():
         current_user.country = form.country.data
         current_user.gender = form.gender.data
         db.session.commit()
-        flash("Your changes have been saved.")
+        flash("Success! Your changes have been saved.")
         return redirect(url_for("views.account"))
     elif request.method == "GET":
         form.firstname.data = current_user.firstname
