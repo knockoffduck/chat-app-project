@@ -16,15 +16,12 @@ fieldset {
   align-items: center;
 }
 
-.profile-upload > fieldset > span {
-  font-size: small;
-}
-
 .profile-upload > img {
   border-radius: 100%;
   width: 5rem;
   height: 5rem;
   object-fit: cover;
+  border: 1px var(--dark-text) solid;
 }
 
 .profile-upload > button {
@@ -38,7 +35,7 @@ fieldset {
   width: 100%;
   padding: 20px;
   border-radius: 21px;
-  background-color: white;
+  background-color: var(--bg-app);
 }
 
 .content {

@@ -19,10 +19,12 @@
   <div class="content">
     <h1>Account</h1>
     <div class="profile-upload">
-      <img src="{{ profile_picture }}" alt="Profile Picture" />
+      <img
+        src="{{ url_for('static', filename='images/profile-pictures/' ~ profile_pic ~ '.webp') }}"
+        alt="Profile Picture"
+      />
       <fieldset id="upload">
         <input size="30" type="file" id="user_avatar" />
-        <span class="info">JPG, GIF or PNG. Max size of 800K</span>
       </fieldset>
       <button class="btn btn-primary" id="upload-avatar-button">Upload</button>
     </div>

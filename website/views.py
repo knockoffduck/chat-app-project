@@ -26,6 +26,21 @@ views = Blueprint("views", __name__)
 openai.api_key = os.environ.get("API_KEY")
 
 
+# sets the profile picture
+@views.context_processor
+def get_avatar_path():
+    if not current_user.is_authenticated:
+        return dict(profile_pic="default-avatar")
+    hash_id = current_user.email_hash_id
+    img_path = f"website/static/images/profile-pictures/{hash_id}.webp"
+
+    if os.path.isfile(img_path):
+        return dict(profile_pic=hash_id)
+    else:
+        return dict(profile_pic="default-avatar")
+    # Check if the image file exists
+
+
 @views.errorhandler(500)
 def handle_error(error):
     print("STATUS CODE 500")
@@ -54,7 +69,11 @@ def chat_route():
         return jsonify(get_chat_history(email))
     user_email = current_user.email
     chat_history = json.dumps(get_chat_history(user_email))
-    return render_template("chat.html", email=user_email, chat_history=chat_history)
+    return render_template(
+        "chat.html",
+        email=user_email,
+        chat_history=chat_history,
+    )
 
 
 @views.route("/user", methods=["POST"])
@@ -165,9 +184,6 @@ def upload():
 @views.route("/account", methods=["GET", "POST"])
 @login_required
 def account():
-    profile_picture = (
-        f"./static/images/profile-pictures/{current_user.email_hash_id}.webp"
-    )
     form = EditProfileForm()
     if form.validate_on_submit():
         current_user.firstname = form.firstname.data
@@ -188,5 +204,4 @@ def account():
         "account.html",
         title="Account",
         form=form,
-        profile_picture=profile_picture,
     )
