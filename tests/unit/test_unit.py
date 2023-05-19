@@ -65,6 +65,7 @@ class UserModelCase(unittest.TestCase):
                 self.assertEqual(current_user.email, user.email)
             logout_user()
         self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Send', response.data)
 
 
     def test_anonymous_user(self):
@@ -165,22 +166,28 @@ class UserModelCase(unittest.TestCase):
                                                                   'password': 'Horse',
                                                                   'password2': 'Horse',
                                                                   'country': 'India',
-                                                                  'gender': 'F',
-                                                                  'submit': True},
+                                                                  'gender': 'F'},
                                                                   follow_redirects=True)
-                # print("Response data:", response.data)
+                
                 self.assertEqual(response.status_code, 200)
 
                 self.assertIn(b'Login', response.data)
-                self.assertIn(b'Login', response.data)
+                # assert response.request.path == 'auth/login'
 
                 # check user is added to the db
-                
                 user = User.query.filter_by(email='first@mail.com').first()
                 self.assertIsNotNone(user)
                 self.assertEqual(user.firstname, 'Kelly')
                 self.assertEqual(user.lastname, 'Stone')
                 self.assertEqual(user.country, 'India')
+
+                #login
+                response = self.client.post('/auth/login', data={'email': 'first@mail.com', 
+                                                    'password': 'Horse'},
+                                                    follow_redirects=True)
+                self.assertEqual(response.status_code, 200)
+                #prompted to chat
+                self.assertIn(b'Send', response.data)
 
 
 if __name__ == '__main__':
