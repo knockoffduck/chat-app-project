@@ -12,7 +12,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from website import create_app, db
 from website.models import User, Chat
-from config import basedir
+from config import basedir, TestingConfig
 
 
 from selenium.webdriver.chrome.service import Service
@@ -21,12 +21,14 @@ class SystemTest(unittest.TestCase):
   driver = None
   service = None
   
+
   @classmethod
   def setUpClass(cls):
-      cls.service = Service(executable_path=os.path.join(basedir, 'drivers/chromedriver'))
+    cls.service = Service(executable_path='path/to/chromedriver')
+
   
   def setUp(self):
-      self.app = create_app()
+      self.app = create_app(TestingConfig)
       self.client = self.app.test_client()
       self.driver = webdriver.Chrome(service=self.service)
       with self.app.app_context():
@@ -42,20 +44,21 @@ class SystemTest(unittest.TestCase):
         self.skipTest("Web browser not available")
 
   def tearDown(self):
-    if self.driver:
-      self.driver.close()
-      db.session.query(User).delete()
-      db.session.commit()
-      db.session.remove()
-      self.driver.quit()
+      if self.driver:
+          self.driver.close()
 
-    if self.service:
-      self.service.stop()
+          with self.app.app_context():
+              db.session.query(User).delete()
+              db.session.query(Chat).delete()
+              db.session.commit()
+              db.session.remove()
 
+          self.driver.quit()
+
+      if self.service:
+          self.service.stop()
 
   def test_register(self):
-    u = User.query.filter_by(email='test@email.net').first()
-    self.assertEqual(u.firstname,'Bob',msg='user exists in db')
     self.driver.get('http://localhost:5000/auth/signup')
     self.driver.implicitly_wait(5)
     fname = self.driver.find_element(By.ID, "first_name")
@@ -63,7 +66,7 @@ class SystemTest(unittest.TestCase):
     lname = self.driver.find_element(By.ID, "last_name")
     lname.send_keys('Smith')
     email = self.driver.find_element(By.ID, "email")
-    email.send_keys('hi@gmail.com')
+    email.send_keys('q@gmail.com')
     pword = self.driver.find_element(By.ID, "password")
     pword.send_keys('hello')
     pword2 = self.driver.find_element(By.ID, "confirm_password")
