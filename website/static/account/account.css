@@ -24,6 +24,7 @@ fieldset {
   border-radius: 100%;
   width: 5rem;
   height: 5rem;
+  object-fit: cover;
 }
 
 .profile-upload > button {

@@ -21,6 +21,7 @@
       src="{{ url_for('static', filename='images/profile-pictures/' ~ current_user.email_hash_id ~ '.webp') }}"
       alt="Profile Pic"
       class="avatar"
+      style="object-fit: cover"
     />
     <span>{{current_user.firstname + " " + current_user.lastname}}</span>
     <i class="bi bi-caret-down-fill"></i>
