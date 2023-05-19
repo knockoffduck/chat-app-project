@@ -7,7 +7,7 @@
 </style>
 {% endblock %} {% block script %}
 <script>
-  // uses the email parameter passed from the flask route to
+  // uses the email parameter passed from the flask route to 
   let email = '{{ email }}';
 </script>
 <script src="{{ url_for('static', filename='chat/script.js') }}"></script>
@@ -23,5 +23,7 @@
     </button>
   </div>
 
+
 </div>
+{% endblock %}
 {% endblock %}

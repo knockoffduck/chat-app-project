@@ -4,7 +4,7 @@ body {
     BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans',
     'Helvetica Neue', sans-serif;
   overflow-x: hidden;
-  overflow-y: overlay;
+  overflow-y: auto;
 }
 h1 {
   font-family: 'Montserrat', sans-serif;
@@ -78,7 +78,7 @@ h1 {
 
 .secondheader .info p {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1;
+  font-size: 1rem;
   font-weight: 600;
   max-width: 46rem;
 } /* Main header section */
