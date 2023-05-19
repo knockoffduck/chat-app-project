@@ -12,7 +12,7 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+    WTF_CSRF_ENABLED = True
 
 class ProductionConfig(Config):
     FLASK_ENV = 'production'
@@ -24,9 +24,6 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
-
-    # SQLALCHEMY_DATABASE_URI = os.getenv(
-    #         'TEST_DATABASE_URI', default=f"sqlite:///{os.path.join(basedir), 'tests/test.db'}")
     SQLALCHEMY_DATABASE_URI = 'sqlite:///'+os.path.join(basedir, 'tests', 'test.db')
 
     
