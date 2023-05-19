@@ -1,62 +1,82 @@
-{% extends "app.html" %} 
-
-{% block page_css %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account/account.css') }}">
-{% endblock %}
-
-{% block app_content %}
-
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-    {% for message in messages %}
-    <p>{{ message }}</p>
-    {% endfor %}
-{% endif %}
-{% endwith %}
+{% extends "app.html" %} {% block page_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='account/account.css') }}"
+/>
+{% endblock %} {% block script %}
+<script src="{{ url_for('static', filename='account/script.js') }}"></script>
+{% endblock %} {% block app_content %}
+<div class="flashed-messages">
+  {% with messages = get_flashed_messages() %} {% if messages %} {% for message
+  in messages %}
+  <p>{{ message }}</p>
+  {% endfor %} {% endif %} {% endwith %}
+</div>
 
 <div class="account">
-    <div class="content">
-        <h1>Account</h1>
-
-        <form action="" method="POST">
-            {{ form.hidden_tag() }}
-            <p>
-                {{ form.firstname.label }}<br>
-                {{ form.firstname(size=32) }}<br>
-                {% for error in form.firstname.errors %}
-                <span class="error-message">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.lastname.label }}<br>
-                {{ form.lastname(size=32) }}<br>
-                {% for error in form.lastname.errors %}
-                <span class="error-message">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.dob.label }}<br>
-                {{ form.dob }}<br>
-                {% for error in form.dob.errors %}
-                <span class="error-message">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.country.label }}<br>
-                {{ form.country(size=32) }}<br>
-                {% for error in form.country.errors %}
-                <span class="error-message">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.gender.label }}<br>
-                {{ form.gender }}<br>
-                {% for error in form.gender.errors %}
-                <span class="error-message">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>{{ form.submit(class="submit-button") }}</p>
-        </form>
+  <div class="content">
+    <h1>Account</h1>
+    <div class="profile-upload">
+      <img
+        src="{{ url_for('static', filename='images/profile-pictures/' ~ profile_pic ~ '.webp') }}"
+        alt="Profile Picture"
+      />
+      <fieldset id="upload">
+        <input size="30" type="file" id="user_avatar" />
+      </fieldset>
+      <button class="btn btn-primary" id="upload-avatar-button">Upload</button>
     </div>
+
+    <form action="" method="POST">
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.firstname.label }}
+        <br />
+        {{ form.firstname(size=32) }}
+        <br />
+        {% for error in form.firstname.errors %}
+        <span class="error-message">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.lastname.label }}
+        <br />
+        {{ form.lastname(size=32) }}
+        <br />
+        {% for error in form.lastname.errors %}
+        <span class="error-message">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.dob.label }}
+        <br />
+        {{ form.dob }}
+        <br />
+        {% for error in form.dob.errors %}
+        <span class="error-message">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.country.label }}
+        <br />
+        {{ form.country(size=32) }}
+        <br />
+        {% for error in form.country.errors %}
+        <span class="error-message">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.gender.label }}
+        <br />
+        {{ form.gender }}
+        <br />
+        {% for error in form.gender.errors %}
+        <span class="error-message">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.submit(class="submit-button") }}</p>
+    </form>
+  </div>
 </div>
 {% endblock %}

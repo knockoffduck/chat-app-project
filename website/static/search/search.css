@@ -1,149 +1,146 @@
 .content-area {
-    height: 100%;
-    width: 100%;
-    padding: 3.1rem;
-    padding-bottom: 1.9rem;
-    border-radius: 1.3rem;
-    background-color: var(--bg-app);
-    overflow-y: auto; /* Prevents content from overflowing */
-    position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 3.1rem;
+  padding-bottom: 1.9rem;
+  border-radius: 1.3rem;
+  background-color: var(--bg-app);
+  overflow-y: auto; /* Prevents content from overflowing */
+  position: relative;
 }
 
 .message-box {
-    display: flex;
-    background-color: #f0f5ff;
-    border: 0.05rem solid rgb(205, 205, 205);
-    border-radius: 0.6rem;
-    padding: 0.6rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-family: 'Montserrat', sans-serif;
+  display: flex;
+  background-color: #f0f5ff;
+  border: 0.05rem solid rgb(205, 205, 205);
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .message-box:hover {
-    box-shadow: 
-        0 0.1rem 0.2rem rgba(0, 0, 0, 0.1), 
-        0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 
-        0 0.6rem 0.6rem rgba(0, 0, 0, 0.1), 
-        0 0.15rem 0.15rem rgba(0, 0, 0, 0.1);
-    border-radius: 0.6rem;
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1),
+    0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1),
+    0 0.15rem 0.15rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.6rem;
 }
 
 .message-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    max-height: calc(100% - 2.5rem);
-    overflow-y: auto;
-    margin-bottom: 0.6rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  max-height: calc(100% - 2.5rem);
+  overflow-y: auto;
+  margin-bottom: 0.6rem;
 }
 
 .message-list a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
- 
+
 .message-box a {
-    display: block;
-    height: 100%;
-    width: 100%;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .title {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--dark-text);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-text);
 }
 
-#searchContainer input[type="text"] {
-    width: 15.6rem; /* Adjust the width value as needed */
-}
-
-#search {
-    border-radius: 0.5rem;
-    border: 0.1rem solid black;
-    padding-left: 0.5rem;
-    height: 2.5rem;
-    font-family: 'Montserrat', sans-serif;
+#searchContainer input[type='text'] {
+  width: 15.6rem; /* Adjust the width value as needed */
 }
 
 #search {
-    background-color: var(--search-background-color, white);
-  }
-  
+  border-radius: 0.5rem;
+  border: 0.1rem solid black;
+  padding-left: 0.5rem;
+  height: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#search {
+  background-color: var(--search-background-color, white);
+}
+
 .dark #search {
-    border: 0.1rem solid;
-}  
+  border: 0.1rem solid;
+}
 
 @media (min-width: 1024px) {
-    /* Adjust the styling for larger screens */
-    #searchContainer #search {
-      /* Modify the styles for larger screens */
-      width: 45rem
-    }
+  /* Adjust the styling for larger screens */
+  #searchContainer #search {
+    /* Modify the styles for larger screens */
+    width: 45rem;
+  }
 }
 
 .noMessages {
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 1rem;
-    color: var(--dark-text)
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1rem;
+  color: var(--dark-text);
 }
-
 
 /* Copied from chat/style.css */
 .content-area::-webkit-scrollbar {
-    width: 0.625rem;
-    height: 0.625rem;
+  width: 0.625rem;
+  height: 0.625rem;
 }
 
 .content-area::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 0.3125rem;
-    width: 0.375rem;
-    height: 0.375rem;
-    padding: 0.125rem;
+  background-color: #888;
+  border-radius: 0.3125rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  padding: 0.125rem;
 }
 
 .content-area::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+  background-color: #555;
 }
 
 .content-area::-webkit-scrollbar-thumb:active {
-    background-color: #333;
-    cursor: pointer; /* Change the cursor to a pointer */
+  background-color: #333;
+  cursor: pointer; /* Change the cursor to a pointer */
 }
 
 /* Chrome, Edge and Safari */
 .content-area::-webkit-scrollbar {
-    width: 0.5625rem;
+  width: 0.5625rem;
 }
 .content-area::-webkit-scrollbar-track {
-    border-radius: 0.25rem;
-    background-color: transparent;
+  border-radius: 0.25rem;
+  background-color: transparent;
 }
 
 .content-area::-webkit-scrollbar-track:hover {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .content-area::-webkit-scrollbar-track:active {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .content-area::-webkit-scrollbar-thumb {
-    border-radius: 1.25rem;
-    background-color: transparent;
-    border: 0.125rem solid transparent;
+  border-radius: 1.25rem;
+  background-color: transparent;
+  border: 0.125rem solid transparent;
 }
 
 .content-area::-webkit-scrollbar-thumb:hover {
-    background-color: #727a87;
+  background-color: #727a87;
 }
 
 .content-area::-webkit-scrollbar-thumb:active {
-    background-color: #727a87;
+  background-color: #727a87;
 }
 
 .message-prefix {
-    font-weight: bold;
+  font-weight: bold;
 }

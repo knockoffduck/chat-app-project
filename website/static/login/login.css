@@ -1,0 +1,106 @@
+html {
+    height: 100%;
+}
+
+.bg-blur {
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/Background_Rainbow_Blur.png');
+    background-size: cover;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+
+.top-navbar {
+    background-color: #5333ed;
+    margin-bottom: 4rem;
+    height: 4rem;
+}
+
+.logo-text > #full {
+      display: block;
+    }
+
+p.fmessage {
+    text-align: center;
+}
+.remember {
+    margin-bottom: 0;
+    margin-top: 2rem;
+    margin-left: 0.1rem;
+}
+#login-box {
+    height: auto;
+    width: 21rem;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.card {
+    border:1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#signup-box {
+    height: auto;
+    width: 35rem;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+label {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+span.errors {
+    color: red;
+}
+
+.form-control {
+    border: 1px solid black;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#col {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+input[type="submit"] {
+    background-color: #5333ed;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #d8fc4c;
+    color: black;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.h1{
+    text-align: center;
+}

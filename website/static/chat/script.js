@@ -1,8 +1,21 @@
 // Wait for the document to be fully loaded and then execute the enclosed function
 $(document).ready(function () {
   const api_url = window.location.origin + '/api/prompt';
+  const current_email = email;
 
-  console.log(email + ' is logged in');
+  console.log(current_email + ' is logged in');
+
+  const clear_conversation_btn = $('#clear-conversation').on(
+    'click',
+    function () {
+      const data = { email: current_email };
+      $.post('/clear_chat', data, function (result) {
+        $('.messages').load('/chat' + '.messages');
+        console.log(data);
+        location.reload();
+      });
+    }
+  );
 
   $.ajax({
     url: window.location.origin + '/chat',

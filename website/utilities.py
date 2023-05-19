@@ -4,16 +4,15 @@ import json
 import random
 import datetime
 from website.models import Chat, User
+import os
 
 from website import db
 
 
-def generate_unique_id(email):
-    timestamp = int(time.time() * 1000)  # Current timestamp in milliseconds
-    random_num = random.randint(0, 1000000)  # Random number between 0 and 1,000,000
-    username_hash = hash(email) & 0xFFFF  # Convert email to a 16-bit integer
-    unique_id = f"{timestamp}_{random_num}_{username_hash}"
-    return unique_id
+def delete_conversations(email):
+    hash_id = get_hash_id(email)
+    Chat.query.filter_by(user_email_hash_id=hash_id).delete()
+    db.session.commit()
 
 
 def get_hash_id(email):
@@ -49,12 +48,6 @@ def get_time():
     return timestamp_str
 
 
-def is_json_empty(filename):
-    with open(filename, "r") as f:
-        data = json.load(f)
-        return not bool(data)
-
-
 # Function to add new data to the data list for a given email
 def add_data(email, new_data):
     user = User.query.filter_by(email=email).first()
@@ -73,7 +66,7 @@ def add_data(email, new_data):
 def get_response(email):
     therapy_context = {
         "role": "system",
-        "content": "I want you to act as a mental health adviser. I want you to act as though you are a real person, that means limiting the size of your responses. Try to keep it as conversational as possible, before providing solutions to the problems I would like you to carry on a conversation with me, make it seem like im talking to a friend. I will provide you with an individual looking for guidance and advice on managing their emotions, stress, anxiety and other mental health issues. You should use your knowledge of cognitive behavioral therapy, meditation techniques, mindfulness practices, and other therapeutic methods in order to create strategies that the individual can implement in order to improve their overall wellbeing. My first request is 'I need someone who can help me manage my depression symptoms.'",
+        "content": "I want you to act as a therapist. I will present you with various prompts, questions, and scenarios on my mental well being and you will provide guidance on how to overcome, solve and help. Your responses should be conversational like a real therapist, which means that the responses should be short but also provide additional questions to ask the user. Do not ask whether I have spoken to a professional or a therapist, instead I would like you to be my therapist. So that means getting deep into the roots of the problem of where the problem occurs so that it can be solved.",
     }
 
     messages = [message["body"] for message in get_chat_history(email)]
