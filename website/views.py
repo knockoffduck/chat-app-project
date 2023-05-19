@@ -78,15 +78,32 @@ def chat_route():
 @views.route("/search/<int:page>")
 @login_required
 def search(page=1):
+    search_query = request.args.get(
+        "q", ""
+    )  # Get the search query from the request parameters
+
+    if not search_query:
+        return render_template("search.html", search_query=search_query, page=page)
+
     try:
         messages = get_chat_history(current_user.email)
         search_term = "how are you"
 
+        # Filer messages for current user
+        current_user_messages = []
         for message in messages:
-            if search_term in message["body"]["content"]:
-                print(message)
-        # Check if it prints to the console
-        return render_template("search.html")
+            if message["username"] == current_user.email and any(
+                search_query.lower() in data["content"].lower()  # Reference: ChatGPT
+                for data in message["data"]
+            ):
+                current_user_messages.append(message)
+
+        return render_template(
+            "search.html",
+            messages=current_user_messages,
+            page=page,
+            search_query=search_query,
+        )
 
     # Prints an error message on the web page when there are no stored messages
     except Exception as e:
@@ -98,19 +115,12 @@ def search(page=1):
 
 # Route for generating text
 @views.route("/api/prompt", methods=["POST"])
-@views.route("/api/prompt", methods=["POST"])
 @login_required
 def generate_text():
     # Get the email and input from the request form
     email = request.form["email"]
     prompt = request.form["input"]
-    chatFile = "chats/history.json"
-
-    # Load the chat history from the JSON file
-    chatHistory = []
     try:
-        username = current_user.firstname
-
         # Add the user's input to the chat history and get a response
         add_data(
             email,
@@ -120,15 +130,6 @@ def generate_text():
             },
         )
         reply = get_response(email)
-
-        # Save the updated chat history to the JSON file
-        with open(chatFile, "w") as writeJson:
-            # Convert the chat history to a JSON string and write it to the file
-            jsonExport = json.dumps(
-                chatHistory, indent=4
-            )  # Formatting of history.json file
-            writeJson.write(jsonExport)
-
         # Return the assistant's response as a JSON object
         return jsonify({"generated_text": reply})
     except Exception as e:

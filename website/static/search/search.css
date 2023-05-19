@@ -4,8 +4,8 @@
   padding: 3.1rem;
   padding-bottom: 1.9rem;
   border-radius: 1.3rem;
-  background-color: white;
-  overflow: hidden; /* Prevents content from overflowing */
+  background-color: var(--bg-app);
+  overflow-y: auto; /* Prevents content from overflowing */
   position: relative;
 }
 
@@ -16,6 +16,7 @@
   border-radius: 0.6rem;
   padding: 0.6rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -41,58 +42,6 @@
   color: black;
 }
 
-/* Move buttons to the RHS of the page */
-.pagination {
-  display: flex;
-  justify-content: flex-end; /*Chat-GPT*/
-  margin-top: 1rem;
-  margin-left: auto;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-bottom: 2rem;
-  margin-right: 3.1rem;
-}
-
-.Previous-Button a {
-  background-color: #d8fc4c;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 0.94rem 2rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  margin-right: 0.63rem;
-  width: 6.3rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: 0.099rem;
-}
-
-.Next-Button a {
-  background-color: #d8fc4c;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 0.94rem 2rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  margin-left: 0.63rem;
-  width: 6.3rem;
-  font-weight: bold;
-}
-
-.Next-Button.First-Page {
-  margin-left: -0.6rem;
-}
-
 .message-box a {
   display: block;
   height: 100%;
@@ -101,17 +50,97 @@
 
 .title {
   font-family: 'Montserrat', sans-serif;
+  color: var(--dark-text);
 }
 
-.Previous-Button {
+#searchContainer input[type='text'] {
+  width: 15.6rem; /* Adjust the width value as needed */
+}
+
+#search {
+  border-radius: 0.5rem;
+  border: 0.1rem solid black;
+  padding-left: 0.5rem;
+  height: 2.5rem;
   font-family: 'Montserrat', sans-serif;
 }
 
-.Next-Button {
-  font-family: 'Montserrat', sans-serif;
+#search {
+  background-color: var(--search-background-color, white);
 }
 
-.username {
+.dark #search {
+  border: 0.1rem solid;
+}
+
+@media (min-width: 1024px) {
+  /* Adjust the styling for larger screens */
+  #searchContainer #search {
+    /* Modify the styles for larger screens */
+    width: 45rem;
+  }
+}
+
+.noMessages {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1rem;
+  color: var(--dark-text);
+}
+
+/* Copied from chat/style.css */
+.content-area::-webkit-scrollbar {
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 0.3125rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  padding: 0.125rem;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.content-area::-webkit-scrollbar-thumb:active {
+  background-color: #333;
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+
+/* Chrome, Edge and Safari */
+.content-area::-webkit-scrollbar {
+  width: 0.5625rem;
+}
+.content-area::-webkit-scrollbar-track {
+  border-radius: 0.25rem;
+  background-color: transparent;
+}
+
+.content-area::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+.content-area::-webkit-scrollbar-track:active {
+  background-color: transparent;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+  border-radius: 1.25rem;
+  background-color: transparent;
+  border: 0.125rem solid transparent;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+  background-color: #727a87;
+}
+
+.content-area::-webkit-scrollbar-thumb:active {
+  background-color: #727a87;
+}
+
+.message-prefix {
   font-weight: bold;
-  margin-right: 0.5rem;
 }
