@@ -86,8 +86,11 @@ def search(page=1):
         return render_template("search.html", search_query=search_query, page=page)
 
     try:
-        messages = get_chat_history(current_user.email)
-        search_term = "how are you"
+        if os.path.exists("chats/history.json"):
+            with open("chats/history.json", "r") as f:
+                messages = json.load(f)
+        else:
+            messages = []
 
         # Filer messages for current user
         current_user_messages = []
