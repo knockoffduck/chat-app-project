@@ -6,7 +6,7 @@ from tests.functional.test_routes import RouteTestCase
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(UserModelCase))
 suite.addTest(unittest.makeSuite(RouteTestCase))
-# suite.addTest(unittest.makeSuite(SystemTest))
+
 
 # Create a TestRunner and run the TestSuite
 runner = unittest.TextTestRunner(verbosity=2)
