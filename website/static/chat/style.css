@@ -39,7 +39,7 @@
 }
 
 .input button:hover {
-  background-color: rgba(var(--primary-rgba));
+  background-color: var(--primary);
 }
 
 .message-input {

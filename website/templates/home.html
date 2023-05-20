@@ -1,6 +1,6 @@
 {% extends "base.html"%} {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home/style.css') }}">
->
+
 {% endblock %} {% block home_script %}
 <script src="{{ url_for('static', filename='home/script.js') }}"></script>
 {% endblock %} {% block title %} Home {% endblock %} {% block topbar %}
@@ -24,9 +24,7 @@
     </div>
   </div>
   <div class="image">
-    <img src="{{ url_for('static', filename='images/mainHeader-pic.png') }}" srcset="{{ url_for('static', filename='images/main-header-pic-mobile.png') }} 320w,
-      {{ url_for('static', filename='images/mainHeader-pic.png') }} 810w" sizes="(max-width: 320px) 320px, 810px"
-      alt="Man Meditating">
+    <img src="{{ url_for('static', filename='images/mainHeader-pic.webp') }}" alt="Man Meditating">
   </div>
 </div>
 
@@ -34,7 +32,7 @@
   <div class="spacer layer1"></div>
   <div class="contain">
     <div class="image">
-      <img src="{{ url_for('static', filename='images/secondHeader.svg') }}" alt="Man Meditating">
+      <img src="{{ url_for('static', filename='images/secondHeader.svg') }}" alt="Diagram of brains connected">
     </div>
     <div class="info">
       <h1 class="inactive">

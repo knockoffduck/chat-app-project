@@ -63,5 +63,44 @@
                 "content": "That's great to hear! However, remember that maintaining good mental health is an ongoing process. Is there anything in particular that you feel you would like to discuss or explore in order to enhance your overall mental well-being?"
             }
         ]
+    },
+    {
+        "username": "test2@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "Hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Hello! It's great to see you here. How can I help you today?"
+            }
+        ]
+    },
+    {
+        "username": "test2@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "Hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Hello! How are you feeling today?"
+            }
+        ]
+    },
+    {
+        "username": "test2@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "Hi again"
+            },
+            {
+                "role": "assistant",
+                "content": "Hello! Welcome back. Did something in particular bring you back?"
+            }
+        ]
     }
 ]
