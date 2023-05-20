@@ -1,28 +1,28 @@
 {% extends "app.html" %} {% block page_css %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename='chat/style.css') }}"
->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='chat/style.css') }}">
+<style>
+  .user .avatar {
+    background-image: url('../static/images/profile-pictures/{{ profile_pic }}.webp');
+  }
+</style>
 {% endblock %} {% block script %}
+<script>
+  // uses the email parameter passed from the flask route to 
+  let email = '{{ email }}';
+</script>
 <script src="{{ url_for('static', filename='chat/script.js') }}"></script>
 {% endblock %} {% block app_content %}
 
 <div class="chat-area">
   <div class="messages"></div>
   <div class="input">
-    <textarea
-      class="message-input"
-      name="Input"
-      id=""
-      cols="30"
-      rows="1"
-      placeholder="Send a message."
-    ></textarea>
+    <textarea class="message-input" name="Input" id="message-input" cols="30" rows="1"
+      placeholder="Send a message."></textarea>
     <button id="send-input">
       <i class="bi-send icon"></i>
     </button>
   </div>
 
-  {% endblock %}
+
 </div>
+{% endblock %}

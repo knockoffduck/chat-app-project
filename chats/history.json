@@ -1,1 +1,67 @@
-[{"username": "zarif", "data": [{"role": "user", "content": "hello", "datetime": "2023-05-12 17:33:16", "uuid": "1683883996560_83864_30231"}, {"role": "assistant", "content": "Hello! How are you feeling today?", "datetime": "2023-05-12 17:33:18", "uuid": "1683883998397_970288_30231"}, {"role": "user", "content": "im feeling great", "datetime": "2023-05-12 17:34:29", "uuid": "1683884069571_597417_43699"}, {"role": "assistant", "content": "That's great to hear! Is there anything specific that made you feel great today?", "datetime": "2023-05-12 17:34:31", "uuid": "1683884071934_57467_43699"}]}, {"username": "", "data": [{"role": "user", "content": "eawr", "datetime": "2023-05-12 17:38:56", "uuid": "1683884336054_567138_0"}, {"role": "assistant", "content": "I'm sorry, I don't understand what you're trying to say. Can you please rephrase or provide more information so I can assist you as a therapist?", "datetime": "2023-05-12 17:38:59", "uuid": "1683884339860_384098_0"}]}]
+[
+    {
+        "username": "test@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "Hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Hello! How can I assist you today?"
+            }
+        ]
+    },
+    {
+        "username": "test@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "I'm feeling a bit down today"
+            },
+            {
+                "role": "assistant",
+                "content": "I'm sorry to hear that. Can you share with me what's been going on that's been making you feel down?"
+            }
+        ]
+    },
+    {
+        "username": "test@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "It's cold"
+            },
+            {
+                "role": "assistant",
+                "content": "I see. Are you feeling down just because of the cold weather or is there anything else on top of that?"
+            }
+        ]
+    },
+    {
+        "username": "test2@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "Hello"
+            },
+            {
+                "role": "assistant",
+                "content": "Hello! How can I assist you today in terms of your mental well-being?"
+            }
+        ]
+    },
+    {
+        "username": "test2@example.com",
+        "data": [
+            {
+                "role": "user",
+                "content": "My mental health is pretty good"
+            },
+            {
+                "role": "assistant",
+                "content": "That's great to hear! However, remember that maintaining good mental health is an ongoing process. Is there anything in particular that you feel you would like to discuss or explore in order to enhance your overall mental well-being?"
+            }
+        ]
+    }
+]

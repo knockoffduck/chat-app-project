@@ -1,123 +1,122 @@
 {% extends "base.html" %} {% block title %} Sign Up {% endblock %} {% block
-    content_header %} Login {% endblock %} {% block content %}
+content_header %} Login {% endblock %} {% block content %}
 
 {% block css %}
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}">
 {% endblock %}
 
-  <div class="d-flex justify-content-center align-items-center">
-    <div class="fixed-box" id="signup-box">
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-            <p>{{ message }}</p>
-            {% endfor %}
-        {% endif %}
-      {% endwith %}
-      <div class="card">
-        <div class="card-body">
-          <h1 class="text-center mb-4">Create Account</h1>
-          <p class="fmessage">To access the benefits of MindMate, simply create an account below:</p>
-          <form action="#" method="POST">
-            {{ form.hidden_tag() }}
-            <div class="form-row">
-              <div class="col form-group" id="first">
-                <p>
-                    {{ form.firstname.label }}
-                    {{ form.firstname(id="firstname", class="form-control") }}
-                    {% for error in form.firstname.errors %}
-                    <span class="errors">[{{ error }}]</span>
-                    {% endfor %}
-                </p>
-              </div>
-              <div class="col form-group" id="second">
-                <p>
-                    {{ form.lastname.label }}
-                    {{ form.lastname(id="lastname", class="form-control") }}
-                    {% for error in form.lastname.errors %}
-                    <span class="errors">[{{ error }}]</span>
-                    {% endfor %}
-                </p>
-              </div>
-            </div>            
-
-            <div class="form-group"  id="third">
+<div class="d-flex justify-content-center align-items-center">
+  <div class="fixed-box" id="signup-box">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="card">
+      <div class="card-body">
+        <h1 class="text-center mb-4">Create Account</h1>
+        <p class="fmessage">To access the benefits of MindMate, simply create an account below:</p>
+        <form action="#" method="POST">
+          {{ form.hidden_tag() }}
+          <div class="form-row">
+            <div class="col form-group" id="first">
               <p>
-              {{ form.email.label }}
-              {{ form.email(id="email", class="form-control") }}
-              {% for error in form.email.errors %}
-              <span class="errors">[{{ error }}]</span>
-              {% endfor %}
-              </p>
-            </div>
-
-            <div class="form-row">
-              <div class="col form-group" id="fourth">
-                <p>
-                  {{ form.password.label }}&emsp;&emsp;&emsp;
-                  {{ form.password(id="password", class="form-control") }}
-                  {% for error in form.password.errors %}
-                  <span class="errors">[{{ error }}]</span>
-                  {% endfor %}
-                </p>
-              </div>
-              <div class="col form-group" id="fifth">
-                <p>
-                  {{ form.password2.label }}
-                  {{ form.password2(id="password2", class="form-control") }}
-                  {% for error in form.password2.errors %}
-                  <span class="errors">[{{ error }}]</span>
-                  {% endfor %}
-                </p>
-              </div>
-            </div>
-
-            <div class="form-group"  id="sixth">
-              <p>
-                {{ form.dob.label }}
-                {{ form.dob(id="dob", class="form-control") }}
-                {% for error in form.dob.errors %}
+                {{ form.firstname.label }}
+                {{ form.firstname(id="firstname", class="form-control") }}
+                {% for error in form.firstname.errors %}
                 <span class="errors">[{{ error }}]</span>
                 {% endfor %}
               </p>
             </div>
-
-            <div class="form-row">
-              <div class="col form-group" id="seventh">
-                <p>
-                  {{ form.country.label }}
-                  {{ form.country(id="country", class="form-control") }}
-                  {% for error in form.country.errors %}
-                  <span class="errors">[{{ error }}]</span>
-                  {% endfor %}
-                </p>
-              </div>
-              <div class="col form-group" id="eighth">
-                <p>
-                  {{ form.gender.label }}<br>
-                  <select class='form-control' id="gender" name="gender" size="1">
-                      {% for value, label in form.gender.choices %}
-                          <option value="{{ value }}">{{ label }}</option>
-                      {% endfor %}
-                  </select><br>
-                  {% for error in form.gender.errors %}
-                      <span class="error-message">[{{ error }}]</span>
-                  {% endfor %}
+            <div class="col form-group" id="second">
+              <p>
+                {{ form.lastname.label }}
+                {{ form.lastname(id="lastname", class="form-control") }}
+                {% for error in form.lastname.errors %}
+                <span class="errors">[{{ error }}]</span>
+                {% endfor %}
               </p>
-              </div>
             </div>
+          </div>
 
-            <div class="form-group text-center">
-              <p>{{ form.submit(class="btn btn-primary mt-4") }}</p>
-              <div class="mt-2">
-                <p>Already A User? <a href="{{ url_for('auth.login') }}" class="text-primary small">Login</a></p>
-              </div>
+          <div class="form-group" id="third">
+            <p>
+              {{ form.email.label(for="email") }}
+              {{ form.email(id="email", class="form-control") }}
+              {% for error in form.email.errors %}
+              <span class="errors">[{{ error }}]</span>
+              {% endfor %}
+            </p>
+          </div>
+
+          <div class="form-row">
+            <div class="col form-group" id="fourth">
+              <p>
+                {{ form.password.label(for="password") }}&emsp;&emsp;&emsp;
+                {{ form.password(id="password", class="form-control") }}
+                {% for error in form.password.errors %}
+                <span class="errors">[{{ error }}]</span>
+                {% endfor %}
+              </p>
             </div>
-          </form>
-        </div>
+            <div class="col form-group" id="fifth">
+              <p>
+                {{ form.password2.label }}
+                {{ form.password2(id="password2", class="form-control") }}
+                {% for error in form.password2.errors %}
+                <span class="errors">[{{ error }}]</span>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group" id="sixth">
+            <p>
+              {{ form.dob.label(for="dob") }}
+              {{ form.dob(id="dob", class="form-control") }}
+              {% for error in form.dob.errors %}
+              <span class="errors">[{{ error }}]</span>
+              {% endfor %}
+            </p>
+          </div>
+
+          <div class="form-row">
+            <div class="col form-group" id="seventh">
+              <p>
+                {{ form.country.label(for="country") }}
+                {{ form.country(id="country", class="form-control", required=true) }}
+                {% for error in form.country.errors %}
+                <span class="errors">[{{ error }}]</span>
+                {% endfor %}
+              </p>
+            </div>
+            <div class="col form-group" id="eighth">
+              <p>
+                {{ form.gender.label }}<br>
+                <select class='form-control' id="gender" name="gender" size="1">
+                  {% for value, label in form.gender.choices %}
+                  <option value="{{ value }}">{{ label }}</option>
+                  {% endfor %}
+                </select><br>
+                {% for error in form.gender.errors %}
+                <span class="error-message">[{{ error }}]</span>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group text-center">
+            <p>{{ form.submit(class="btn btn-primary mt-4") }}</p>
+            <div class="mt-2">
+              <p>Already A User? <a href="{{ url_for('auth.login') }}" class="text-primary small">Login</a></p>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-
-
+</div>
 {% endblock %}

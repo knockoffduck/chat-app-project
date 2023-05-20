@@ -7,40 +7,49 @@ import urllib.parse
 
 auth = Blueprint("auth", __name__)
 
-@auth.route('/login', methods=['GET', 'POST'])
+
+@auth.route("/login", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('views.home'))
+        return redirect(url_for("views.home"))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid email or password. Please try again.')
-            return redirect(url_for('auth.login'))
+            flash("Invalid email or password. Please try again.")
+            return redirect(url_for("auth.login"))
         login_user(user, remember=form.remember_me.data)
-        next_page = request.args.get('next')
-        if not next_page or urllib.parse.urlsplit(next_page).netloc != '':
-            next_page = url_for('views.chat_route')
+        next_page = request.args.get("next")
+        if not next_page or urllib.parse.urlsplit(next_page).netloc != "":
+            next_page = url_for("views.chat_route")
         return redirect(next_page)
-    return render_template('login.html', title='Sign In', form=form)
+    return render_template("login.html", title="Sign In", form=form)
 
-@auth.route('/logout')
+
+@auth.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for('views.home'))
+    return redirect(url_for("views.home"))
 
-@auth.route('/signup', methods=['GET', 'POST'])
+
+@auth.route("/signup", methods=["GET", "POST"])
 def signup():
     if current_user.is_authenticated:
-        return redirect(url_for('views.home'))
+        return redirect(url_for("views.home"))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(firstname=form.firstname.data, lastname=form.lastname.data, 
-                    email=form.email.data, dob=form.dob.data, country=form.country.data, 
-                    gender=form.gender.data)
+        user = User(
+            firstname=form.firstname.data,
+            lastname=form.lastname.data,
+            email=form.email.data,
+            dob=form.dob.data,
+            country=form.country.data,
+            gender=form.gender.data,
+        )
+        user.set_email(form.email.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
-        return redirect(url_for('auth.login'))
-    return render_template('signup.html', title='Sign Up', form=form)
+        flash("Congratulations, you are now a registered user!")
+        return redirect(url_for("auth.login"))
+    return render_template("signup.html", title="Sign Up", form=form)

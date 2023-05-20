@@ -1,9 +1,5 @@
 {% extends "base.html" %} {% block css %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename='navbar/style.css') }}"
->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar/style.css') }}">
 {% block page_css %}{% endblock %}{% endblock %} {% block app_script %}
 <script src="{{ url_for('static', filename='navbar/script.js')}}"></script>
 
@@ -17,34 +13,43 @@
 </button>
 <div class="profile-dropdown">
   <button class="profile-dropdown">
-    <img
-      src="{{url_for('static', filename='images/pfp.jpg')}}"
-      alt="Profile Pic"
-      class="avatar"
-    >
-    <span>Daffa Fathurohman</span>
+    <img src="{{ url_for('static', filename='images/profile-pictures/' ~ profile_pic ~ '.webp') }}" alt="Profile Pic"
+      class="avatar" style="object-fit: cover">
+    <span>{{current_user.firstname + " " + current_user.lastname}}</span>
     <i class="bi bi-caret-down-fill"></i>
   </button>
 
   <div class="dropdown">
     <nav>
-      <ul>
+      <ul class="nav-container">
         <li>
-          Dark Mode
-          <input
-            class="dark-mode-switcher"
-            type="checkbox"
-            name=""
-            id="color-selector"
-          >
+          <span>
+            <i class="bi bi-moon"></i>
+            Dark Mode
+          </span>
+          <input class="dark-mode-switcher" type="checkbox" name="theme-switcher" id="color-selector">
         </li>
-        <div
-          style="width: 100%; border-bottom: 1px solid rgba(var(--border-rgba))"
-        ></div>
-        <div class="nav-container">
-          <li class="nav-item">Profile</li>
-          <li class="nav-item" id="logout-button">Logout</li>
-        </div>
+        <li class="nav-item">
+          <button id="clear-conversation">
+            <i class="bi bi-trash"></i>
+            Clear Conversation
+          </button>
+        </li>
+      </ul>
+      <div style="width: 100%; border-bottom: 1px solid rgba(var(--border-rgba))"></div>
+      <ul class="nav-container">
+        <li class="nav-item">
+          <a href="/account">
+            <i class="bi bi-person"></i>
+            Profile
+          </a>
+        </li>
+        <li class="nav-item" id="logout-button">
+          <a href="{{ url_for('auth.logout') }}">
+            <i class="bi bi-arrow-right-square"></i>
+            Logout
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -55,7 +60,7 @@
 <section class="burger-menu hide" id="burger-menu-section">
   <div class="topbar">
     <a href="/" class="logo-text">
-      <span>MindMate</span>
+      <h1>MindMate</h1>
     </a>
     <button class="button-square" id="close-button">
       <i class="bi-x icon" style="color: black"></i>
@@ -66,7 +71,7 @@
       <li>
         <a href="/chat">Chat</a>
       </li>
-      <li><a href="/history">History</a></li>
+      <li><a href="/search/1">Search</a></li>
       <li><a href="/account">Account</a></li>
     </ul>
   </nav>
@@ -82,10 +87,10 @@
         </a>
       </li>
       <li>
-        <a href="/history/1">
-          <!--Changed route for history page to history/1-->
-          <i class="bi-bookshelf"></i>
-          <span>History</span>
+        <a href="/search/1">
+          <!--Changed route for search page to search/1-->
+          <i class="bi-search"></i>
+          <span>Search</span>
         </a>
       </li>
       <li>

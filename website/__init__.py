@@ -3,13 +3,12 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-from flask import Flask
 from flask_cors import CORS
 
 db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()
-login.login_view = 'auth.login'
+login.login_view = "auth.login"
 
 
 # Define a function to create the Flask application
@@ -37,7 +36,6 @@ def create_app(config_class=Config):
     # Register the views and auth blueprints with the application
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/auth")
-
 
     # Import load_user to avoid circular import error
     from .models import load_user, User
