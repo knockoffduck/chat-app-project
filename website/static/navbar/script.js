@@ -14,14 +14,12 @@ $(document).ready(function () {
 
   $(document).mouseup((event) => {
     const dropdownMenu = $('.dropdown');
-    const dropdownButton = $('button.profile-dropdown');
+    const dropdownButton = $('.profile-dropdown');
+    console.log(event.target);
     // If the clicked element is not a dropdown button or a dropdown menu item
-    if (
-      !dropdownMenu.is(event.target) &&
-      !dropdownButton.is(event.target) &&
-      dropdownMenu.has(event.target).length === 0
-    ) {
-      // dropdownMenu.hide();
+    if (!$(event.target).closest('.dropdown').length && dropdownMenu.hasClass('show')) {
+      $('.dropdown').removeClass('show');
+      $('.dropdown').addClass('hide');
     }
   });
 

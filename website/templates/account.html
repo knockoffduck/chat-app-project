@@ -3,12 +3,15 @@
 {% endblock %} {% block script %}
 <script src="{{ url_for('static', filename='account/script.js') }}"></script>
 {% endblock %} {% block app_content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
 <div class="flashed-messages">
-  {% with messages = get_flashed_messages() %} {% if messages %} {% for message
-  in messages %}
-  <p>{{ message }}</p>
-  {% endfor %} {% endif %} {% endwith %}
+  {% for message in messages %}
+  <span>{{ message }}</span>
+  {% endfor %}
 </div>
+{% endif %}
+{% endwith %}
 
 <div class="account">
   <div class="content">
@@ -17,9 +20,9 @@
       <img src="{{ url_for('static', filename='images/profile-pictures/' ~ profile_pic ~ '.webp') }}"
         alt="Profile Picture">
       <fieldset id="upload">
-        <input size="30" type="file" id="user_avatar">
+        <input type="file" id="user_avatar">
       </fieldset>
-      <button class="btn btn-primary" id="upload-avatar-button">Upload</button>
+      <button id="upload-avatar-button">Upload</button>
     </div>
 
     <form action="#" method="POST">

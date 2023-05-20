@@ -24,15 +24,28 @@ fieldset {
 }
 
 .profile-upload > button {
-  background-color: var(--primary);
+  width: auto;
+  color: black;
+  padding: 0.625rem 1rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+  background-color: var(--secondary);
   height: 3rem;
   border-radius: 10px;
+}
+
+.profile-upload > button:hover {
+  background-color: lightblue;
+  color: white;
 }
 
 .content-area {
   height: 100%;
   width: 100%;
-  padding: 1.25rem;
+  padding: 1.5rem;
   border-radius: 1.3rem;
   background-color: var(--bg-app);
 }
@@ -60,20 +73,21 @@ select {
 
 /* Styling for form submit button */
 .submit-button {
-  background-color: #d8fc4c;
+  background-color: var(--primary);
   width: auto;
-  color: black;
+  color: white;
   padding: 0.625rem 1rem;
   margin: 0.5rem 0;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
+  transition: all ease-in-out 0.15s;
 }
 
 /* Styling for form submit button on hover */
 .submit-button:hover {
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--secondary);
+  color: black;
 }
 
 /* Styling for error messages */
@@ -82,9 +96,10 @@ select {
 }
 
 .flashed-messages {
-  color: black;
-  padding-left: 1.25rem;
-  padding-top: 1.25rem;
+  padding: 1rem;
+  background-color: #eafbf6;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 h1,
