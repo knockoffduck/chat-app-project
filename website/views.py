@@ -37,7 +37,7 @@ def home():
 
 
 # Route for the chat page
-@views.route("/chat/")
+@views.route("/chat")
 @login_required
 def chat_route():
     return render_template("chat.html")
