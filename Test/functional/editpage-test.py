@@ -58,5 +58,26 @@ class EditProfileTestCase(unittest.TestCase):
             self.assertEqual(user.country, 'Canada')
             self.assertEqual(user.gender, 'F')
 
+    def test_upload_avatar(self):
+        #  avatar
+        avatar_path = '/path/to/avatar.png'  
+
+        # login
+        self.client.post('/login', data={
+            'email': 'test@example.com',
+            'password': 'password',
+            'remember_me': False
+        })
+
+        # upload avatar
+        with open(avatar_path, 'rb') as avatar_file:
+            response = self.client.post('C:\Desktop\Avatar.png', data={
+                'user_avatar': (avatar_file, 'avatar.png')
+            }, follow_redirects=True)
+
+        # check avatar link
+        with self.app.app_context():
+            user = User.query.filter_by(email='test@example.com').first()
+            self.assertEqual(user.avatar, 'C:\Desktop\Avatar.png')  
 if __name__ == '__main__':
     unittest.main()
