@@ -33,7 +33,7 @@ class SystemTest(unittest.TestCase):
       self.driver = webdriver.Chrome(service=self.service)
       with self.app.app_context():
         db.create_all()
-        u1 = User(firstname='Bob',lastname='Test',email='test@email.net',
+        u1 = User(firstname='Bob',lastname='Test',email='test@email.net.au',
                   dob=datetime.datetime(2020,1,2),country="Aus",gender="Other")
         u1.set_password('password')
         db.session.add(u1)
@@ -83,19 +83,19 @@ class SystemTest(unittest.TestCase):
     submit.click()
 
   def test_login(self):
-    u = User.query.filter_by(email='test@email.net').first()
-    self.assertEqual(u.email,'test@email.net', msg='user exists in db')
+    u = User.query.filter_by(email='test@email.net.au').first()
+    self.assertEqual(u.email,'test@email.net.au', msg='user exists in db')
     self.driver.get('http://localhost:5000/auth/login')
     self.driver.implicitly_wait(5)
     email = self.driver.find_element(By.ID, "email")
-    email.send_keys('test@email.net')
+    email.send_keys('test@email.net.au')
     pword = self.driver.find_element(By.ID, "password")
     pword.send_keys('password')
     time.sleep(1)
     self.driver.implicitly_wait(5)
     submit = self.driver.find_element(By.ID, "submit")
     submit.click()
-    self.assertEqual(u.email,'test@email.net', msg='logged in')
+    self.assertEqual(u.email,'test@email.net.au', msg='logged in')
 
 if __name__=='__main__':
   tracemalloc.start()
