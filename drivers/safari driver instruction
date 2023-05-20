@@ -1,0 +1,17 @@
+Safari Driver Setup Guide for Selenium Testing
+To run Selenium tests on the Safari browser, you need to install and configure the Safari Driver. Here are the steps required to set up the environment for the Safari Driver.
+
+Step 1: Open Safari Preferences and go to the Advanced tab
+Open the Safari browser on your computer.
+From the main menu of Safari, select "Preferences."
+Go to the "Advanced" tab.
+Step 2: Enable the "Show Develop menu in menu bar" option
+On the "Advanced" tab, make sure you have expanded all options.
+Locate the "Show Develop menu in menu bar" option and check the checkbox to enable it if it's not already checked.
+Step 3: Enable the "Allow Remote Automation" option
+In the menu bar, click on "Develop."
+In the Develop menu, make sure you have expanded all options.
+Find the "Allow Remote Automation" option and check the checkbox to enable it if it's not already checked.
+Once you have completed these steps, you have configured the Safari Driver and are ready to run Selenium tests on the Safari browser. Make sure you have installed the Safari Driver and update your code to use the Safari Driver as instructed in your test code.
+
+Note: You need to install the appropriate version of the Safari Driver that matches the version of the Safari browser you are using.
