@@ -29,7 +29,6 @@ fieldset {
   padding: 0.625rem 1rem;
   margin: 0.5rem 0;
   border: none;
-  border-radius: 0.25rem;
   cursor: pointer;
   transition: all ease-in-out 0.15s;
   background-color: var(--secondary);
