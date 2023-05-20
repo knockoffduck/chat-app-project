@@ -17,6 +17,7 @@ Columns:
         firstname - VARCHAR(30)
         lastname - VARCHAR(40)
         email - VARCHAR(120)
+        email_hash_id - INTEGER
         password_hash - VARCHAR(128)
         dob - DATETIME
         country - VARCHAR(20)
@@ -28,11 +29,9 @@ Columns:
         id - INTEGER
         body - VARCHAR(140)
         timestamp - DATETIME
-        user_id - INTEGER
+        user_email_hash_id - INTEGER
 Primary Key: ['id']
-Foreign Key: id -> user.id
-
-chat table to be updated
+Foreign Key: email_hash_id -> user.email_hash_id
 
 #### Chat
 Our website contains a chat feature, where we use OpenAI API to create a chatbot
