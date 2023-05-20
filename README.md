@@ -1,13 +1,57 @@
-## Introduction
+## Introduction to CITS3403 Project
 ### Purpose of the web application, design and use explanation
 
-This is a Flask web application that uses the OpenAI API to create a chatbot. The chatbot interacts with users and provides therapy-like conversation in response to prompts from the user. The chat history is stored in a JSON file and is loaded and saved to allow for continuous conversations with the chatbot.
+This is a Flask web application that uses the OpenAI API to create a chatbot. The chatbot interacts with users and provides therapy-like conversation in response to prompts from the user. The chat history is stored in a JSON file and is loaded and saved to the database table to allow for continuous conversations with the chatbot.
+The purpose of this web application is to provide users with a version of an online therapist, which they can chat with at anytime, anywhere. This aims to provide people with an accessible and helpful 'therapist', which they can talk to about their day, any issues they are having, their mental health or relationships. The login feature of the application allows a person's conversation history to be recorded and saved, so that when a user logs back in, they can begin a conversation where they left off. A user's account also ensures that their chats are not accessible to others, keeping conversations private.
+When a person opens this application, they are greeted with the homepage for 'MindMate', the name of our app. This homepage explains the features of the app and how it can provide support for individuals. On clicking 'Chat Now', a user is prompted to login, or create an account to access the chat service. On logging in, the chat page appears, where a user can start chatting with the therapy chat assistant. Responses will be provided based on what a user talks about. Conversation history is stored within the 'History' page, accessible from the navigation menu. Here, a user can search for keywords in their previous chat history, and can see questions and responses at that point in time. A user is also able to view and change their account details in the 'Account' page if they need to. There is also a dropdown menu to allow users to choose a 'darkmode' option for the application. If a user logs out, on their next login, they are able to continue their conversation with the therapy chat assistant, who remembers all previous interactions.
+The purpose of MindMate is to provide support and advice for individuals, tailored to them, so that people have a place where they can freely and confidently talk about whatever they need to.
+
+## Architecture of the Web Application
+#### Database Schema
+In our database, there are 2 tables: User and Chat. The schema definition for these are below:
+
+-----------------------------
+Table Name: User
+Columns:
+        id - INTEGER
+        firstname - VARCHAR(30)
+        lastname - VARCHAR(40)
+        email - VARCHAR(120)
+        password_hash - VARCHAR(128)
+        dob - DATETIME
+        country - VARCHAR(20)
+        gender - VARCHAR(10)
+Primary Key: ['id']
+-----------------------------
+Table Name: Chat
+Columns:
+        id - INTEGER
+        body - VARCHAR(140)
+        timestamp - DATETIME
+        user_id - INTEGER
+Primary Key: ['id']
+Foreign Key: id -> user.id
+
+chat table to be updated
+
+#### Chat
+Our website contains a chat feature, where we use OpenAI API to create a chatbot
+to be finished...
 
 ## Steps to Launch the Web Application Using `app.py`
 
 1. Unzip the project folder
 
-2. Open a virtual environment:
+2. Open a virtual environment within the project folder. Ensure that you have python downloaded.
+
+   ```
+   python -m venv venv
+   ```
+
+   ```
+   source venv/bin/activate
+   ```
+
 
 3. Install the required Python packages by running the following command in the terminal:
 
@@ -46,11 +90,9 @@ To be edited:
 
 12. The user account page is located at `http://127.0.0.1:5000/account`, which can be reached by clicking the "Account" navigation on the navigation menu. This page allows a user to make and save changes to their profile, which is saved to the database.
 
-## Database Schema
-In our database, there are 2 tables: User and Chat. The schema definition for these are below:
 
 ## Testing
-Tests for the web application include:
+Tests for the web application include: tests to ensure eaach flask route can be accessed successfully, correct password hashing, valid registration and login, handling for invalid registration and login, and successful profile changes.
 ...
 
 Run the following command in the terminal to run the tests:
@@ -72,6 +114,11 @@ In this new terminal, to run the Selenium Tests, run the following command:
    python tests/test_selenium.py
    ```
 
+The selenium tests are designed to run in Chrome and use chromedriver to do so. Ensure that the lastest version of Chrome is installed. The selenium tests include tests for registering in the application, logging in, and using the chat functionality.
 
 ## Commit Logs
 ...
+
+## Created By:
+⁠
+Daffa Fathurohman (23454661), Elise Panicciari (23088805), Tom Truong ⁠(23067483), Zarif ⁠Solaiman(23640056)
