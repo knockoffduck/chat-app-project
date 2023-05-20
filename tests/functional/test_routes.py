@@ -121,26 +121,25 @@ class RouteTestCase(unittest.TestCase):
             self.assertIn(current_user.gender, response.data.decode('utf-8'))
 
 
-    # def test_history_route(self):
-    #     """ 
-    #     GIVEN a Flask application configured for testing
-    #     WHEN the '/history/1' page is requested (GET)
-    #     THEN check the response is valid
-    #     """
-    #     # Simulate the login process
-    #     with self.client:
-    #         response = self.client.post('/auth/login', data={'email': 'test@email.net', 
-    #                                                          'password': 'password'}, 
-    #                                                          follow_redirects = True)
-    #         self.assertEqual(response.status_code, 200)
+    def test_search_route(self):
+        """ 
+        GIVEN a Flask application configured for testing
+        WHEN the '/search/1' page is requested (GET)
+        THEN check the response is valid
+        """
+        # Simulate the login process
+        with self.client:
+            response = self.client.post('/auth/login', data={'email': 'test@email.net', 
+                                                             'password': 'password'}, 
+                                                             follow_redirects = True)
+            self.assertEqual(response.status_code, 200)
 
-    #         # With successful login, access the history route
-    #         self.assertEqual(current_user.email, 'test@email.net')
-    #         response = self.client.get('/history/1',follow_redirects=True)
-    #         self.assertEqual(response.status_code, 200)
+            # With successful login, access the search route
+            self.assertEqual(current_user.email, 'test@email.net')
+            response = self.client.get('/search/1',follow_redirects=True)
+            self.assertEqual(response.status_code, 200)
 
-    #         #check that account details are on account page
-    #         assert response.request.path == '/history/1'
+
 
 
 if __name__ == '__main__':

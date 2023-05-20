@@ -69,7 +69,7 @@ class UserModelCase(unittest.TestCase):
         #check the chat screen comes up, where messages are sent
         self.assertIn(b'Send', response.data)
 
-#with help from ChatGPT
+    #with help from ChatGPT
     def test_anonymous_user(self):
         """
         GIVEN a Flask application configured for testing
@@ -195,7 +195,7 @@ class UserModelCase(unittest.TestCase):
                 assert response.request.path == '/chat'
                 self.assertIn(b'Send', response.data)
 
-def test_invalid_email_registration(self):
+    def test_invalid_email_registration(self):
             """ 
             GIVEN a Flask application configured for testing
             WHEN the '/auth/signup' page is posted to (POST) with incorrect email format
@@ -220,7 +220,7 @@ def test_invalid_email_registration(self):
                 self.assertIn(b'Invalid email address', response.data)
                 assert response.request.path == '/auth/signup'
 
-def test_password_mismatch_registration(self):
+    def test_password_mismatch_registration(self):
             """ 
             GIVEN a Flask application configured for testing
             WHEN the '/auth/signup' page is posted to (POST) with mismatched passwords
@@ -245,7 +245,7 @@ def test_password_mismatch_registration(self):
                 self.assertIn(b'Field must be equal to password', response.data)
                 assert response.request.path == '/auth/signup'
 
-def test_successful_profile_update(self):
+    def test_successful_profile_update(self):
         """ 
         GIVEN a Flask application configured for testing
         WHEN the '/account' page is posted (POST) with profile changed
@@ -264,15 +264,43 @@ def test_successful_profile_update(self):
             self.assertEqual(response.status_code, 200)
 
             #change first name
-            response = self.client.post('/account', data={'firstname': 'Pat'}, 
-                                                             follow_redirects = True)
+            response = self.client.post('/account', data={'firstname': 'Jane',
+                                                           'lastname': 'Smith',
+                                                           'dob': '1995-02-15',
+                                                           'country': 'Canada',
+                                                           'gender': 'F'}, 
+                                                            follow_redirects=True)
             assert response.request.path == '/account'
             self.assertIn(b'Success! Your changes have been saved', response.data)
                             
             # check user is updated to the db
-            user = User.query.filter_by(email='first@mail.com').first()
-            self.assertEqual(user.firstname, 'Pat')
+            user = User.query.filter_by(email='test@email.net').first()
+            self.assertEqual(user.firstname, 'Jane')
+            self.assertEqual(user.lastname, 'Smith')
+            self.assertEqual(user.dob.strftime('%Y-%m-%d'), '1995-02-15')
+            self.assertEqual(user.country, 'Canada')
+            self.assertEqual(user.gender, 'F')
 
+
+    # def test_upload_avatar(self):
+    #     #  avatar
+    #     avatar_path = '/path/to/avatar.png'  
+
+    #     # login
+    #     self.client.post('/auth/login', data={'email': 'test@email.net', 
+    #                                                          'password': 'password'}, 
+    #                                                          follow_redirects = True)
+
+    #     # upload avatar
+    #     with open(avatar_path, 'rb') as avatar_file:
+    #         response = self.client.post('C:\Desktop\Avatar.png', data={
+    #             'user_avatar': (avatar_file, 'avatar.png')
+    #         }, follow_redirects=True)
+
+    #     # check avatar link
+    #     with self.app.app_context():
+    #         user = User.query.filter_by(email='test@email.net').first()
+    #         self.assertEqual(user.avatar, 'C:\Desktop\Avatar.png') 
 
                 
 

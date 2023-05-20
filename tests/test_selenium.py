@@ -98,6 +98,41 @@ class SystemTest(unittest.TestCase):
     submit.click()
     self.assertEqual(u.email,'test@email.net.au', msg='logged in')
 
+  def test_chat_functionality(self):
+    #login
+    self.driver.get('http://localhost:5000/auth/login')
+    self.driver.implicitly_wait(5)
+    email = self.driver.find_element(By.ID, "email")
+    email.send_keys('test@email.net.au')
+    pword = self.driver.find_element(By.ID, "password")
+    pword.send_keys('password')
+    time.sleep(1)
+    self.driver.implicitly_wait(5)
+    submit = self.driver.find_element(By.ID, "submit")
+    submit.click()
+    time.sleep(1)
+    self.driver.implicitly_wait(5)
+
+    # send mess
+    message_input = self.driver.find_element(By.ID,'message-input')
+    message_input.send_keys('Hello, this is my test message')
+    time.sleep(1)
+    self.driver.implicitly_wait(5)
+    send_button = self.driver.find_element(By.ID, 'send-input')
+    send_button.click()
+    time.sleep(1)
+    self.driver.implicitly_wait(5)
+
+    # test display message
+    chat_messages = self.driver.find_element(By.CLASS_NAME, 'chat-bubble')
+    self.assertEqual(len(chat_messages), 1)  # there is 1 line mess
+    time.sleep(1)
+    self.driver.implicitly_wait(5)
+    # test chat body
+    message_content = chat_messages[0].text
+    self.assertEqual(message_content, 'Hello, this is my test message')  # correct display
+
+
 if __name__=='__main__':
   tracemalloc.start()
   unittest.main(verbosity=2)
