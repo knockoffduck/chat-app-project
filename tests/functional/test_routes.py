@@ -16,12 +16,12 @@ class RouteTestCase(unittest.TestCase):
         u1 = User(
             firstname='Bob',
             lastname='Test',
-            email='test@email.net',
             dob=datetime.datetime(2020, 1, 2),
             country="Aus",
             gender="Other"
         )
         u1.set_password('password')
+        u1.set_email('test@email.net')
         db.session.add(u1)
         db.session.commit()
 

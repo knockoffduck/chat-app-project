@@ -33,9 +33,10 @@ class SystemTest(unittest.TestCase):
       self.driver = webdriver.Chrome(service=self.service)
       with self.app.app_context():
         db.create_all()
-        u1 = User(firstname='Bob',lastname='Test',email='test@email.net.au',
+        u1 = User(firstname='Bob',lastname='Test',
                   dob=datetime.datetime(2020,1,2),country="Aus",gender="Other")
         u1.set_password('password')
+        u1.set_email('test@email.net.au')
         db.session.add(u1)
         db.session.commit()
         self.driver.maximize_window()
