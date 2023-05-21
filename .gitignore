@@ -4,3 +4,4 @@ venv/
 *.pyc
 *.Identifier
 __pycache__/
+.vscode
