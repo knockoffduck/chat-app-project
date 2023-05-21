@@ -8,30 +8,31 @@ The purpose of MindMate is to provide support and advice for individuals, tailor
 
 ## Architecture of the Web Application
 #### Database Schema
-In our database, there are 2 tables: User and Chat. The schema definition for these are below:
+In our database, there are 2 tables: User and Chat. The schema definition for these are below:  
 
------------------------------
-Table Name: User
-Columns:
-        id - INTEGER
-        firstname - VARCHAR(30)
-        lastname - VARCHAR(40)
-        email - VARCHAR(120)
-        email_hash_id - INTEGER
-        password_hash - VARCHAR(128)
-        dob - DATETIME
-        country - VARCHAR(20)
-        gender - VARCHAR(10)
-Primary Key: ['id']
------------------------------
-Table Name: Chat
-Columns:
-        id - INTEGER
-        body - VARCHAR(140)
-        timestamp - DATETIME
-        user_email_hash_id - INTEGER
-Primary Key: ['id']
-Foreign Key: email_hash_id -> user.email_hash_id
+Table Name: User  
+Columns:  
+        id - INTEGER  
+        firstname - VARCHAR(30)  
+        lastname - VARCHAR(40)  
+        email - VARCHAR(120)  
+        email_hash_id - INTEGER  
+        password_hash - VARCHAR(128)  
+        dob - DATETIME  
+        country - VARCHAR(20)  
+        gender - VARCHAR(10)  
+          
+Primary Key: ['id']  
+    
+Table Name: Chat  
+Columns:  
+        id - INTEGER  
+        body - VARCHAR(140)  
+        timestamp - DATETIME  
+        user_email_hash_id - INTEGER  
+          
+Primary Key: ['id']  
+Foreign Key: email_hash_id -> user.email_hash_id  
 
 #### Chat
 Our website contains a chat feature, where we use OpenAI API to create a chatbot
@@ -78,21 +79,23 @@ to be finished...
 
 7. On clicking "Chat Now", you will be prompted to login at `http://127.0.0.1:5000/auth/login` with an email and password to access the features of the website. 
 
-8. If you are a new user, click on "Create New Account", where you will be promted to fill in the form for account creation at `http://127.0.0.1:5000/auth/signup`. The fields required are: first name, last name, email address, password, confirm password, date of birth, country and gender. On clicking register, you will then be prompted to login to access the chat page, where you can enter a username and start a conversation with the chatbot.
+8. If you are a new user, click on "Create New Account", where you will be promted to fill in the form for account creation at `http://127.0.0.1:5000/auth/signup`. The fields required are: first name, last name, email address, password, confirm password, date of birth, country and gender. On clicking register, you will then be prompted to login.
 
 9. Logging in will direct you to `http://127.0.0.1:5000/chat/`, where you can access the chat page. Here you can start a conversation with the chatbot, who acts as a therapy assistant.
 
 10. Enter a prompt in the chat input field and click the send button to get a response from the chatbot.
 
-To be edited:
+EDIT:
 11. The chat history is stored in the `chats/history.json` file, which is loaded and saved automatically by the `generate_text` function. You can view the chat history by opening the file in a text editor or by reading the contents of the file in your Python code.
 
 12. The user account page is located at `http://127.0.0.1:5000/account`, which can be reached by clicking the "Account" navigation on the navigation menu. This page allows a user to make and save changes to their profile, which is saved to the database.
 
+13. Chat history can be searched in `http://127.0.0.1:5000/search/1`. Here, a user can search for keywords in all previous chat history, and that moment in the chat will be returned, where they can click on it and return to that moment in 'Chat' to see previous discussions.
+
 
 ## Testing
-Tests for the web application include: tests to ensure eaach flask route can be accessed successfully, correct password hashing, valid registration and login, handling for invalid registration and login, and successful profile changes.
-...
+Tests for the web application include: tests to ensure eaach flask route can be accessed successfully, correct password hashing, valid registration and login, handling for invalid registration and login, and successful profile changes.  
+  
 
 Run the following command in the terminal to run the tests:
 
