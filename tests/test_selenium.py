@@ -10,10 +10,10 @@ sys.path.append(parent_dir)
 import unittest, os, time, datetime, tracemalloc
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from website import create_app, db
 from website.models import User, Chat
-from config import basedir, TestingConfig
-
+from config import TestingConfig
 
 from selenium.webdriver.chrome.service import Service
 
@@ -59,6 +59,7 @@ class SystemTest(unittest.TestCase):
       if self.service:
           self.service.stop()
 
+
   def test_register(self):
     self.driver.get('http://localhost:5000/auth/signup')
     self.driver.implicitly_wait(5)
@@ -82,6 +83,9 @@ class SystemTest(unittest.TestCase):
     self.driver.implicitly_wait(5)
     submit = self.driver.find_element(By.ID, "submit")
     submit.click()
+    u = User.query.filter_by(email='q@gmail.com').first()
+    self.assertEqual(u.email,'q@gmail.com', msg='user exists in db')
+
 
   def test_login(self):
     u = User.query.filter_by(email='test@email.net.au').first()
@@ -98,39 +102,80 @@ class SystemTest(unittest.TestCase):
     submit.click()
     self.assertEqual(u.email,'test@email.net.au', msg='logged in')
 
+
+  def test_avatar(self):
+      self.driver.get('http://localhost:5000/auth/login')
+      self.driver.implicitly_wait(5)
+      email = self.driver.find_element(By.ID, "email")
+      email.click()
+      email.send_keys('test@email.net.au')
+      
+      pword = self.driver.find_element(By.ID, "password")
+      email.click()
+      pword.send_keys('password')
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
+      submit = self.driver.find_element(By.ID, "submit")
+      submit.submit()
+      time.sleep(1)
+      self.driver.implicitly_wait(20)
+      self.driver.get('http://localhost:5000/account')
+
+      print(self.driver.page_source)
+
+
+      user_avatar = self.driver.find_element(By.ID, "user_avatar")
+      user_avatar.click()
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
+
+      avatar_input = self.driver.find_element(By.ID, "avatar-input")
+      avatar_input.send_keys("C:\Desktop\Avatar.png")
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
+      avatar_input.send_keys(Keys.RETURN)
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
+
+      upload_avatar_button = self.driver.find_element(By.ID, "upload-avatar-button")
+      upload_avatar_button.click()
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
+
+
   def test_chat_functionality(self):
-    #login
-    self.driver.get('http://localhost:5000/auth/login')
-    self.driver.implicitly_wait(5)
-    email = self.driver.find_element(By.ID, "email")
-    email.send_keys('test@email.net.au')
-    pword = self.driver.find_element(By.ID, "password")
-    pword.send_keys('password')
-    time.sleep(1)
-    self.driver.implicitly_wait(5)
-    submit = self.driver.find_element(By.ID, "submit")
-    submit.click()
-    time.sleep(1)
-    self.driver.implicitly_wait(5)
+      #login
+      self.driver.get('http://localhost:5000/auth/login')
+      self.driver.implicitly_wait(5)
+      email = self.driver.find_element(By.ID, "email")
+      email.send_keys('test@email.net.au')
+      pword = self.driver.find_element(By.ID, "password")
+      pword.send_keys('password')
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
+      submit = self.driver.find_element(By.ID, "submit")
+      submit.click()
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
 
-    # send mess
-    message_input = self.driver.find_element(By.ID,'message-input')
-    message_input.send_keys('Hello, this is my test message')
-    time.sleep(1)
-    self.driver.implicitly_wait(5)
-    send_button = self.driver.find_element(By.ID, 'send-input')
-    send_button.click()
-    time.sleep(1)
-    self.driver.implicitly_wait(5)
+      # send mess
+      message_input = self.driver.find_element(By.ID,'message-input')
+      message_input.send_keys('Hello, this is my test message')
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
+      send_button = self.driver.find_element(By.ID, 'send-input')
+      send_button.click()
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
 
-    # test display message
-    chat_messages = self.driver.find_element(By.CLASS_NAME, 'chat-bubble')
-    self.assertEqual(len(chat_messages), 1)  # there is 1 line mess
-    time.sleep(1)
-    self.driver.implicitly_wait(5)
-    # test chat body
-    message_content = chat_messages[0].text
-    self.assertEqual(message_content, 'Hello, this is my test message')  # correct display
+      # test display message
+      chat_messages = self.driver.find_element(By.CLASS_NAME, 'chat-bubble')
+      self.assertEqual(len(chat_messages), 1)  # there is 1 line mess
+      time.sleep(1)
+      self.driver.implicitly_wait(5)
+      # test chat body
+      message_content = chat_messages[0].text
+      self.assertEqual(message_content, 'Hello, this is my test message')  # correct display
 
 
 if __name__=='__main__':
