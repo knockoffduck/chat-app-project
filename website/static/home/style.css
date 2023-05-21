@@ -21,7 +21,7 @@ h1 {
   background-size: cover;
 } /* Second header section */
 .secondheader {
-  background-image: url('../images/Background_Rainbow_Blur.png');
+  background-image: url('../images/Background_Rainbow_Blur.webp');
   background-size: cover;
   display: flex;
   flex-direction: column;

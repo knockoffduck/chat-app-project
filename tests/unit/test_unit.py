@@ -280,29 +280,7 @@ class UserModelCase(unittest.TestCase):
             self.assertEqual(user.dob.strftime('%Y-%m-%d'), '1995-02-15')
             self.assertEqual(user.country, 'Canada')
             self.assertEqual(user.gender, 'F')
-
-
-    # def test_upload_avatar(self):
-    #     #  avatar
-    #     avatar_path = '/path/to/avatar.png'  
-
-    #     # login
-    #     self.client.post('/auth/login', data={'email': 'test@email.net', 
-    #                                                          'password': 'password'}, 
-    #                                                          follow_redirects = True)
-
-    #     # upload avatar
-    #     with open(avatar_path, 'rb') as avatar_file:
-    #         response = self.client.post('C:\Desktop\Avatar.png', data={
-    #             'user_avatar': (avatar_file, 'avatar.png')
-    #         }, follow_redirects=True)
-
-    #     # check avatar link
-    #     with self.app.app_context():
-    #         user = User.query.filter_by(email='test@email.net').first()
-    #         self.assertEqual(user.avatar, 'C:\Desktop\Avatar.png') 
-
-                
+                          
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)  
+    unittest.main(verbosity=2)

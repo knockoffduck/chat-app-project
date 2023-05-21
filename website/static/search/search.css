@@ -1,7 +1,6 @@
 .content-area {
   height: 100%;
   width: 100%;
-  padding: 3.1rem;
   padding-bottom: 1.9rem;
   border-radius: 1.3rem;
   background-color: var(--bg-app);
@@ -9,22 +8,32 @@
   position: relative;
 }
 
-.message-box {
+#messageContainer li {
+  position: relative;
+  z-index: 10;
+  margin-left: 1rem;
+  margin-right: 1rem;
   display: flex;
-  background-color: #f0f5ff;
-  border: 0.05rem solid rgb(205, 205, 205);
+  background-color: transparent;
+  border: 0.05rem solid var(--dark-text);
   border-radius: 0.6rem;
   padding: 0.6rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  transition: all ease-in-out 0.25s;
+}
+#messageContainer li:hover {
+  box-shadow: 0px 4px 8px 2px rgba(0,0,0,0.22);
+  border-radius: 0.6rem;
+  border: 0.05rem solid transparent;
+  
 }
 
-.message-box:hover {
-  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1),
-    0 0.3rem 0.4rem rgba(0, 0, 0, 0.1), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.1),
-    0 0.15rem 0.15rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.6rem;
+
+.dark #messageContainer li {
+  background-color: var(--message-box-background, #1e1f28);
+
 }
 
 .message-list {
@@ -37,24 +46,34 @@
   margin-bottom: 0.6rem;
 }
 
+#messageContainer {
+  position: relative;
+  z-index: 10;
+
+}
+
 .message-list a {
   text-decoration: none;
   color: black;
+  height: 100%;
+  width: 100%;
 }
 
 .message-box a {
-  display: block;
-  height: 100%;
-  width: 100%;
+  display: flex;
+
 }
 
 .title {
   font-family: 'Montserrat', sans-serif;
   color: var(--dark-text);
+  margin: 1rem;
 }
 
 #searchContainer input[type='text'] {
   width: 15.6rem; /* Adjust the width value as needed */
+  margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 #search {
@@ -66,11 +85,11 @@
 }
 
 #search {
-  background-color: var(--search-background-color, white);
+  background-color: var(--search-background-color, rgb(244, 244, 244));
 }
 
 .dark #search {
-  border: 0.1rem solid;
+  border: 0.1rem solid black;
 }
 
 @media (min-width: 1024px) {
@@ -143,4 +162,12 @@
 
 .message-prefix {
   font-weight: bold;
+}
+
+.dark .message-prefix {
+  color: var(--dark-text, white);
+}
+
+.dark .message-content {
+  color: var(--dark-text, white);
 }

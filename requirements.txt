@@ -51,3 +51,4 @@ Werkzeug==2.3.1
 wsproto==1.2.0
 WTForms==3.0.1
 yarl==1.9.2
+Pillow==9.5.0

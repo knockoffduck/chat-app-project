@@ -1,6 +1,5 @@
 // Wait for the document to be fully loaded and then execute the enclosed function
 $(document).ready(function () {
-  const api_url = window.location.origin + '/api/prompt';
   const current_email = email;
 
   console.log(current_email + ' is logged in');
@@ -48,13 +47,6 @@ $(document).ready(function () {
     },
   });
 
-  const parseTime = (datetimeString) => {
-    const timeComponents = datetimeString.split(' ')[1].split(':');
-    const hour = timeComponents[0];
-    const minute = timeComponents[1];
-    return hour + ':' + minute;
-  };
-
   // Resize the message-input textarea dynamically based on its content
   $('.message-input').on('input', function () {
     const $this = $(this);
@@ -77,6 +69,10 @@ $(document).ready(function () {
       e.preventDefault();
       onSubmit();
       $(this).val('');
+      $(this).css({
+        'overflow-y': 'hidden',
+        height: 'auto',
+      });
     }
   });
 
