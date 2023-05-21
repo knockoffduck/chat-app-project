@@ -177,7 +177,7 @@
   border-radius: 0.5rem 0rem 0.5rem 0.5rem;
 }
 .assistant .avatar {
-  background-image: url('../images/assistant-pfp.png');
+  background-image: url('../images/assistant-pfp.webp');
 }
 .assistant .bubble {
   color: var(--assistant-text-colour);

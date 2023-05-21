@@ -68,56 +68,44 @@ class SystemTest(unittest.TestCase):
         self.driver.implicitly_wait(5)
         fname = self.driver.find_element(By.ID, "firstname")
         fname.click()
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         fname.send_keys("Kelly")
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         lname = self.driver.find_element(By.ID, "lastname")
         lname.click()
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         lname.send_keys("Smith")
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         email = self.driver.find_element(By.ID, "email")
         email.click()
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         email.send_keys("q@gmail.com")
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         pword = self.driver.find_element(By.ID, "password")
         pword.click()
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         pword.send_keys("hello")
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         pword2 = self.driver.find_element(By.ID, "password2")
         pword2.click()
         pword2.send_keys("hello")
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         dob = self.driver.find_element(By.ID, "dob")
         dob.click()
-        dob.send_keys("1999-01-01")
-        time.sleep(1)
+        dob.send_keys("01/01/2000")
         self.driver.implicitly_wait(5)
         country = self.driver.find_element(By.ID, "country")
         country.click()
         country.send_keys("Aus")
-        time.sleep(1)
         self.driver.implicitly_wait(5)
         gender = self.driver.find_element(By.ID, "gender")
         gender.click()
         gender.send_keys("Female")
-        time.sleep(1)
         self.driver.implicitly_wait(5)
-        print(self.driver.page_source)
         submit = self.driver.find_element(By.ID, "submit")
         submit.click()
         u = User.query.filter_by(email="q@gmail.com").first()
+        print(User.query.with_entities(User.email).all())
         self.assertEqual(u.email, "q@gmail.com", msg="user exists in db")
 
     def test_login(self):
@@ -152,19 +140,13 @@ class SystemTest(unittest.TestCase):
         time.sleep(1)
         self.driver.implicitly_wait(20)
         self.driver.get("http://localhost:5000/account")
+        time.sleep(5)
 
-        print(self.driver.page_source)
+        avatar_input = self.driver.find_element(By.ID, "user_avatar")
 
-        user_avatar = self.driver.find_element(By.ID, "user_avatar")
-        user_avatar.click()
-        time.sleep(1)
-        self.driver.implicitly_wait(5)
+        avatar_file = os.path.abspath("../tests/images/Avatar1.jpg")
 
-        avatar_input = self.driver.find_element(By.ID, "avatar-input")
-        avatar_input.send_keys("C:\Desktop\Avatar.png")
-        time.sleep(1)
-        self.driver.implicitly_wait(5)
-        avatar_input.send_keys(Keys.RETURN)
+        avatar_input.send_keys(avatar_file)
         time.sleep(1)
         self.driver.implicitly_wait(5)
 
@@ -173,41 +155,46 @@ class SystemTest(unittest.TestCase):
         time.sleep(1)
         self.driver.implicitly_wait(5)
 
-        def test_chat_functionality(self):
-            # login
-            self.driver.get("http://127.0.0.1:5000/auth/login")
-            self.driver.implicitly_wait(5)
-            email = self.driver.find_element(By.ID, "email")
-            email.send_keys("test@email.net.au")
-            pword = self.driver.find_element(By.ID, "password")
-            pword.send_keys("password")
-            time.sleep(1)
-            self.driver.implicitly_wait(5)
-            submit = self.driver.find_element(By.ID, "submit")
-            submit.click()
-            time.sleep(1)
-            self.driver.implicitly_wait(5)
+    def test_chat_functionality(self):
+        # login
+        self.driver.get("http://localhost:5000/auth/login")
+        self.driver.implicitly_wait(5)
+        email = self.driver.find_element(By.ID, "email")
+        email.send_keys("test@email.net.au")
+        pword = self.driver.find_element(By.ID, "password")
+        pword.send_keys("password")
+        time.sleep(1)
+        self.driver.implicitly_wait(5)
+        submit = self.driver.find_element(By.ID, "submit")
+        submit.click()
+        time.sleep(1)
+        self.driver.implicitly_wait(5)
 
-            # send mess
-            message_input = self.driver.find_element(By.ID, "message-input")
-            message_input.send_keys("Hello, this is my test message")
-            time.sleep(1)
-            self.driver.implicitly_wait(5)
-            send_button = self.driver.find_element(By.ID, "send-input")
-            send_button.click()
-            time.sleep(1)
-            self.driver.implicitly_wait(5)
+        # send mess
+        message_input = self.driver.find_element(By.ID, "message-input")
+        message_input.send_keys("Hello, this is my test message")
+        time.sleep(1)
+        self.driver.implicitly_wait(5)
+        send_button = self.driver.find_element(By.ID, "send-input")
+        send_button.click()
+        time.sleep(1)
+        self.driver.implicitly_wait(5)
 
-            # test display message
-            chat_messages = self.driver.find_element(By.CLASS_NAME, "chat-bubble")
-            self.assertEqual(len(chat_messages), 1)  # there is 1 line mess
-            time.sleep(1)
-            self.driver.implicitly_wait(5)
-            # test chat body
-            message_content = chat_messages[0].text
-            self.assertEqual(
-                message_content, "Hello, this is my test message"
-            )  # correct display
+        # test display message
+        chat_messages = [
+            element
+            for element in self.driver.find_elements(
+                By.CSS_SELECTOR, ".user>.chat-bubble"
+            )
+        ]
+        self.assertEqual(len(chat_messages), 1)  # there is 1 message
+        time.sleep(1)
+        self.driver.implicitly_wait(5)
+        # test chat body
+        message_content = chat_messages[0].text
+        self.assertEqual(
+            message_content, "Hello, this is my test message"
+        )  # correct display
 
 
 if __name__ == "__main__":

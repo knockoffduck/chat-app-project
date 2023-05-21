@@ -63,20 +63,11 @@
         <span class="error-message">[{{ error }}]</span>
         {% endfor %}
       </p>
-      <!-- <p>
-        {{ form.gender.label }}
-        <br />
-        {{ form.gender }}
-        <br />
-        {% for error in form.gender.errors %}
-        <span class="error-message">[{{ error }}]</span>
-        {% endfor %}
-            </p> -->
       <p>
         {{ form.gender.label }}<br>
         <select id="gender" name="gender" size="1">
           {% for value, label in form.gender.choices %}
-          <option value="{{ value }}">{{ label }}</option>
+          <option value="{{ value }}" {% if form.gender.data == value %}selected{% endif %}>{{ label }}</option>
           {% endfor %}
         </select><br>
         {% for error in form.gender.errors %}

@@ -126,7 +126,6 @@ def generate_text():
         # Return the assistant's response as a JSON object
         return jsonify({"generated_text": reply})
     except Exception as e:
-        print(handle_error(e))
         return handle_error(e)
 
 
