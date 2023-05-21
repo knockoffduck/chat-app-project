@@ -34,4 +34,4 @@ class EditProfileForm(FlaskForm):
     dob = DateField('Date Of Birth', format='%Y-%m-%d', validators=[DataRequired()])
     country = StringField('Country', validators=[DataRequired()])
     gender = SelectField('Gender', choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')], validators=[DataRequired()])
-    submit = SubmitField('Submit')
+    submit = SubmitField('Save Changes')

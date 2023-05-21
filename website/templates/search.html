@@ -1,0 +1,54 @@
+{% extends "app.html" %}
+{% block page_css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search/search.css')}}">
+{% endblock %}
+{% block script %}
+<script src="{{ url_for('static', filename='search/search.js') }}"></script>
+{% endblock %}
+{% block app_content %}
+<div class="content">
+
+  <h2 class="title">Chats</h2>
+  <div id="searchContainer">
+    <form action="{{ url_for('views.search', page=page) }}" method="get">
+      <input id="search" type="text" name="q" value="{{ search_query}}" placeholder="🔍︎ Search...">
+    </form>
+  </div>
+  <div id="messageContainer">
+    <ul class="message-list">
+      {% if search_query %}
+      {% if messages %}
+      {% for message in messages %}
+      <!--Allows user to redirect to the chat page by clicking on a stored message.-->
+      <li>
+        <a href="{{ url_for('views.chat_route') }}">
+          {% if message["body"]["role"] == 'user'%}
+          <div class="message-box">
+            <div class="message-content user-message">
+              <span class="message-prefix">User:</span>
+              {{ message["body"]["content"] }}
+            </div>
+          </div>
+          {% else %}
+          <div class="message-box">
+            <div class="message-content assistant-message">
+              <span class="message-prefix">Assistant:</span>
+              {{ message["body"]["content"] }}
+            </div>
+          </div>
+          {% endif %}
+
+        </a>
+      </li>
+      {% endfor %}
+      {% else %}
+      <div class="noMessages">
+        <p>No matching messages found.</p>
+      </div>
+      {% endif %}
+      {% endif %}
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

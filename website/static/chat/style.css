@@ -39,7 +39,7 @@
 }
 
 .input button:hover {
-  background-color: rgba(var(--primary-rgba));
+  background-color: var(--primary);
 }
 
 .message-input {
@@ -168,7 +168,7 @@
   justify-content: flex-end;
 }
 .user .avatar {
-  background-image: url('../images/pfp.jpg');
+  background-position: center;
 }
 .user .bubble {
   color: var(--user-text);
@@ -177,7 +177,7 @@
   border-radius: 0.5rem 0rem 0.5rem 0.5rem;
 }
 .assistant .avatar {
-  background-image: url('../images/assistant-pfp.png');
+  background-image: url('../images/assistant-pfp.webp');
 }
 .assistant .bubble {
   color: var(--assistant-text-colour);
