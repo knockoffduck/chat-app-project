@@ -144,7 +144,7 @@ class SystemTest(unittest.TestCase):
 
         avatar_input = self.driver.find_element(By.ID, "user_avatar")
 
-        avatar_file = os.path.abspath("../tests/images/Avatar1.jpg")
+        avatar_file = os.path.abspath("tests/images/Avatar1.jpg")
 
         avatar_input.send_keys(avatar_file)
         time.sleep(1)
