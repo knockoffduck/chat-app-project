@@ -37,13 +37,11 @@ Foreign Key: email_hash_id -> user.email_hash_id
 Our website contains a chat feature, where we use OpenAI API to create a chatbot. The /api/prompt endpoint is designed to interact with the OpenAI API and simulate a therapist. 
 The user will send a message via the chat interface, causing the client to send a HTTP request to the /api/prompt endpoint. The server receives the request and uses it to interact with the OpenAI API. The OpenAI API will send a response back to the server which contains the generated response based on the user's prompt. Then, the server sends the generated response back to the client as a HTTP response. Finally, the client receives the response from the server and displays it in the chat interface. This process is done multiple times as the user inputs more messages in the chat, creating a conversation with the therapist.
 
-### Search
-The search page is responsible for storing a user's chat history. The user is able to interact with the web application by accessing the search page and entering a search query. The client captures the search query and sends it to the server. The search pag eis handle by a Flask view function called 'search'. This view function is responsible for processing the user's search query and generating a response to be sent back to the client. The view function retrieves the search query and attempts to load the stored messages from a JSON file. The loaded messages are filtered based on the current user and the inputted search query. The client receives the response and updates the page with the search results.
+#### Search
+The search page is responsible for storing a user's chat history. The user is able to interact with the web application by accessing the search page and entering a search query. The client captures the search query and sends it to the server. The search page is handled by a Flask view function called 'search'. This view function is responsible for processing the user's search query and generating a response to be sent back to the client. The view function retrieves the search query and attempts to load the stored messages from a JSON file. The loaded messages are filtered based on the current user and the inputted search query. The client receives the response and updates the page accordingly with the search results.
 
-### Account 
-
-
-
+#### Account 
+The account page allows users to make changes to their personal details by interacting with the form elements and customise their profile by uploading a profile picture. The client is responsible for rendering the account page template, including the form elements that capture the user's input and send it to the server for processing. The server processes the form submissions, updates the user's personal details, and saves the changes to the database. If the account page is accessed via a GET request, the form elements are pre-populated with the user's existing personal details. This ensures that the forms displays the user's current data before any modifications are made. If modifications have been made by the user, the rendered template is sent as a HTTP response to the client. The client receives the response and updates the page accordingly.
 
 ## Steps to Launch the Web Application Using `app.py`
 
