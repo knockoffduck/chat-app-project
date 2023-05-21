@@ -90,11 +90,11 @@ The account page allows users to make changes to their personal details by inter
 
 10. Enter a prompt in the chat input field and click the send button to get a response from the chatbot.
 
-To be edited:
-11. The chat history is stored in the `chats/history.json` file, which is loaded and saved automatically by the `generate_text` function. You can view the chat history by opening the file in a text editor or by reading the contents of the file in your Python code.
+11. The chat history is stored in the `chats/history.json` file, which is loaded and saved automatically by the `generate_text` function. You can view the chat history by opening the file in a text editor or by reading the contents of the file in your Python code. The chat history can be filtered and displayed by navigating to `http://127.0.0.1:5000/search/1` and entering a keyword in the search bar.   
 
 12. The user account page is located at `http://127.0.0.1:5000/account`, which can be reached by clicking the "Account" navigation on the navigation menu. This page allows a user to make and save changes to their profile, which is saved to the database.
 
+13. The drop-down menu (down arrow next to your username) allows you to toggle dark mode OFF/ON, clear the conversations displayed on the chat page, view your profile (navigates you to `http://127.0.0.1:5000/account`) and logout of the application. 
 
 ## Testing
 Tests for the web application include: tests to ensure eaach flask route can be accessed successfully, correct password hashing, valid registration and login, handling for invalid registration and login, and successful profile changes.
