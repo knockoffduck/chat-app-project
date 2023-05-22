@@ -129,9 +129,6 @@ In this new terminal, to run the Selenium Tests, run the following command:
 
 The selenium tests are designed to run in Chrome and use chromedriver to do so. Ensure that the lastest version of Chrome is installed. The selenium tests include tests for registering in the application, logging in, using the chat functionality and uploading an avatar image.
 
-## Commit Logs
-...
-
 ## Created By:
 ⁠
 Daffa Fathurohman (23454661), Elise Panicciari (23088805), Tom Truong ⁠(23067483), Zarif ⁠Solaiman(23640056)
