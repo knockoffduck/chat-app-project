@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/Background_Rainbow_Blur.png');
+    background-image: url('../images/Background_Rainbow_Blur.webp');
     background-size: cover;
     height: 100%;
     font-family: 'Roboto', sans-serif;

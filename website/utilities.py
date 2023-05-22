@@ -78,7 +78,6 @@ def get_response(email):
         )
         # Extract the response message from the API response
         reply = response["choices"][0]["message"]["content"]
-
         add_data(
             email,
             {
