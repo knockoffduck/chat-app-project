@@ -17,7 +17,7 @@ if __name__ == "__main__":
         print("------------------------------------------")
         print("Website running in Development Environment")
         print("------------------------------------------")
-    app.run(debug=True)
+    app.run(debug=False)
 
 
 @app.shell_context_processor
