@@ -1,0 +1,1926 @@
+* commit 2078c82711e1be55bb3f0a87d058c986160dec14 (origin/elise)
+| Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| Date:   Mon May 22 09:17:02 2023 +0800
+| 
+|     final readme
+| 
+* commit 3ef8dc8f84ce6057f229e76ac374267d0b31514b
+| Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| Date:   Mon May 22 09:10:11 2023 +0800
+| 
+|     Added Zarif's README changes
+| 
+* commit 8718d461370e87d9e1e2862eab3702f195359718
+| Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| Date:   Mon May 22 09:03:39 2023 +0800
+| 
+|     working tests
+| 
+* commit e1eb4241f3a7287fe89f9ae8c515be22f4eeefb5
+| Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| Date:   Mon May 22 09:00:50 2023 +0800
+| 
+|     turned debug to false
+| 
+* commit 034ad2aeff95ec10f282f40ae6bc1ca14bbe0ef9
+| Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| Date:   Mon May 22 09:00:10 2023 +0800
+| 
+|     added tests to readme
+|   
+*   commit 9f1d63436cc72ac51e6a0aed53c16f0b8213d2a0
+|\  Merge: 5c4e60f 91f5c1b
+| | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | Date:   Mon May 22 08:55:21 2023 +0800
+| | 
+| |     Merge branch 'master' of https://github.com/knockoffduck/chat-app-project into elise
+| |   
+| *   commit 91f5c1bcd0bb558d6f8099a647cb725311fdd9f8 (HEAD -> master, origin/master, origin/HEAD)
+| |\  Merge: 9859c25 edb8dfb
+| | | Author: Daffa Fathurohman <95541799+knockoffduck@users.noreply.github.com>
+| | | Date:   Mon May 22 01:35:59 2023 +0800
+| | | 
+| | |     Merge pull request #5 from knockoffduck/develop
+| | |     
+| | |     Develop
+| | | 
+| | * commit edb8dfb4f4c3b4f7401a1087f2e9619df0df8c42 (origin/develop)
+| | | Author: knockoffduck <ddarm4@gmail.com>
+| | | Date:   Mon May 22 01:34:59 2023 +0800
+| | | 
+| | |     fixed minor bugs
+| | |   
+| | *   commit b4cbbac131d969ff45e64271977c0de988c3e781
+| | |\  Merge: a3bf814 5c4e60f
+| |_|/  Author: knockoffduck <ddarm4@gmail.com>
+|/| |   Date:   Mon May 22 01:25:04 2023 +0800
+| | |   
+| | |       Merge remote-tracking branch 'origin/elise' into develop
+| | | 
+* | | commit 5c4e60f589d231eec65769345e5b173e06b604ef
+| | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | Date:   Sun May 21 23:32:47 2023 +0800
+| | | 
+| | |     working selenium test and commented out failed 1s
+| | | 
+* | | commit 7ef37924028458a19621194d2e720c9b168b0257
+| | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | Date:   Sun May 21 22:38:30 2023 +0800
+| | | 
+| | |     updated databases
+| | | 
+* | | commit a508fcbbaff079ebd50ff3001192af2840e58897
+| | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | Date:   Sun May 21 22:15:27 2023 +0800
+| | | 
+| | |     temporary working selenium tests
+| | | 
+* | | commit 55e8b7ebe9746f1f3a9a30acb291a13dd8e6893f
+| | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | Date:   Sun May 21 22:09:24 2023 +0800
+| | | 
+| | |     gender selector fixed darkmode & shows correct val
+| | | 
+| | * commit a3bf814fbedd5053628a3319203eae2a76197cb3
+| | | Author: knockoffduck <ddarm4@gmail.com>
+| | | Date:   Mon May 22 01:23:21 2023 +0800
+| | | 
+| | |     merged from origin/elise fixed selenium and unit testing
+| | |   
+| | *   commit b4b5257142d9183e105b54579e6257951af3e3f3
+| | |\  Merge: 5bef0dc 9ad32cb
+| |_|/  Author: knockoffduck <ddarm4@gmail.com>
+|/| |   Date:   Sun May 21 22:04:04 2023 +0800
+| | |   
+| | |       Merge remote-tracking branch 'origin/elise' into develop
+| | | 
+* | | commit 9ad32cb976f1c6cc9cca5c0a1cebf6109674f3a3
+| | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | Date:   Sun May 21 19:20:46 2023 +0800
+| | | 
+| | |     selenium update2
+| | | 
+* | | commit 8fec10e614805c732eedabb6efdb1a10ac31494a
+| | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | Date:   Sun May 21 18:45:26 2023 +0800
+| | | 
+| | |     selenium update
+| | | 
+* | | commit 4d4a22e47df8b8f291d4505759bac753993f378f
+| | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | Date:   Sun May 21 09:15:34 2023 +0800
+| | | 
+| | |     not working
+| | |   
+* | |   commit 07a162ed358219b3dc945fa0455d46677556d01a
+|\ \ \  Merge: 609d368 352da98
+| | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | Date:   Sun May 21 09:15:19 2023 +0800
+| | | | 
+| | | |     Merge branch 'develop' into elise
+| | | | 
+* | | | commit 609d368129e2c6bff55e14962bf3c1d4c2b3843f
+| | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | Date:   Sun May 21 08:03:20 2023 +0800
+| | | | 
+| | | |     made changes before final submission
+| | | |   
+| | | *   commit 5bef0dc1f7f1495931837ba1bff43b75b715969b
+| | | |\  Merge: ea8cae1 f9a04dc
+| | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | Date:   Sun May 21 22:01:47 2023 +0800
+| | | | | 
+| | | | |     Merge branch 'develop' of https://github.com/knockoffduck/chat-app-project into develop
+| | | | | 
+| | | | * commit f9a04dca3cf154c55080670bb67b2f3150fe68df
+| | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | Date:   Sun May 21 21:56:40 2023 +0800
+| | | | | 
+| | | | |     Added git_log.txt -needs to be updated after last commits
+| | | | | 
+| | | * | commit ea8cae137b165915898ed451fe04b383f9870857
+| | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | Date:   Sun May 21 22:01:38 2023 +0800
+| | | | | 
+| | | | |     fixed some minor details
+| | | | | 
+| | | * | commit ddb9d3e2d11a57d0cbb02e006db96a350c8989e6
+| | | |/  Author: knockoffduck <ddarm4@gmail.com>
+| | | |   Date:   Sun May 21 22:01:26 2023 +0800
+| | | |   
+| | | |       fixed some minor details
+| | | | 
+| | | * commit ac21d384acd49a8320debccfd4ecb4e667e0207e
+| | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | Date:   Sun May 21 16:16:18 2023 +0800
+| | | | 
+| | | |     Update README.md Steps 11 and 13
+| | | | 
+| | | * commit 9a645c3ea6d8f0a2227b672d9a57c64a0a8e5767
+| | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | Date:   Sun May 21 16:06:33 2023 +0800
+| | | | 
+| | | |     Update README.md -- Account Web Architecture
+| | | | 
+| | | * commit cf3b693c949d595f27aa0d7869eb6854db4f549b
+| | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | Date:   Sun May 21 15:36:45 2023 +0800
+| | | | 
+| | | |     Update README.md -- Search Architecture
+| | | | 
+| | | * commit 1229ecb94877c5a20bc5779bf945a64a40ce0b44
+| | |/  Author: Zarif <23640056@student.uwa.edu.au>
+| |/|   Date:   Sun May 21 15:02:12 2023 +0800
+| | |   
+| | |       Update README.md
+| | |   
+| * |   commit 352da984e6cf3372b256a05dc7ebc258a5b00f6d
+| |\ \  Merge: d402b65 6641522
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Sun May 21 01:39:11 2023 +0800
+| | | | 
+| | | |     Merge remote-tracking branch 'origin/Tom' into develop
+| | | |   
+| * | |   commit d402b6584f48ceb27046e4df02c0d37594648f26
+| |\ \ \  Merge: 62d3212 b128d76
+| |/ / /  Author: knockoffduck <ddarm4@gmail.com>
+|/| | |   Date:   Sun May 21 01:38:20 2023 +0800
+| | | |   
+| | | |       Merge remote-tracking branch 'origin/elise' into develop
+| | | | 
+* | | | commit b128d76f47f5a2121bd485ed3ab236bf3caef24d
+| | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | Date:   Sat May 20 23:42:16 2023 +0800
+| | | | 
+| | | |     gitignore .vscode
+| | | | 
+* | | | commit 4967bc64df9d06cb7acb8fab25333fb5d04a47f7
+| | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | Date:   Sat May 20 23:41:44 2023 +0800
+| | | | 
+| | | |     removed temporary test folder
+| | | | 
+* | | | commit 26ca22189b78ba95ff0ea13f3b589803b43ad811
+| | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | Date:   Sat May 20 23:38:46 2023 +0800
+| | | | 
+| | | |     added Tom's tests
+| | | | 
+* | | | commit 7068767c875bc6fee4791cbc0141f5a707925c66
+| | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | Date:   Sat May 20 23:13:47 2023 +0800
+| | | | 
+| | | |     history to seach keywords
+| | | |   
+* | | |   commit f22e65248b48d44d1f7a50336a404e38766664a7
+|\ \ \ \  Merge: c9e82bb 1336e7d
+| | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | Date:   Sat May 20 22:07:02 2023 +0800
+| | | | | 
+| | | | |     Merge tests from branch 'Tom' into elise
+| | | | | 
+* | | | | commit c9e82bbe139407c95adaf196fe7040ebca337e63
+| | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | Date:   Sat May 20 21:45:36 2023 +0800
+| | | | | 
+| | | | |     added email hashing to tests
+| | | | | 
+* | | | | commit c041060d4858d70a180a3c4ef1519359ce3ffd98
+| | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | Date:   Sat May 20 21:08:25 2023 +0800
+| | | | | 
+| | | | |     updated db schema in README
+| | | | |   
+* | | | |   commit cededab8320b031cd64221132fc7dd8f75145970
+|\ \ \ \ \  Merge: 34032dd 79305b7
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Sat May 20 21:06:21 2023 +0800
+| | | | | | 
+| | | | | |     Merge branch 'develop' into elise
+| | | | | | 
+* | | | | | commit 34032ddc3ca5024657334164f2c65b164165571d
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Sat May 20 21:04:26 2023 +0800
+| | | | | | 
+| | | | | |     added Pillow install
+| | | | | | 
+* | | | | | commit 763b4fd4af45476b4886c53b8280d92097c774d3
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Sat May 20 20:43:21 2023 +0800
+| | | | | | 
+| | | | | |     readme updated
+| | | | | | 
+* | | | | | commit ce0d797b25424cc4ca94c592dc72c61b79072857
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Sat May 20 20:09:57 2023 +0800
+| | | | | | 
+| | | | | |     generates the schema to add into README
+| | | | | | 
+* | | | | | commit 73c03140dab6dcd588606fbf3526810586861a3d
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Sat May 20 20:09:33 2023 +0800
+| | | | | | 
+| | | | | |     selenium update
+| | | | | | 
+* | | | | | commit f56a5aecc2309b9c970f971f92f838904d89b264
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Sat May 20 19:41:08 2023 +0800
+| | | | | | 
+| | | | | |     id update
+| | | | | | 
+* | | | | | commit aabc9feee0e5427fdb1dff5974fd4bd8602cb8fa
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Sat May 20 19:31:47 2023 +0800
+| | | | | | 
+| | | | | |     updated tests
+| | | | | |   
+| | | * | |   commit 62d3212dba880d9486db900519b8c9581ba7bd65
+| | | |\ \ \  Merge: 350f674 441094d
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Sun May 21 01:37:27 2023 +0800
+| | | | | | | 
+| | | | | | |     Merge remote-tracking branch 'origin/zarif' into develop
+| | | | | | | 
+| | | | * | | commit 441094d880c9b22ef26d76e8034eb9254029bcc4 (origin/zarif)
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Sat May 20 13:48:33 2023 +0800
+| | | | | | | 
+| | | | | | |     merge models.py from origin/develop
+| | | | | | |   
+| | | | * | |   commit 17c9423d667039354e92dcd5be9b2075d9f2cb39
+| | | | |\ \ \  Merge: bddf35c caeb1f8
+| | | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | | Date:   Sat May 20 13:33:40 2023 +0800
+| | | | | | | | 
+| | | | | | | |     Merge remote-tracking branch 'origin/develop' into zarif
+| | | | | | | | 
+| | | | * | | | commit bddf35cab3e007f2cf7105c6306475e993583237
+| | | | | | | | Author: 23640056 <127744558+23640056@users.noreply.github.com>
+| | | | | | | | Date:   Thu May 18 16:16:52 2023 +0800
+| | | | | | | | 
+| | | | | | | |     Commit files before merging with origin/develop
+| | | | | | | | 
+| | | * | | | | commit 350f674c06b5e1c4cb6585eaa93d6f31ba3821d0
+| | | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | | Date:   Sun May 21 01:24:13 2023 +0800
+| | | | | | | | 
+| | | | | | | |     added Pillow to requirements
+| | | | | | | | 
+| | | * | | | | commit f4e4d2c68d1876e6471da0aa71fece834d347f0a
+| | | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | | Date:   Sun May 21 01:22:07 2023 +0800
+| | | | | | | | 
+| | | | | | | |     implemented minor changes and improved account styling
+| | | | | | | |   
+| | | * | | | |   commit 954f3559e6b54cdf34d3f89c9adffea4f8bc8ca4
+| | | |\ \ \ \ \  Merge: 1676972 79305b7
+| | |_|/ / / / /  Author: knockoffduck <ddarm4@gmail.com>
+| |/| | | | | |   Date:   Sun May 21 00:48:25 2023 +0800
+| | | | | | | |   
+| | | | | | | |       Merge branch 'develop' of https://github.com/knockoffduck/chat-app-project into develop
+| | | | | | | | 
+| * | | | | | | commit 79305b7e1a3799cda2e626aa4be7c60d8f8c9ac7
+| | |_|_|/ / /  Author: Zarif <23640056@student.uwa.edu.au>
+| |/| | | | |   Date:   Sat May 20 13:42:50 2023 +0800
+| | | | | | |   
+| | | | | | |       zarif - deleted an extra endblock causing an error
+| | | | | | | 
+| | | * | | | commit 1676972b2c4331351270fec166091daa8f90ddfb
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Sun May 21 00:45:51 2023 +0800
+| | | | | | | 
+| | | | | | |     Deleted unused assets and modified search history, and improve
+| | | | | | |     functionality
+| | | | | | | 
+| | | * | | | commit 7823a2e4503ee50e7899fa96e5e9ca6db241b60c
+| | |/| | | | Merge: caeb1f8 a43096d
+| |/| |/ / /  Author: knockoffduck <ddarm4@gmail.com>
+| | | | | |   Date:   Sat May 20 08:57:00 2023 +0800
+| | | | | |   
+| | | | | |       Merge remote-tracking branch 'origin/zarif' into develop
+| | | | | | 
+| | | * | | commit a43096d7f6c3274f656b867cc6693f317a9f2f42
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sat May 20 00:53:40 2023 +0800
+| | | | | | 
+| | | | | |     testing with new users
+| | | | | | 
+| | | * | | commit 7dc8c126fdcc6c1a058e3074af34f433ea407dab
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sat May 20 00:53:16 2023 +0800
+| | | | | | 
+| | | | | |     dark mode changes for search page
+| | | | | |   
+| * | | | |   commit caeb1f8332ccde860e7babfbeebc1f65acbee261
+| |\ \ \ \ \  Merge: a2fd744 120e4f4
+| |/ / / / /  Author: knockoffduck <ddarm4@gmail.com>
+|/| | | | |   Date:   Sat May 20 00:58:51 2023 +0800
+| | | | | |   
+| | | | | |       Merge remote-tracking branch 'origin/elise' into develop
+| | | | | | 
+* | | | | | commit 120e4f4cb3b25c07efae933ff5201ac032121b4a
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 23:03:10 2023 +0800
+| | | | | | 
+| | | | | |     tests working
+| | | | | | 
+* | | | | | commit 57520daf3218fe384378671c39b38e96b9072259
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 22:54:39 2023 +0800
+| | | | | | 
+| | | | | |     csrf change
+| | | | | | 
+* | | | | | commit 7198f7d093c1b6ddbe25b7699b45826ee73936d4
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 22:45:55 2023 +0800
+| | | | | | 
+| | | | | |     test_valid_registration fails (to fix)
+| | | | | | 
+* | | | | | commit 98617e74c12de8a9f69d0f3df8dadaf41fc6cffa
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 21:34:19 2023 +0800
+| | | | | | 
+| | | | | |     tests in progress
+| | | | | | 
+* | | | | | commit 07576c8b40d5069930bbc12c654a352c7448e4ca
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 21:07:02 2023 +0800
+| | | | | | 
+| | | | | |     added testing requirements
+| | | | | | 
+* | | | | | commit 0ef5053cb2ac4b4b54c39b207c600fe02f588c88
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 20:59:46 2023 +0800
+| | | | | | 
+| | | | | |     fixed imports
+| | | | | | 
+* | | | | | commit 94b3ff9bdd26f8c41737046f0b517db29b244847
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 20:58:47 2023 +0800
+| | | | | | 
+| | | | | |     validation error fixes
+| | | | | | 
+* | | | | | commit f7e64b12dada6488da5465b27ec0ccf0214d3b3a
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 18:29:35 2023 +0800
+| | | | | | 
+| | | | | |     testing in progress
+| | | | | | 
+* | | | | | commit f85b8f4601174b3a2dc24201c17d945894ff5d07
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 18:28:08 2023 +0800
+| | | | | | 
+| | | | | |     WTF_CSRF_ENABLED
+| | | | | | 
+* | | | | | commit d630bec4da96192652c18b479033c330b7cf17c9
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 18:27:44 2023 +0800
+| | | | | | 
+| | | | | |     no more pytest req as using unittest
+| | | | | | 
+* | | | | | commit ab3616e95c0c50091c1ca10a28c7bdda00cd388a
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 18:24:51 2023 +0800
+| | | | | | 
+| | | | | |     working selenium on testing db
+| | | | | | 
+* | | | | | commit f449d4658654bfa3a267d39e7b8c320195f46c9d
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 14:18:59 2023 +0800
+| | | | | | 
+| | | | | |     selenium test no warnings
+| | | | | | 
+* | | | | | commit c2b90558199697993c7c83a6ce525916488967ae
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Fri May 19 14:05:28 2023 +0800
+| | | | | | 
+| | | | | |     readme updated with selenium test
+| | | | | |   
+| * | | | |   commit a2fd744ac716edffd6dc622999a332df8fd6de7a
+| |\ \ \ \ \  Merge: d3c9000 56c656f
+| | | |/ / /  Author: knockoffduck <ddarm4@gmail.com>
+| | |/| | |   Date:   Sat May 20 00:53:32 2023 +0800
+| | | | | |   
+| | | | | |       Merge remote-tracking branch 'origin/zarif' into develop
+| | | | | | 
+| | * | | | commit 56c656f421a4f317ebbb8ce45146c62762834e5d
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sat May 20 00:24:14 2023 +0800
+| | | | | | 
+| | | | | |     chat.html - validated
+| | | | | | 
+| | * | | | commit c1d0090080679e678c1ef45e965ef002de97ab65
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 23:51:04 2023 +0800
+| | | | | | 
+| | | | | |     Style.css validated - home (scrollbar present)
+| | | | | | 
+| | * | | | commit 747798f715dcebd8dd0e533523a4f3474a590044
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 22:43:25 2023 +0800
+| | | | | | 
+| | | | | |     removed trailing slash
+| | | | | | 
+| | * | | | commit 17deea90b9f36a662f52901cd180c13c7b1fffc4
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 22:41:52 2023 +0800
+| | | | | | 
+| | | | | |     removed trailing slash
+| | | | | | 
+| | * | | | commit f9431fc400338b7e90c00d3869dc15bd73c3dc26
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 22:17:30 2023 +0800
+| | | | | | 
+| | | | | |     Had to fix search page again
+| | | | | | 
+| | * | | | commit e3f865556d53aafc8a7a84a68d3322acbf857734
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 21:00:12 2023 +0800
+| | | | | | 
+| | | | | |     login page - validated, signup nearly
+| | | | | | 
+| | * | | | commit 78475183f4be5c7b0b8e1ace2ef074c03db63713
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 20:20:02 2023 +0800
+| | | | | | 
+| | | | | |     home page - HTML has been validated
+| | | | | | 
+| | * | | | commit 5fad2d971cf208f70fc712bb2e1b2ff5733c2c5b
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 20:07:20 2023 +0800
+| | | | | | 
+| | | | | |     Search function fixed - wasn't working
+| | | | | |   
+| | * | | |   commit 8cc20116a7fb110889c6a185a6ba8375b4008271
+| | |\ \ \ \  Merge: 02b4e46 fbbaf4f
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Fri May 19 19:36:22 2023 +0800
+| | | | | | | 
+| | | | | | |     Merge remote-tracking branch 'origin/develop' into zarif
+| | | | | | | 
+| | * | | | | commit 02b4e464f193b358a82c1f30f8c024d53dac622e
+| | | | | | | Author: 23640056 <127744558+23640056@users.noreply.github.com>
+| | | | | | | Date:   Thu May 18 09:12:50 2023 +0800
+| | | | | | | 
+| | | | | | |     Committing local changes before merge
+| | | | | | | 
+| | * | | | | commit fb0afa1c5391f10f190ddc5ae7a474a3eab4aff9
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Fri May 19 19:21:27 2023 +0800
+| | | | | | | 
+| | | | | | |     changed history to search in burger menu
+| | | | | | | 
+| | * | | | | commit d59822d7788499520cdbb598b773c4d593462142
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Fri May 19 19:05:09 2023 +0800
+| | | | | | | 
+| | | | | | |     new user message
+| | | | | | | 
+| * | | | | | commit d3c9000711c9db094a900e0426efa8dd589a246f
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Sat May 20 00:45:02 2023 +0800
+| | | | | | | 
+| | | | | | |     fixed some w3c principles
+| | | | | | | 
+| * | | | | | commit c62c0ed36a325dd168fad0e40605d37cdd161264
+| | |/ / / /  Author: knockoffduck <ddarm4@gmail.com>
+| |/| | | |   Date:   Fri May 19 22:25:48 2023 +0800
+| | | | | |   
+| | | | | |       fixed a few bugs
+| | | | | | 
+| * | | | | commit fbbaf4f84f567a421fb852712d96f52a4b1aec4a
+| |\| | | | Merge: b03ea5c 5752489
+| | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | Date:   Fri May 19 15:14:37 2023 +0800
+| | | | | | 
+| | | | | |     Merge remote-tracking branch 'origin/zarif' into develop
+| | | | | | 
+| | * | | | commit 575248966d91bd15d1738a202c1131051d7956c6
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 11:57:14 2023 +0800
+| | | | | | 
+| | | | | |     dark-mode text for no messages found
+| | | | | | 
+| | * | | | commit 9d8e4301f82d5e624ada43c025a8f2afc1c50d72
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 11:48:10 2023 +0800
+| | | | | | 
+| | | | | |     Basic styling to message box
+| | | | | | 
+| | * | | | commit 0f10304caef7874d8b55de282b6395433e8800e4
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 11:22:14 2023 +0800
+| | | | | | 
+| | | | | |     updates to db
+| | | | | | 
+| | * | | | commit 9bc403e2a0df55a8ac6605ac5af0ad36b1298b47
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 11:22:00 2023 +0800
+| | | | | | 
+| | | | | |     dark mode colour -- background
+| | | | | | 
+| | * | | | commit fa43eacbe20d983ccc0db08c778f3f89f356dc39
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 19 00:00:25 2023 +0800
+| | | | | | 
+| | | | | |     media query
+| | | | | | 
+| | * | | | commit 97b88b554acf765a0dda54cdaa01b512bfa39097
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 22:51:17 2023 +0800
+| | | | | | 
+| | | | | |     scroll bar styling
+| | | | | | 
+| | * | | | commit b560101cb104fb8330de17e151c1b12612b2cae5
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 21:58:16 2023 +0800
+| | | | | | 
+| | | | | |     More styling
+| | | | | | 
+| | * | | | commit 7b6a43cd6d556e58799d0af66f8efcf91f0ca027
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 21:31:02 2023 +0800
+| | | | | | 
+| | | | | |     added focus to search bar
+| | | | | | 
+| | * | | | commit bdb366d87de2ef632a7990d779e717ab9364d5ee
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 21:01:39 2023 +0800
+| | | | | | 
+| | | | | |     removed search button
+| | | | | | 
+| | * | | | commit 16a6c6f31707b11b3f169ef08aba7ee54fd4a43e
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 20:39:41 2023 +0800
+| | | | | | 
+| | | | | |     added a margin-top for message boxes
+| | | | | | 
+| | * | | | commit f2da1f1c902064f0c37ec0a4cc266354bf336231
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 20:00:40 2023 +0800
+| | | | | | 
+| | | | | |     deleted pagination buttons - not required
+| | | | | | 
+| | * | | | commit 4716c91d18eaab4e7bd624446946c1159913180b
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 19:56:34 2023 +0800
+| | | | | | 
+| | | | | |     Search is now initially blank wait for user input
+| | | | | | 
+| | * | | | commit dbe940b2373af5a418c5254e3cf76ff5c133265f
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 18:36:29 2023 +0800
+| | | | | | 
+| | | | | |     add seach functionality
+| | | | | | 
+| | * | | | commit e421521a2b3764c93818e47382640563e37c30d3
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 17:04:12 2023 +0800
+| | | | | | 
+| | | | | |     remove pagination buttons for now
+| | | | | | 
+| | * | | | commit 0c7e1b7fe02b2f87fea47c184e90353a5a5f1d9a
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 16:13:07 2023 +0800
+| | | | | | 
+| | | | | |     append messages to history.json
+| | | | | | 
+| | * | | | commit 6b7b91a30ea2b57b756d810e187bb542caabe6a4
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 15:57:40 2023 +0800
+| | | | | | 
+| | | | | |     commit
+| | | | | | 
+| | * | | | commit 96a978dcdc30a2669efaa23d639c4dc7df5104ef
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 15:52:58 2023 +0800
+| | | | | | 
+| | | | | |     app.db
+| | | | | | 
+| | * | | | commit 794359e71fd1cadd136dc3505092f6576e9ba8e9
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 15:50:32 2023 +0800
+| | | | | | 
+| | | | | |     migration -- versions
+| | | | | | 
+| | * | | | commit 374076bfce67faff16421f92db76719947e0f2a6
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 15:48:15 2023 +0800
+| | | | | | 
+| | | | | |     migrations
+| | | | | | 
+| | * | | | commit ba8ba3332540d7f38a95074c86d5bd2103994627
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 14:14:46 2023 +0800
+| | | | | | 
+| | | | | |     delete migrations file
+| | | | | | 
+| | * | | | commit 1bb62dac95cdb8524aadc51e7a44dd3094b12dde
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 18 14:10:11 2023 +0800
+| | | | | | 
+| | | | | |     delete app.db file
+| | | | | |   
+| | * | | |   commit 2f505ce899c1a235444a93ff5ff4ea890e709570
+| | |\ \ \ \  Merge: b91f04c 5bb4f28
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 19:49:15 2023 +0800
+| | | | | | | 
+| | | | | | |     Merge branch 'develop' into zarif
+| | | | | | | 
+| | * | | | | commit b91f04c803dde494b2bcffbd05a9c2794d68d526
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 18:02:15 2023 +0800
+| | | | | | | 
+| | | | | | |     changed from .firstname to .email
+| | | | | | | 
+| | * | | | | commit 976e7fb3ff2a20dda0db071a2531fe9071a77b16
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 17:56:15 2023 +0800
+| | | | | | | 
+| | | | | | |     Merge changes from develop --utilities.py
+| | | | | | |   
+| * | | | | |   commit b03ea5c77f8b4d543bfd21ad2d0c6359b3fd185e
+| |\ \ \ \ \ \  Merge: cff0a67 c99b3ae
+| |/ / / / / /  Author: knockoffduck <ddarm4@gmail.com>
+|/| | | | | |   Date:   Fri May 19 15:11:13 2023 +0800
+| | | | | | |   
+| | | | | | |       Merge remote-tracking branch 'origin/elise' into develop
+| | | | | | | 
+* | | | | | | commit c99b3aeeee462f7e8af8aa32a58fe8d52a702375
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Fri May 19 14:01:08 2023 +0800
+| | | | | | | 
+| | | | | | |     working selenium tests
+| | | | | | | 
+* | | | | | | commit afefdecbb37c68f2e9947e494028a5931fd5caa1
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Fri May 19 12:42:58 2023 +0800
+| | | | | | | 
+| | | | | | |     selenium
+| | | | | | | 
+* | | | | | | commit 5c62f4f8c0a3f3e5933a0c5ddaf3c88be0054dd6
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Fri May 19 11:05:58 2023 +0800
+| | | | | | | 
+| | | | | | |     README update
+| | | | | | | 
+* | | | | | | commit 1f1628b50d5a31c943dfa3af3886ce22bfc2f1e9
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Fri May 19 10:50:56 2023 +0800
+| | | | | | | 
+| | | | | | |     account with dark mode
+| | | | | | | 
+* | | | | | | commit a0225e4c32aa0df2561e4ea227ed2d091dbe8496
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Fri May 19 10:30:41 2023 +0800
+| | | | | | | 
+| | | | | | |     edited signup for phone screen
+| | | | | | | 
+* | | | | | | commit a76b8aeecc1d10a902aeceee4b8e9c900eac541e
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Fri May 19 10:28:47 2023 +0800
+| | | | | | | 
+| | | | | | |     tests update
+| | | | | | | 
+* | | | | | | commit 92e7f9edc8650b64745269e39f7aa79b21bca2ce
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Thu May 18 19:59:42 2023 +0800
+| | | | | | | 
+| | | | | | |     README update
+| | | | | | | 
+* | | | | | | commit 2569692781e392de75423bab90851bd24cb306a2
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Thu May 18 19:23:17 2023 +0800
+| | | | | | | 
+| | | | | | |     testing configs
+| | | | | | | 
+* | | | | | | commit 9c091ce942105ae1560103c1218d74d5d7c202bc
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Thu May 18 19:22:49 2023 +0800
+| | | | | | | 
+| | | | | | |     more up to date README
+| | | | | | | 
+* | | | | | | commit 36483f94d17fdd4c2d7553557707e256015ca581
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Thu May 18 19:22:20 2023 +0800
+| | | | | | | 
+| | | | | | |     updated imports
+| | | | | | | 
+* | | | | | | commit 47418ea2497738d70135972d76c9ad990605c82e
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Thu May 18 19:21:27 2023 +0800
+| | | | | | | 
+| | | | | | |     added more testing
+| | | | | | | 
+* | | | | | | commit c84835f6ab3cd1c7159abb55b117885cbd3a1455
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 17 17:31:57 2023 +0800
+| | | | | | | 
+| | | | | | |     kept the logo in place for all screen sizes
+| | | | | | | 
+| * | | | | | commit cff0a67e8daef388b65228e0264d8e714b075799
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Fri May 19 15:10:04 2023 +0800
+| | | | | | | 
+| | | | | | |     removed unnecessary functions
+| | | | | | | 
+| * | | | | | commit eb37283b18c5f04507643ade2ed84e4862f52c03
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Fri May 19 15:10:02 2023 +0800
+| | | | | | | 
+| | | | | | |     removed some unnecessary functions
+| | | | | | |   
+| * | | | | |   commit 988afa8576c1a685fb504e28cfcfc8d05cba634b
+| |\ \ \ \ \ \  Merge: 2f721bd 8521b7c
+| |/ / / / / /  Author: knockoffduck <ddarm4@gmail.com>
+|/| | | | | |   Date:   Fri May 19 15:00:48 2023 +0800
+| | | | | | |   
+| | | | | | |       Merge remote-tracking branch 'origin/elise' into develop
+| | | | | | | 
+* | | | | | | commit 8521b7c8891004c6b301fd34148afe4c1d2d5f9c
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 16 23:18:02 2023 +0800
+| | | | | | | 
+| | | | | | |     merge from master
+| | | | | | | 
+* | | | | | | commit 31b7e501e450c5817f8abb2f1a28c22b80e1d7e3
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 16 23:12:28 2023 +0800
+| | | | | | | 
+| | | | | | |     Merge branch 'master' into elise
+| | | | | | | 
+* | | | | | | commit efbf6e1860e29784c96ec35a36db22b3ea3890ac
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 16 22:51:05 2023 +0800
+| | | | | | | 
+| | | | | | |     account view edits
+| | | | | | | 
+* | | | | | | commit 0e0ce2205f752a011caba7f80c4798edf9bf65b4
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 16 22:50:41 2023 +0800
+| | | | | | | 
+| | | | | | |     login and signup styling
+| | | | | | | 
+* | | | | | | commit a15f1877e0c6c928df83282454bd28d7cdc1b7a8
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 16 22:49:51 2023 +0800
+| | | | | | | 
+| | | | | | |     Manually merging Tom's login and signup pages
+| | | | | | | 
+* | | | | | | commit 5048d585e3e045e05e9eed027c989dda9223dcb2
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 16 22:43:32 2023 +0800
+| | | | | | | 
+| | | | | | |     removed 2nd req file
+| | | | | | | 
+| * | | | | | commit 2f721bd40152017258468b7ce1a9628ff4dba5e2
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Fri May 19 14:43:17 2023 +0800
+| | | | | | | 
+| | | | | | |     fixed some bugs with profile pictures
+| | | | | | | 
+| * | | | | | commit 9e0917ffc05f7c6ad41df2584346769e6f645acc
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Fri May 19 12:33:58 2023 +0800
+| | | | | | | 
+| | | | | | |     implemented the avatar to the chat messages avatar
+| | | | | | | 
+| * | | | | | commit 9950db3a370b77e5dd3896d728d3ea679d3b30be
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Fri May 19 12:05:14 2023 +0800
+| | | | | | | 
+| | | | | | |     implemented conversation clear button in profile dropdown
+| | | | | | | 
+| * | | | | | commit a97ebb7c98b1c04807638d05e5676f4fdeea6973
+| |\| | | | | Merge: 3d63723 c22d005
+| | | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | | Date:   Fri May 19 11:56:29 2023 +0800
+| | | | | | | 
+| | | | | | |     merged with zarifs branch and implemented file upload
+| | | | | | | 
+| | * | | | | commit c22d005b0cc905400c6e0662b01322764ff10d79
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 16:48:33 2023 +0800
+| | | | | | | 
+| | | | | | |     users stored in db
+| | | | | | | 
+| | * | | | | commit bc22c76e83bff910ba02281715e00f44a16a22cd
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 16:39:45 2023 +0800
+| | | | | | | 
+| | | | | | |     updated history.json file
+| | | | | | | 
+| | * | | | | commit e2cb3d095fab17faceb945e1c113199bae426fba
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 16:39:30 2023 +0800
+| | | | | | | 
+| | | | | | |     added a div
+| | | | | | | 
+| | * | | | | commit aabecd54d1a094edc409236a979721b18f219d0e
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 13:48:50 2023 +0800
+| | | | | | | 
+| | | | | | |     Fixed formatting for history.json file
+| | | | | | | 
+| | * | | | | commit b1392cd2bcdde13f02ad205712c3fe3ade5013bf
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 13:46:22 2023 +0800
+| | | | | | | 
+| | | | | | |     populated username with account firstname field
+| | | | | | | 
+| | * | | | | commit ff061e06372c5c3d30070a2f28ad0b081358dc16
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Wed May 17 12:29:37 2023 +0800
+| | | | | | | 
+| | | | | | |     Handle the case when history.json is empty
+| | | | | | | 
+| | * | | | | commit ca004e89de792791a5f62b61fb3d385fd73c37d5
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Tue May 16 19:35:21 2023 +0800
+| | | | | | | 
+| | | | | | |     commit - just added a comment
+| | | | | | | 
+| | * | | | | commit d7710955f2699f47827913e2c92d39be52986f6e
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Tue May 16 19:34:57 2023 +0800
+| | | | | | | 
+| | | | | | |     Handle when history.json file is empty.
+| | | | | | | 
+| | * | | | | commit 61d2eedf620a34559798a4ccc2cd9ea4f25a47d1
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Tue May 16 17:27:58 2023 +0800
+| | | | | | | 
+| | | | | | |     added search.js file
+| | | | | | | 
+| | * | | | | commit 86ac3940c29f2952172304afe6faa7afb7fa6866
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Sun May 14 17:06:10 2023 +0800
+| | | | | | | 
+| | | | | | |     Removed username from message box
+| | | | | | | 
+| | * | | | | commit dfbe51f45ec73cd85573f49c6076cd6f3f5be89a
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Sat May 13 15:34:53 2023 +0800
+| | | | | | | 
+| | | | | | |     commit
+| | | | | | |   
+| | * | | | |   commit 44cd9ceca8709894c4af5500249fba23dbaa82b3
+| | |\ \ \ \ \  Merge: fbe0299 9859c25
+| | | | |_|_|/  Author: Zarif <23640056@student.uwa.edu.au>
+| | | |/| | |   Date:   Sat May 13 14:56:07 2023 +0800
+| | | | | | |   
+| | | | | | |       Merge branch 'master' into 'zarif'
+| | | | | | | 
+| | * | | | | commit fbe029939f518bcdbfbfc35606d4b53868e06bda
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Sat May 13 14:37:41 2023 +0800
+| | | | | | | 
+| | | | | | |     moved to backup file
+| | | | | | | 
+| | * | | | | commit ac48b7bdc24132b2c527bc3ed41e68b49b41cc9e
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Sat May 13 14:24:46 2023 +0800
+| | | | | | | 
+| | | | | | |     commit
+| | | | | | | 
+| | * | | | | commit 34bb1838962f9617230d018c1f50dde78b4a42fe
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Sat May 13 14:24:03 2023 +0800
+| | | | | | | 
+| | | | | | |     untracked files
+| | | | | | | 
+| | * | | | | commit 165dacb3bb7a207a93755d151f35bb8ab00c453c
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Sat May 13 14:16:32 2023 +0800
+| | | | | | | 
+| | | | | | |     commit
+| | | | | | | 
+| | * | | | | commit 0c6454ab67202a457860b983a4b0b198bc710d32
+| | | | | | | Author: 23640056 <127744558+23640056@users.noreply.github.com>
+| | | | | | | Date:   Sat May 13 02:41:04 2023 +0800
+| | | | | | | 
+| | | | | | |     Committing local changes before switching branches
+| | | | | | | 
+| | * | | | | commit a9cc0b35aef6d121e1bd2d9990fa33d9c46f8dd8
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Fri May 12 16:36:26 2023 +0800
+| | | | | | | 
+| | | | | | |     Changed bookshelf icon to search icon
+| | | | | | | 
+| | * | | | | commit 4752f70ebf5ab362230d1821a6d3a23bd0288be5
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Fri May 12 16:22:35 2023 +0800
+| | | | | | | 
+| | | | | | |     update history.json file
+| | | | | | | 
+| | * | | | | commit a2ca631482992519fa83545ac82e280cced37dd3
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Fri May 12 16:22:08 2023 +0800
+| | | | | | | 
+| | | | | | |     Changed history -> search page
+| | | | | | | 
+| | * | | | | commit 7d0fcfb85a93f862bd9b512ecce034e758ec4ee7
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Thu May 11 23:22:49 2023 +0800
+| | | | | | | 
+| | | | | | |     removed <br>
+| | | | | | | 
+| | * | | | | commit d7b60ad8b3320f45e39407d072258ab410f802c5
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Thu May 11 23:12:17 2023 +0800
+| | | | | | | 
+| | | | | | |     Added some more styling - changing text
+| | | | | | | 
+| | * | | | | commit bb2ccbe4a530d2eb9c02c9a41651496b1e5ad90c
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Thu May 11 21:48:52 2023 +0800
+| | | | | | | 
+| | | | | | |     No pin/delete button + added some space
+| | | | | | | 
+| | * | | | | commit 0235150f98d0eb92f021678f329dc4be2ea37842
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Thu May 11 21:39:40 2023 +0800
+| | | | | | | 
+| | | | | | |     No need for js file
+| | | | | | | 
+| | * | | | | commit c236df4b89bd8cfeba4b9d9bf9fcd1887cf8d0aa
+| | | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | | Date:   Thu May 11 17:54:02 2023 +0800
+| | | | | | | 
+| | | | | | |     import uuid etc.
+| | | | | | | 
+| * | | | | | commit 3d63723ac1e9e2c788ade1fbd3f5c4aec79ea8f2
+| | |_|/ / /  Author: knockoffduck <ddarm4@gmail.com>
+| |/| | | |   Date:   Wed May 17 16:34:10 2023 +0800
+| | | | | |   
+| | | | | |       implemented a clear conversation button
+| | | | | | 
+| * | | | | commit 5bb4f284f2760131c40c76010a1caf59048f8c7c
+| | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | Date:   Sat May 13 02:49:37 2023 +0800
+| | | | | | 
+| | | | | |     removed temporary login/logout
+| | | | | |     
+| | | | | |     added previous messages to chat page
+| | | | | |     
+| | | | | |     implemented chat messages to database
+| | | | | |   
+| | | | | | * commit a5d827a73c1418a268de801d2d3bc10e9eb04480 (origin/Tom)
+| | | | | |/  Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | |   Date:   Sun May 21 16:31:37 2023 +0800
+| | | | | |   
+| | | | | |       Update change avatar
+| | | | | | 
+| | | | | * commit 6641522cdce547db727adddc415d32bcb90491d5
+| | | | |/  Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | |   Date:   Sat May 20 16:15:47 2023 +0000
+| | | | |   
+| | | | |       change avatar for test selenium
+| | | | | 
+| | | | * commit 1336e7d6b605f88b0d39f3e4436c93f9471b98a8
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sat May 20 06:23:49 2023 +0000
+| | | | | 
+| | | | |     upload instruction for safari driver
+| | | | | 
+| | | | * commit 2e0aee0c7088213e9e150354f100e816df7d1454
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sat May 20 06:15:43 2023 +0000
+| | | | | 
+| | | | |     firefox selenium test
+| | | | | 
+| | | | * commit 5ae9607b16ded929b92fe1b9d2af65f7c8c29bd0
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sat May 20 06:13:08 2023 +0000
+| | | | | 
+| | | | |     rename driver
+| | | | | 
+| | | | * commit e16d43076b7de3f315ff519df995777492bf2e53
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sat May 20 06:12:03 2023 +0000
+| | | | | 
+| | | | |     safari selenium test
+| | | | | 
+| | | | * commit 7185526c76b92481ea3552e1cc0a5124f4da5141
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sat May 20 06:11:47 2023 +0000
+| | | | | 
+| | | | |     firefox driver
+| | | | | 
+| | | | * commit 795e8b44b508441bb7b879e2278c443b83e6c97a
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sat May 20 05:41:09 2023 +0000
+| | | | | 
+| | | | |     upload_avatar test
+| | | | | 
+| | | | * commit 4f4a6f1258cd02d1382f2abac235660b9cbedb06
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Fri May 19 12:26:46 2023 +0800
+| | | | | 
+| | | | |     main for test
+| | | | | 
+| | | | * commit 4641b7a61be258a1de00ff82d2691b761ce29ae8
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Thu May 18 02:43:32 2023 +0800
+| | | | | 
+| | | | |     chrome test
+| | | | | 
+| | | | * commit d118fb55147f841fde09c48f2fbb234fd1127710
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Thu May 18 02:33:10 2023 +0800
+| | | | | 
+| | | | |     test userid, chatbody, timestamp
+| | | | | 
+| | | | * commit 8b5bebf80468a1039bb12c7c3f8c0184afcae2f2
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Thu May 18 02:26:58 2023 +0800
+| | | | | 
+| | | | |     test case for login and register
+| | | | | 
+| | | | * commit a3c97c44357b38852d0bb6ae3126c07eb0e0a12f
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Thu May 18 00:31:02 2023 +0800
+| | | | | 
+| | | | |     udated branch
+| | | | | 
+| | | | * commit 88b854978a68b485261f105c17a8a79c0fd54269
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Thu May 18 00:30:51 2023 +0800
+| | | | | 
+| | | | |     edit chat and updated branch
+| | | | | 
+| | | | * commit 22e6377a36205b3315aed66b11687d469a0edeb3
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Tue May 16 16:29:14 2023 +0800
+| | | | | 
+| | | | |     updated
+| | | | | 
+| | | | * commit b516de8e6d64b0a33e7822c269b39bcdde2b9837
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Tue May 16 16:27:01 2023 +0800
+| | | | | 
+| | | | |     Revert "Revert "updated""
+| | | | |     
+| | | | |     This reverts commit 6d42a0d331e646f745de1aec7611131fd63f30c0.
+| | | | | 
+| | | | * commit 6d42a0d331e646f745de1aec7611131fd63f30c0
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Tue May 16 16:12:42 2023 +0800
+| | | | | 
+| | | | |     Revert "updated"
+| | | | |     
+| | | | |     This reverts commit 00162650736f71a1559bdefccef2655870a70f1d.
+| | | | | 
+| | | | * commit 00162650736f71a1559bdefccef2655870a70f1d
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Tue May 16 16:09:12 2023 +0800
+| | | | | 
+| | | | |     updated
+| | | | | 
+| | | | * commit 9323a7ec60f5a7464083f9b6b44c2d3eda706693
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Fri May 12 17:11:47 2023 +0800
+| | | | | 
+| | | | |     commit
+| | | | | 
+| | | | * commit 39cd4f6385ef5230aa51980f510a5eec061861c4
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Fri May 12 16:40:58 2023 +0800
+| | | | | 
+| | | | |     route fix
+| | | | | 
+| | | | * commit ed392f985892a4b01825d3995b7ec4631949a8e0
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Mon May 8 00:38:45 2023 +0800
+| | | | | 
+| | | | |     chat,login,signout done
+| | | | | 
+| | | | * commit 06e1e60ff23f446f7639d6a189c37cd786645334
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sat May 6 00:03:13 2023 +0800
+| | | | | 
+| | | | |     edit pages
+| | | | | 
+| | | | * commit 13c9928c749e191048c53fddd38851fd82a6a69b
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sun Apr 30 21:52:58 2023 +0800
+| | | | | 
+| | | | |     fix few bugs but cant link css and js file
+| | | | | 
+| | | | * commit b6ea3216a36e73dab332ed3cd80e7e6dd68d42d8
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sun Apr 30 17:39:01 2023 +0800
+| | | | | 
+| | | | |     fix bug for account pop up
+| | | | | 
+| | | | * commit cef58250015e3049ee7b29784db4b160913a9aed
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sun Apr 30 17:34:46 2023 +0800
+| | | | | 
+| | | | |     Revert "Revert "file for chat,signup,login""
+| | | | |     
+| | | | |     This reverts commit ecc38c6d39808290648a79f4146811f6b51545b6.
+| | | | | 
+| | | | * commit aa73ecf47d36725879bf8791c120f3918cc99ccb
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sun Apr 30 17:33:45 2023 +0800
+| | | | | 
+| | | | |     Revert "create html"
+| | | | |     
+| | | | |     This reverts commit c1b88b0c4dd32ea910d2d4ccca495376a1598e6d.
+| | | | | 
+| | | | * commit ecc38c6d39808290648a79f4146811f6b51545b6
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sun Apr 30 17:32:56 2023 +0800
+| | | | | 
+| | | | |     Revert "file for chat,signup,login"
+| | | | |     
+| | | | |     This reverts commit 50833c64849380608c05bb1bbb6f40923bb8e949.
+| | | | | 
+| | | | * commit 50833c64849380608c05bb1bbb6f40923bb8e949
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Sun Apr 30 17:30:43 2023 +0800
+| | | | | 
+| | | | |     file for chat,signup,login
+| | | | | 
+| | | | * commit c1b88b0c4dd32ea910d2d4ccca495376a1598e6d
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Fri Apr 28 00:00:51 2023 +0800
+| | | | | 
+| | | | |     create html
+| | | | | 
+| | | | * commit 782c733a43a0280dfaf455bb32c0061dbecae62f
+| | | | | Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | | | Date:   Thu Apr 27 23:40:03 2023 +0800
+| | | | | 
+| | | | |     create html page
+| | | | |   
+| | | | | * commit 78c429b64541f8f4d94c3532397c347c383f9cb6 (origin/tom18072001-patch-1)
+| | | | |/  Author: tom18072001 <129664679+tom18072001@users.noreply.github.com>
+| | | |/|   Date:   Sat May 20 01:28:49 2023 +0800
+| | | | |   
+| | | | |       Update home.html
+| | | | |   
+| | | * |   commit 9859c25366dd3f61eae99090c4f344a2e1f6e77b
+| | | |\ \  Merge: 5ef6679 157c127
+| | |_|/ /  Author: Daffa Fathurohman <95541799+knockoffduck@users.noreply.github.com>
+| |/| | |   Date:   Fri May 12 17:43:35 2023 +0800
+| | | | |   
+| | | | |       Merge pull request #3 from knockoffduck/develop
+| | | | |       
+| | | | |       Develop
+| | | | | 
+| * | | | commit 157c127c0aa7ae814bfe78243a20a5fbf521402c
+| | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | Date:   Fri May 12 17:39:40 2023 +0800
+| | | | | 
+| | | | |     fixed some small bugs
+| | | | |   
+| * | | |   commit 0254025b642e38a3fae29aa371ebfb8f64c1a6d1
+| |\ \ \ \  Merge: 002f806 2c5b50f
+| |/ / / /  Author: knockoffduck <ddarm4@gmail.com>
+|/| | | |   Date:   Fri May 12 16:55:20 2023 +0800
+| | | | |   
+| | | | |       Merge remote-tracking branch 'origin/elise' into develop
+| | | | | 
+* | | | | commit 2c5b50f61b499044287510a9494d25c92d7026f9
+| | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | Date:   Fri May 12 15:52:15 2023 +0800
+| | | | | 
+| | | | |     migrations
+| | | | | 
+* | | | | commit 5cb69a961a252e278dab8deabc734a21523f8b17
+| | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | Date:   Thu May 11 22:44:13 2023 +0800
+| | | | | 
+| | | | |     changed some css and min navbar width
+| | | | | 
+* | | | | commit 66faea6d02458661fbd05f49adbe65b09d7a6d30
+| | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | Date:   Thu May 11 22:39:29 2023 +0800
+| | | | | 
+| | | | |     temporary login/logout links
+| | | | |   
+* | | | |   commit b0e3621a40214d7a240583340b94de330b8db7e8
+|\ \ \ \ \  Merge: b68d7cd f3c88d1
+| | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | Date:   Thu May 11 22:22:35 2023 +0800
+| | | | | | 
+| | | | | |     Merge develop (Daffa) branch into elise branch
+| | | | | |   
+* | | | | |   commit b68d7cd9e357c8bbec1afd2e03f6429a82845596
+|\ \ \ \ \ \  Merge: b6bc5bd 1de6054
+| | |_|/ / /  Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| |/| | | |   Date:   Thu May 11 21:52:12 2023 +0800
+| | | | | |   
+| | | | | |       Merge branch 'zarif' of https://github.com/knockoffduck/chat-app-project into elise
+| | | | | | 
+| * | | | | commit 1de6054c3768811fb0171cf52506df7ff2e288be
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Thu May 11 17:53:31 2023 +0800
+| | | | | | 
+| | | | | |     Need tp add pin and delete button
+| | | | | |   
+* | | | | |   commit b6bc5bd36104df7ed72d07527c96ec0cf40233a9
+|\ \ \ \ \ \  Merge: 3b004bc 9012d92
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Thu May 11 21:07:47 2023 +0800
+| | | | | | | 
+| | | | | | |     Merge branch 'zarif' into elise
+| | | | | | | 
+* | | | | | | commit 3b004bc9b05997dc78c1bfe5f82c2f3cd4030a36
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:54:56 2023 +0800
+| | | | | | | 
+| | | | | | |     added some account css
+| | | | | | | 
+* | | | | | | commit ec7bfaa72d0cf116eb020232e362f5bb19566feb
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:21:10 2023 +0800
+| | | | | | | 
+| | | | | | |     account page style yet to be done
+| | | | | | | 
+* | | | | | | commit 33d976b7fede516034a2d077f7ea19c4ffa41512
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:20:23 2023 +0800
+| | | | | | | 
+| | | | | | |     accounting for separate config file
+| | | | | | | 
+* | | | | | | commit 9fe3a3161a9e7178b21a03cfeb870cf2c96a14fc
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:17:57 2023 +0800
+| | | | | | | 
+| | | | | | |     added edit profile form
+| | | | | | | 
+* | | | | | | commit 2400135640bf0df991176370d480463bcd4e2ab0
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:17:37 2023 +0800
+| | | | | | | 
+| | | | | | |     adjusted model with datetime
+| | | | | | | 
+* | | | | | | commit a8b43196cb945d286785375babbf21b67b7e010c
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:17:04 2023 +0800
+| | | | | | | 
+| | | | | | |     app database
+| | | | | | | 
+* | | | | | | commit 585cd11736ee05a7e3f9ca0527ba930cecdb183a
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:12:13 2023 +0800
+| | | | | | | 
+| | | | | | |     added account page and edit profile functionality
+| | | | | | | 
+* | | | | | | commit feb0c3547341d7d6420b34e885873de6ec0cae2e
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:10:01 2023 +0800
+| | | | | | | 
+| | | | | | |     organise static css and js files
+| | | | | | | 
+* | | | | | | commit 8f78cf00032d912b747a971ba5070a22cd5b5777
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 10 21:08:46 2023 +0800
+| | | | | | | 
+| | | | | | |     moved config to separate file
+| | | | | | | 
+* | | | | | | commit 778951ab8e27bb8ba6df3adf3e98f65ea806b7b8
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 9 11:19:35 2023 +0800
+| | | | | | | 
+| | | | | | |     Made db columns same as login/signup inputs
+| | | | | | | 
+* | | | | | | commit 1541f2fdc343d1d4ce4767046eeb0ba1fc9490f5
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Wed May 3 16:18:37 2023 +0800
+| | | | | | | 
+| | | | | | |     migrations removed - just for local files
+| | | | | | | 
+* | | | | | | commit a90bd2b07ebd69e4536008a0393f4a02381b70de
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:57:28 2023 +0800
+| | | | | | | 
+| | | | | | |     fixed typo
+| | | | | | | 
+* | | | | | | commit dc891854ebdf81d93723838b76928549dae9d8ef
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:54:49 2023 +0800
+| | | | | | | 
+| | | | | | |     very basic starting login/signup html - to change
+| | | | | | | 
+* | | | | | | commit c059c70f01a9e5a941cc3e916e63e2b1be16b5db
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:53:12 2023 +0800
+| | | | | | | 
+| | | | | | |     implementing login authentication and db
+| | | | | | | 
+* | | | | | | commit 72a0e5975581cbd684b57593b322a9d30551aa42
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:51:00 2023 +0800
+| | | | | | | 
+| | | | | | |     chat storage from master
+| | | | | | | 
+* | | | | | | commit ea212c3410b07a4588d588f0178ed8379521ec23
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:50:21 2023 +0800
+| | | | | | | 
+| | | | | | |     gitignore from master
+| | | | | | | 
+* | | | | | | commit 57228ced6805049fdfd6276e9aaed1ef797da971
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:49:47 2023 +0800
+| | | | | | | 
+| | | | | | |     adding shell context for db
+| | | | | | | 
+* | | | | | | commit 44365f0bafdb6f319a576c0c91917007f8827576
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:49:21 2023 +0800
+| | | | | | | 
+| | | | | | |     from master
+| | | | | | | 
+* | | | | | | commit abf3361260cbb99e8f7f3b6f78e88afdfea32391
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:47:59 2023 +0800
+| | | | | | | 
+| | | | | | |     from merge with master
+| | | | | | | 
+* | | | | | | commit 4295163e5c4862eacb811492e216f609053c022b
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:42:30 2023 +0800
+| | | | | | | 
+| | | | | | |     the database
+| | | | | | | 
+* | | | | | | commit b248e186592ce68aa82e1c53be6ce6e9a4913c21
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:41:27 2023 +0800
+| | | | | | | 
+| | | | | | |     database migrations folder
+| | | | | | | 
+* | | | | | | commit 4d9d7daff15ebd6930a20186e1dc7251d356714b
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Tue May 2 20:39:23 2023 +0800
+| | | | | | | 
+| | | | | | |     original master requirements.txt
+| | | | | | |   
+* | | | | | |   commit 64ecd2e81d1e480881a42df20bd179c482fc6cbb
+|\ \ \ \ \ \ \  Merge: 3c4a804 5ef6679
+| | |_|_|_|/ /  Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| |/| | | | |   Date:   Tue May 2 20:38:22 2023 +0800
+| | | | | | |   
+| | | | | | |       requirements file unedited
+| | | | | | | 
+* | | | | | | commit 3c4a8041bacaca8b8b2dca3f4d5a723f82f42493
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Mon May 1 14:48:31 2023 +0800
+| | | | | | | 
+| | | | | | |     has what pytest included: to be simplified
+| | | | | | | 
+* | | | | | | commit af2d929b932f9e8ef987e2b3f7bb7be34a18bf0c
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Mon May 1 14:47:49 2023 +0800
+| | | | | | | 
+| | | | | | |     added some initial functional tests
+| | | | | | | 
+* | | | | | | commit 125bd8ff3d599053bc5a87e7d518c4eadd2766ff
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Sat Apr 29 22:46:58 2023 +0800
+| | | | | | | 
+| | | | | | |     edited home text
+| | | | | | | 
+* | | | | | | commit 5f3455119c2cc48bede861214332f4262d33d28c
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Sat Apr 29 22:43:05 2023 +0800
+| | | | | | | 
+| | | | | | |     added responsive navbar
+| | | | | | | 
+* | | | | | | commit 038a719cd2f7ac514070c60c0eefc9824f325499
+| | | | | | | Author: eli3005 <126839344+eli3005@users.noreply.github.com>
+| | | | | | | Date:   Sat Apr 29 22:41:55 2023 +0800
+| | | | | | | 
+| | | | | | |     added responsive navbar js
+| | | | | | | 
+| | | | | * | commit 002f80600a420c4d1efb41e7c6d5278a7a8ebc90
+| | | | |/ /  Author: knockoffduck <ddarm4@gmail.com>
+| | | | | |   Date:   Fri May 12 16:49:59 2023 +0800
+| | | | | |   
+| | | | | |       small bug fixes
+| | | | | | 
+| | | | * | commit f3c88d107ff02a488364363eddb3fa5213bd69ba
+| | | | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | | | Date:   Thu May 11 17:10:05 2023 +0800
+| | | | | | 
+| | | | | |     implemented dropdown animation and other small fixes
+| | | | | |   
+| | | | * |   commit 8360a653b393ccccc19751a9b079c4af9c3d42a9
+| | | | |\ \  Merge: 93726f8 4a5b4a8
+| | | | |/ /  Author: knockoffduck <ddarm4@gmail.com>
+| | | |/| |   Date:   Thu May 11 12:07:46 2023 +0800
+| | | | | |   
+| | | | | |       Merge branch 'zarif' into develop
+| | | | | | 
+| | | * | | commit 4a5b4a8c260025b828f304a31cba70a6adca14e0
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Tue May 9 23:56:55 2023 +0800
+| | | | | | 
+| | | | | |     Style change to message box
+| | | | | | 
+| | | * | | commit 8af10e877a8d6ec0843f4715c88cab5c3e5682ae
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Tue May 9 00:06:04 2023 +0800
+| | | | | | 
+| | | | | |     Bold text for Previous|Next
+| | | | | | 
+| | | * | | commit b7a0d305263f8408c30d235db602e384126e9d8c
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Tue May 9 00:02:20 2023 +0800
+| | | | | | 
+| | | | | |     Added more styles to message box
+| | | | | | 
+| | | * | | commit 24464efb33c086862a377e7f897123f620371196
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Mon May 8 22:54:31 2023 +0800
+| | | | | | 
+| | | | | |     Fixed Next-Button on first page, and fixed links
+| | | | | | 
+| | | * | | commit d5cef54878e3617e7f6ad50169858727059c517e
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Mon May 8 00:42:38 2023 +0800
+| | | | | | 
+| | | | | |     CSS for pagination buttons
+| | | | | | 
+| | | * | | commit d085873c80b4e65cee7a53d6a912f0830a145871
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 22:17:18 2023 +0800
+| | | | | | 
+| | | | | |     Added a comment for the history route
+| | | | | | 
+| | | * | | commit a5813316fdfcbf3f7579c2398980e8563914ba4e
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 22:13:34 2023 +0800
+| | | | | | 
+| | | | | |     Added pagination to history page
+| | | | | | 
+| | | * | | commit e13cf36df1d2abe7f73c1e36d2e492f914b26f7d
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 22:13:00 2023 +0800
+| | | | | | 
+| | | | | |     Changed route for history page
+| | | | | | 
+| | | * | | commit 14a8f67d1b7341a05043df9c3d90526828d68d00
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 21:16:20 2023 +0800
+| | | | | | 
+| | | | | |     Removed underline from hyperlink
+| | | | | | 
+| | | * | | commit b7c2dad666a46f6d52f67e764f20a82178b2ec3a
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 17:16:31 2023 +0800
+| | | | | | 
+| | | | | |     Added js file for history page
+| | | | | | 
+| | | * | | commit 4ae9bd484d9fa6d7d44ce5cf1c02c73cd00fdff0
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 17:09:26 2023 +0800
+| | | | | | 
+| | | | | |     Added style (children page)
+| | | | | | 
+| | | * | | commit ff47fc9f17f5fe11a35499e1765104c110feb748
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 16:58:34 2023 +0800
+| | | | | | 
+| | | | | |     deleted previous file in css directory
+| | | | | | 
+| | | * | | commit eef717eeec5ce8a18515fc50b3bf8f37efb0d293
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 16:58:14 2023 +0800
+| | | | | | 
+| | | | | |     changed directory name css -> history
+| | | | | | 
+| | | * | | commit eaf3324ce10f7b4aa2281a18ef06e35eea033031
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 16:56:22 2023 +0800
+| | | | | | 
+| | | | | |     CSS inheritance, children page style
+| | | | | | 
+| | | * | | commit 86e98af4ea2c72107edd9f994f304cbef4b3db22
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 16:43:53 2023 +0800
+| | | | | | 
+| | | | | |     Link back to the chat page
+| | | | | | 
+| | | * | | commit ab7f54260909f448668b1f656fbc1ad2526ba9d7
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 16:20:26 2023 +0800
+| | | | | | 
+| | | | | |     trying to remove dot points next to user messages
+| | | | | | 
+| | | * | | commit 91d7c0bc918c5c7e8e3ee844ca2e328c305c3fa7
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 16:05:23 2023 +0800
+| | | | | | 
+| | | | | |     Added back original starting code for account.html
+| | | | | | 
+| | | * | | commit 0ad352fc7769fbbc28fbb75e66b5a21554b0b330
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 16:03:28 2023 +0800
+| | | | | | 
+| | | | | |     remove code (had code from history.html)
+| | | | | | 
+| | | * | | commit 21058d3ad762bec997b6894baa11f4d4e11e30c5
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Sun May 7 15:05:46 2023 +0800
+| | | | | | 
+| | | | | |     Added css file to history
+| | | | | | 
+| | | * | | commit 9133dfda3ba99178b34d946dac7b8ab5314c2df8
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:56:22 2023 +0800
+| | | | | | 
+| | | | | |     commit photos
+| | | | | | 
+| | | * | | commit acc357f130d0eb8e4f93a3b3e394b27ba67089cd
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:55:53 2023 +0800
+| | | | | | 
+| | | | | |     home.html
+| | | | | | 
+| | | * | | commit 453c65bcca923fcd3d819bd2b1b38b6a5833a87b
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:51:12 2023 +0800
+| | | | | | 
+| | | | | |     added back login
+| | | | | | 
+| | | * | | commit a8453642534612222810247f52268615a534e6b5
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:50:52 2023 +0800
+| | | | | | 
+| | | | | |     added back sign up
+| | | | | | 
+| | | * | | commit e66a64dba9b949a642de5e6ea0b05bd7175985d5
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:49:36 2023 +0800
+| | | | | | 
+| | | | | |     added back utilities.py
+| | | | | | 
+| | | * | | commit 0403f8066f5b058619d4b7b97e77b3d9bb819f88
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:43:50 2023 +0800
+| | | | | | 
+| | | | | |     commit
+| | | | | | 
+| | | * | | commit ba79f00cb61bb1d9942d7d17dfe53abaa31ad9ab
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:36:39 2023 +0800
+| | | | | | 
+| | | | | |     Update json file
+| | | | | | 
+| | | * | | commit 9e689a2c4eaa5cba2b54a661fc39a88b20da95b1
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:26:18 2023 +0800
+| | | | | | 
+| | | | | |     route for history page
+| | | | | | 
+| | | * | | commit 128bc5faaac9f7b769fde45798ea671a9b5242dc
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 18:14:51 2023 +0800
+| | | | | | 
+| | | | | |     ignore commit
+| | | | | | 
+| | | * | | commit f9a946adae817e1533ffde24cba81130d468dfdd
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 17:51:36 2023 +0800
+| | | | | | 
+| | | | | |     Delete old history.html
+| | | | | | 
+| | | * | | commit 30c3eec876e71ff309bf3c0b488eabcf4a4373fb
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Fri May 5 13:29:47 2023 +0800
+| | | | | | 
+| | | | | |     Resolve conflict in views.py
+| | | | | |   
+| | | * | |   commit aad03514079b1611a05dcf221dcfcde62d0920cd
+| | | |\ \ \  Merge: d559e4d 5ef6679
+| | |_|/ / /  Author: Zarif <23640056@student.uwa.edu.au>
+| |/| | | |   Date:   Fri May 5 13:28:34 2023 +0800
+| | | | | |   
+| | | | | |       Merge branch 'origin/master' into zarif
+| | | | | | 
+| * | | | | commit 5ef66790b76bfff2e4f692186a4b15e3a06f32ab
+|/| | | | | Merge: 24119a5 28acaf2
+| | | | | | Author: knockoffduck <95541799+knockoffduck@users.noreply.github.com>
+| | | | | | Date:   Tue May 2 15:28:32 2023 +0800
+| | | | | | 
+| | | | | |     Merge pull request #1 from knockoffduck/develop
+| | | | | |     
+| | | | | |     Develop
+| | | | | | 
+| | | * | | commit d559e4dee1313e5cd57dd4cd8c1bb1c787c270cd
+| | | | | | Author: Zarif <23640056@student.uwa.edu.au>
+| | | | | | Date:   Wed May 3 11:24:02 2023 +0800
+| | | | | | 
+| | | | | |     Structurte for hisotry page
+| | | | | | 
+| | | * | | commit f7441983f5c0173cfc41055014ac2e7a5abcd65a
+| | |/ / /  Author: Zarif <23640056@student.uwa.edu.au>
+| | | | |   Date:   Wed May 3 11:22:36 2023 +0800
+| | | | |   
+| | | | |       Added flask route for history page
+| | | | | 
+| | * | | commit 9012d9253c3c78646e02c98f7e779d0c84b30cdd
+| |/ / /  Author: Zarif <23640056@student.uwa.edu.au>
+|/| | |   Date:   Tue May 2 14:52:14 2023 +0800
+| | | |   
+| | | |       history page
+| | | | 
+| | * | commit 93726f8e24165c133acc75a051589a78693f6441
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Thu May 11 10:01:10 2023 +0800
+| | | | 
+| | | |     Implemented the bots 'typing' animation
+| | | | 
+| | * | commit 928de76be377cbd2b091957ab0ac7e02e1c59bd9
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 23:10:17 2023 +0800
+| | | | 
+| | | |     fixed
+| | | | 
+| | * | commit 136bdb4a98ffb6fc1dfecb51321f8e2a73fe478b
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:54:40 2023 +0800
+| | | | 
+| | | |     changed from using http to href
+| | | | 
+| | * | commit 56eaab015df2f5a41320a0fa0c4f89318e6030da
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:48:34 2023 +0800
+| | | | 
+| | | |     modified the post request url
+| | | | 
+| | * | commit db77e2d10adbb37658d40c611877a083b6ba6290
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:35:12 2023 +0800
+| | | | 
+| | | |     added try catch block to catch error in script
+| | | | 
+| | * | commit 9a768093f9593dc3ad6e5489f9d39554f8757a37
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:22:15 2023 +0800
+| | | | 
+| | | |     fixed the app.py
+| | | | 
+| | * | commit 0bcdadb77ba48e4c48bece49efba9194b66ece2b
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:19:48 2023 +0800
+| | | | 
+| | | |     had to add flask cors to access api
+| | | | 
+| | * | commit 0d037a1a194aa4d480c78f940002532af158fd67
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:15:26 2023 +0800
+| | | | 
+| | | |     test
+| | | | 
+| | * | commit 08ddd420a5b146454cdac9fdb225984ca584c213
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:13:58 2023 +0800
+| | | | 
+| | | |     test
+| | | | 
+| | * | commit 4f2608f63e986142693e773ddd78c7556ffeeeb6
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:10:19 2023 +0800
+| | | | 
+| | | |     test
+| | | | 
+| | * | commit bf5be6669d0d60a0c8290033f75363e228685821
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 22:04:30 2023 +0800
+| | | | 
+| | | |     added procfile for Heroku (testing)
+| | | | 
+| | * | commit 04ee5ff7932fedbcfff61787113e346d25bbbebe
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 21:43:22 2023 +0800
+| | | | 
+| | | |     fixed api key for vercel
+| | | | 
+| | * | commit c6cdf5f5d55760e500a6c3589edfbd4a90cb3238
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 21:40:12 2023 +0800
+| | | | 
+| | | |     fixed api key for vercel
+| | | | 
+| | * | commit 0158639274d7fe424d3b26d8c755edca82adef4c
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 20:54:30 2023 +0800
+| | | | 
+| | | |     modified some css
+| | | | 
+| | * | commit e40b9ec63af34e39ac54925db83f222f4ad7d671
+| | | | Author: knockoffduck <ddarm4@gmail.com>
+| | | | Date:   Tue May 9 13:02:12 2023 +0800
+| | | | 
+| | | |     Implemented Dark mode and profile dropdown
+| | | | 
+| | * | commit e347e7d7c3e31ab005be41160e6d2d9779479def
+| |/ /  Author: knockoffduck <ddarm4@gmail.com>
+| | |   Date:   Thu May 4 02:30:12 2023 +0800
+| | |   
+| | |       Implement CSS inheritance for each page, allowing for individual styles while inheriting shared styles for inherited elements. Reorganize folder structure to include 'chat' directory and adjust CSS file locations for better clarity and ease of understanding. Introduce burger menu on chat page for improved navigation and user experience.
+| | | 
+| * | commit 28acaf2e682d8d0c1980f3dacdc4688eec7943ff
+| | | Author: knockoffduck <ddarm4@gmail.com>
+| | | Date:   Tue May 2 15:15:11 2023 +0800
+| | | 
+| | |     added back therapy context
+| | | 
+| * | commit a6d234857258064968cfdb072c483a6cd4298061
+| | | Author: knockoffduck <ddarm4@gmail.com>
+| | | Date:   Tue May 2 15:12:40 2023 +0800
+| | | 
+| | |     Commented some functions and methods
+| | | 
+| * | commit b443b81c9064d4ea4c001b3d9928c1890083d11c
+|/ /  Author: knockoffduck <ddarm4@gmail.com>
+| |   Date:   Tue May 2 02:51:56 2023 +0800
+| |   
+| |       Adjust layout and design of chat page
+| |       
+| |       - Changed font sizes and colors
+| |       - Rearranged UI elements for better usability
+| |       - Added new icons and graphics
+| |       
+| |       Create homepage
+| |       
+| |       - Added new content and images to homepage
+| |       - Created new navigation menu for improved user experience
+| | 
+* | commit 24119a559d711331529d70dffd4df41cae656782
+| | Author: knockoffduck <ddarm4@gmail.com>
+| | Date:   Wed Apr 26 01:42:38 2023 +0800
+| | 
+| |     removed redundant text
+| | 
+* | commit bcaba28322dd30b051dca1f1ad104f23f8a123d9
+| | Author: knockoffduck <ddarm4@gmail.com>
+| | Date:   Wed Apr 26 01:41:33 2023 +0800
+| | 
+| |     added a git ignored
+| | 
+* | commit 9fa5bafbd6f89434a7dac4d42a8ab60309c21fe0
+| | Author: knockoffduck <ddarm4@gmail.com>
+| | Date:   Wed Apr 26 01:40:46 2023 +0800
+| | 
+| |     Remove .env file
+| | 
+* | commit 946149cb252244d38f12a2b2e8899d3cfbf74ddd
+| | Author: knockoffduck <ddarm4@gmail.com>
+| | Date:   Wed Apr 26 01:30:58 2023 +0800
+| | 
+| |     Implement Flask and OpenAI API to create a web chatbot application with a login feature to differentiate chat conversations between users. The application consists of several Python modules, including auth.py, utilities.py, views.py, and __init__.py. The app uses a folder layout to separate code into relevant modules and added a SQL database to store chat messages.
+| |     
+| |     Additionally, created a chat.html template and implemented JavaScript and jQuery to handle AJAX requests to the Flask routes. Added a README.md file with instructions on how to run the application and created a requirements.txt file for easy installation of the necessary libraries.
+| |     
+| |     Updated the code with comments to better understand the implementation. Committed the changes to the develop branch.
+| | 
+* | commit c3f1c7b0df4483e189b304bafd0072de277ff4e2
+| | Author: knockoffduck <ddarm4@gmail.com>
+| | Date:   Wed Apr 26 01:28:41 2023 +0800
+| | 
+| |     Integrate Flask and implement routes for the website, add chat history functionality, and implement username input field for personalized conversations
+| |     
+| |     This commit adds Flask as a framework for the website and implements routes for the home and chat pages. It also adds functionality to load and save the chat history from a JSON file, and a route for generating responses from the chatbot API. The generate_text function gets the user's input from the request form, loads the chat history from the file, adds the input to the chat history, gets a response from the chatbot API using the get_response function, saves the updated chat history to the file, and returns the response as a JSON object. This allows users to view their chat history and continue their conversation with the chatbot. The Flask integration also allows for more advanced functionality to be added in the future, such as user authentication and session management.
+| |     
+| |     Additionally, this commit adds an input field to the chat page for users to enter their username. This allows for personalized conversations with the chatbot. These features set the foundation for future improvements, including user authentication and registration.
+| | 
+* | commit 8e676571a4a945567bb4a1e2640331b50f0280f1
+| | Author: eli3005 <23088805@student.uwa.edu.au>
+| | Date:   Tue Apr 25 10:32:54 2023 +0800
+| | 
+| |     Elise testing using git
+| | 
+* | commit 571239fc3522f528a9c597afed00cb984b615cb0
+| | Author: Zarif <23640056@student.uwa.edu.au>
+| | Date:   Mon Apr 24 21:04:00 2023 +0800
+| | 
+| |     Testing GIT #2
+| | 
+* | commit a5bf05e7385394db532562922421cbcf33a87966
+|/  Author: Zarif <23640056@student.uwa.edu.au>
+|   Date:   Mon Apr 24 20:56:44 2023 +0800
+|   
+|       Testing GIT
+| 
+* commit 2f7472a693a4044cefe9eb3a7bf75d32665169d8
+| Author: knockoffduck <ddarm4@gmail.com>
+| Date:   Fri Apr 7 14:58:54 2023 +0800
+| 
+|     removed api key
+| 
+* commit bdebf1759a03b458123f2cd6bfe4e6d60cfb8e2b
+| Author: knockoffduck <ddarm4@gmail.com>
+| Date:   Fri Apr 7 01:49:50 2023 +0800
+| 
+|     added a comment
+| 
+* commit 207ea337e1a9d5e39efe7a74ee0baf0edd80ef50
+| Author: knockoffduck <ddarm4@gmail.com>
+| Date:   Fri Apr 7 01:49:39 2023 +0800
+| 
+|     Added the Testing folder where a python script with the openai api is implemeted and can be used
+| 
+* commit 3a2a08202f12486447a98a09704a0ce8fcb722d4
+| Author: knockoffduck <ddarm4@gmail.com>
+| Date:   Thu Apr 6 15:38:26 2023 +0800
+| 
+|     modified the files
+|   
+*   commit 02445bb5384ecb81569dff9c3823abb53f909e6c
+|\  Merge: 729a42f 0508ffd
+| | Author: knockoffduck <ddarm4@gmail.com>
+| | Date:   Sun Apr 2 22:13:17 2023 +0800
+| | 
+| |     Merge branch 'master' of https://github.com/knockoffduck/chat-app-project
+| | 
+| * commit 0508ffd72547a7c23302eebff641bb641907a3bd
+| | Author: knockoffduck <95541799+knockoffduck@users.noreply.github.com>
+| | Date:   Sun Apr 2 16:24:02 2023 +0800
+| | 
+| |     Structure.drawio
+| | 
+* | commit 729a42f5f6cae57806c5a4e0865b695ea346078c
+|/  Author: knockoffduck <ddarm4@gmail.com>
+|   Date:   Sun Apr 2 22:09:17 2023 +0800
+|   
+|       implemented and fixed small things
+| 
+* commit 7ee157435b17c09efa56670c4ab7ac79d4950dac
+| Author: knockoffduck <ddarm4@gmail.com>
+| Date:   Fri Mar 31 12:29:19 2023 +0800
+| 
+|     fixed display on multiple displays and implemented burger menu.
+| 
+* commit 9f94848227cad5f5282021a09af5044f89cd745c
+| Author: knockoffduck <ddarm4@gmail.com>
+| Date:   Wed Mar 29 12:16:22 2023 +0800
+| 
+|     Implemented the navbar and some of the website structure
+|     
+|     **Need to fix colors of navbar
+| 
+* commit 1e4194be6bccbe276d1abb0e22bf3a9d3fd923f9
+| Author: knockoffduck <ddarm4@gmail.com>
+| Date:   Wed Mar 29 09:14:48 2023 +0800
+| 
+|     first commit
+| 
+* commit 59cd7493d04cc567bd07ec0dce5404c61f00e836
+| Author: knockoffduck <ddarm4@gmail.com>
+| Date:   Wed Mar 29 08:26:38 2023 +0800
+| 
+|     first commit
+| 
+* commit afdc01f7ef59b94a7f7f24c84025863178e1f1d0
+  Author: knockoffduck <ddarm4@gmail.com>
+  Date:   Wed Mar 29 08:26:00 2023 +0800
+  
+      first commit

@@ -4,7 +4,7 @@
 This is a Flask web application that uses the OpenAI API to create a chatbot. The chatbot interacts with users and provides therapy-like conversation in response to prompts from the user. The chat history is stored in a JSON file and is loaded and saved to the database table to allow for continuous conversations with the chatbot.
 The purpose of this web application is to provide users with a version of an online therapist, which they can chat with at anytime, anywhere. This aims to provide people with an accessible and helpful 'therapist', which they can talk to about their day, any issues they are having, their mental health or relationships. The login feature of the application allows a person's conversation history to be recorded and saved, so that when a user logs back in, they can begin a conversation where they left off. A user's account also ensures that their chats are not accessible to others, keeping conversations private.
 When a person opens this application, they are greeted with the homepage for 'MindMate', the name of our app. This homepage explains the features of the app and how it can provide support for individuals. On clicking 'Chat Now', a user is prompted to login, or create an account to access the chat service. On logging in, the chat page appears, where a user can start chatting with the therapy chat assistant. Responses will be provided based on what a user talks about. Conversation history is stored within the 'Chat' page, and can be searches using the 'Search' page, both accessible from the navigation menu. Here, a user can search for keywords in their previous chat history, and can see questions and responses at that point in time. A user is also able to view and change their account details in the 'Account' page if they need to. There is also a dropdown menu to allow users to choose a 'darkmode' option for the application. If a user logs out, on their next login, they are able to continue their conversation with the therapy chat assistant, who remembers all previous interactions.
-The purpose of MindMate is to provide support and advice for individuals, tailored to them, so that people have a place where they can freely and confidently talk about whatever they need to.
+The purpose of MindMate is to provide support and advice for individuals, tailored to them, so that people have a place where they can freely and confidently talk about whatever is on their mind.
 
 ## Architecture of the Web Application
 #### Database Schema
@@ -35,8 +35,14 @@ Primary Key: ['id']
 Foreign Key: email_hash_id -> user.email_hash_id  
 
 #### Chat
-Our website contains a chat feature, where we use OpenAI API to create a chatbot
-to be finished...
+Our website contains a chat feature, where we use OpenAI API to create a chatbot. The /api/prompt endpoint is designed to interact with the OpenAI API and simulate a therapist. 
+The user will send a message via the chat interface, causing the client to send a HTTP request to the /api/prompt endpoint. The server receives the request and uses it to interact with the OpenAI API. The OpenAI API will send a response back to the server which contains the generated response based on the user's prompt. Then, the server sends the generated response back to the client as a HTTP response. Finally, the client receives the response from the server and displays it in the chat interface. This process is done multiple times as the user inputs more messages in the chat, creating a conversation with the therapist.
+
+#### Search
+The search page is responsible for storing a user's chat history. The user is able to interact with the web application by accessing the search page and entering a search query. The client captures the search query and sends it to the server. The search page is handled by a Flask view function called 'search'. This view function is responsible for processing the user's search query and generating a response to be sent back to the client. The view function retrieves the search query and attempts to load the stored messages from a JSON file. The loaded messages are filtered based on the current user and the inputted search query. The client receives the response and updates the page accordingly with the search results.
+
+#### Account 
+The account page allows users to make changes to their personal details by interacting with the form elements and customise their profile by uploading a profile picture. The client is responsible for rendering the account page template, including the form elements that capture the user's input and send it to the server for processing. The server processes the form submissions, updates the user's personal details, and saves the changes to the database. If the account page is accessed via a GET request, the form elements are pre-populated with the user's existing personal details. This ensures that the forms displays the user's current data before any modifications are made. If modifications have been made by the user, the rendered template is sent as a HTTP response to the client. The client receives the response and updates the page accordingly.
 
 ## Steps to Launch the Web Application Using `app.py`
 
@@ -85,16 +91,15 @@ to be finished...
 
 10. Enter a prompt in the chat input field and click the send button to get a response from the chatbot.
 
-EDIT:
-11. The chat history is stored in the `chats/history.json` file, which is loaded and saved automatically by the `generate_text` function. You can view the chat history by opening the file in a text editor or by reading the contents of the file in your Python code.
+11. The chat history is stored in the `chats/history.json` file, which is loaded and saved automatically by the `generate_text` function. You can view the chat history by opening the file in a text editor or by reading the contents of the file in your Python code. The chat history can be filtered and displayed by navigating to `http://127.0.0.1:5000/search/1` and entering a keyword in the search bar.    
 
 12. The user account page is located at `http://127.0.0.1:5000/account`, which can be reached by clicking the "Account" navigation on the navigation menu. This page allows a user to make and save changes to their profile, which is saved to the database.
 
-13. Chat history can be searched in `http://127.0.0.1:5000/search/1`. Here, a user can search for keywords in all previous chat history, and that moment in the chat will be returned, where they can click on it and return to that moment in 'Chat' to see previous discussions.
+13. The drop-down menu (down arrow next to your username) allows you to toggle dark mode OFF/ON, clear the conversations displayed on the chat page, view your profile (navigates you to `http://127.0.0.1:5000/account`) and logout of the application. 
 
 
 ## Testing
-Tests for the web application include: tests to ensure eaach flask route can be accessed successfully, correct password hashing, valid registration and login, handling for invalid registration and login, and successful profile changes.  
+Tests for the web application include: tests to ensure eaach flask route can be accessed successfully, correct password hashing, valid registration and login, handling for invalid registration and login, successful profile changes, and correct avatar and chat functionality.
   
 
 Run the following command in the terminal to run the tests:
@@ -109,17 +114,20 @@ Then run the following command in the terminal to have a coverage report returne
    ```
 
 ### Selenium Tests
-Have the application running on local host `http://127.0.0.1:5000/` and open a new terminal.
+First, run the application in one terminal with:
+   ```
+   python app.py --testing
+   ```
+
+This will ensure that the application is running in a testing environment to access the testing database.
+Once the website is running on localhost `http://127.0.0.1:5000/`, open a new terminal.
 In this new terminal, to run the Selenium Tests, run the following command:
 
    ```
    python tests/test_selenium.py
    ```
 
-The selenium tests are designed to run in Chrome and use chromedriver to do so. Ensure that the lastest version of Chrome is installed. The selenium tests include tests for registering in the application, logging in, and using the chat functionality.
-
-## Commit Logs
-...
+The selenium tests are designed to run in Chrome and use chromedriver to do so. Ensure that the lastest version of Chrome is installed. The selenium tests include tests for registering in the application, logging in, using the chat functionality and uploading an avatar image.
 
 ## Created By:
 ⁠
