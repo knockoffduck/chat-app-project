@@ -4,7 +4,7 @@
 This is a Flask web application that uses the OpenAI API to create a chatbot. The chatbot interacts with users and provides therapy-like conversation in response to prompts from the user. The chat history is stored in a JSON file and is loaded and saved to the database table to allow for continuous conversations with the chatbot.
 The purpose of this web application is to provide users with a version of an online therapist, which they can chat with at anytime, anywhere. This aims to provide people with an accessible and helpful 'therapist', which they can talk to about their day, any issues they are having, their mental health or relationships. The login feature of the application allows a person's conversation history to be recorded and saved, so that when a user logs back in, they can begin a conversation where they left off. A user's account also ensures that their chats are not accessible to others, keeping conversations private.
 When a person opens this application, they are greeted with the homepage for 'MindMate', the name of our app. This homepage explains the features of the app and how it can provide support for individuals. On clicking 'Chat Now', a user is prompted to login, or create an account to access the chat service. On logging in, the chat page appears, where a user can start chatting with the therapy chat assistant. Responses will be provided based on what a user talks about. Conversation history is stored within the 'Chat' page, and can be searches using the 'Search' page, both accessible from the navigation menu. Here, a user can search for keywords in their previous chat history, and can see questions and responses at that point in time. A user is also able to view and change their account details in the 'Account' page if they need to. There is also a dropdown menu to allow users to choose a 'darkmode' option for the application. If a user logs out, on their next login, they are able to continue their conversation with the therapy chat assistant, who remembers all previous interactions.
-The purpose of MindMate is to provide support and advice for individuals, tailored to them, so that people have a place where they can freely and confidently talk about whatever they need to.
+The purpose of MindMate is to provide support and advice for individuals, tailored to them, so that people have a place where they can freely and confidently talk about whatever is on their mind.
 
 ## Architecture of the Web Application
 #### Database Schema
@@ -35,8 +35,11 @@ Primary Key: ['id']
 Foreign Key: email_hash_id -> user.email_hash_id  
 
 #### Chat
-Our website contains a chat feature, where we use OpenAI API to create a chatbot
-to be finished...
+Our website contains a chat feature, where we use OpenAI API to create a chatbot. The /api/prompt endpoint is designed to interact with the OpenAI API and simulate a therapist. 
+The user will send a message via the chat interface, causing the client to send a HTTP request to the /api/prompt endpoint. The server receives the request and uses it to interact with the OpenAI API. The OpenAI API will send a response back to the server which contains the generated response based on the user's prompt. Then, the server sends the generated response back to the client as a HTTP response. Finally, the client receives the response from the server and displays it in the chat interface. This process is done multiple times as the user inputs more messages in the chat, creating a conversation with the therapist.
+
+### Search
+The search page is responsible for storing a user's chat history. The user is able to interact with the web application by accessing the search page and entering a search query. The client captures the search query and sends it to the server. The search pag eis handle by a Flask view function called 'search'. This view function is responsible for processing the user's search query and generating a response to be sent back to the client. The view function retrieves the search query and attempts to load the stored messages from a JSON file. The loaded messages are filtered based on the current user and the inputted search query. The client receives the response and updates the page with the search results.
 
 ## Steps to Launch the Web Application Using `app.py`
 
@@ -94,7 +97,7 @@ EDIT:
 
 
 ## Testing
-Tests for the web application include: tests to ensure eaach flask route can be accessed successfully, correct password hashing, valid registration and login, handling for invalid registration and login, and successful profile changes.  
+Tests for the web application include: tests to ensure eaach flask route can be accessed successfully, correct password hashing, valid registration and login, handling for invalid registration and login, successful profile changes, and correct avatar and chat functionality.
   
 
 Run the following command in the terminal to run the tests:
@@ -109,14 +112,20 @@ Then run the following command in the terminal to have a coverage report returne
    ```
 
 ### Selenium Tests
-Have the application running on local host `http://127.0.0.1:5000/` and open a new terminal.
+First, run the application in one terminal with:
+   ```
+   python app.py --testing
+   ```
+
+This will ensure that the application is running in a testing environment to access the testing database.
+Once the website is running on localhost `http://127.0.0.1:5000/`, open a new terminal.
 In this new terminal, to run the Selenium Tests, run the following command:
 
    ```
    python tests/test_selenium.py
    ```
 
-The selenium tests are designed to run in Chrome and use chromedriver to do so. Ensure that the lastest version of Chrome is installed. The selenium tests include tests for registering in the application, logging in, and using the chat functionality.
+The selenium tests are designed to run in Chrome and use chromedriver to do so. Ensure that the lastest version of Chrome is installed. The selenium tests include tests for registering in the application, logging in, using the chat functionality and uploading an avatar image.
 
 ## Commit Logs
 ...
