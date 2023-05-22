@@ -6,7 +6,10 @@ from flask_login import current_user
 
 class RouteTestCase(unittest.TestCase):
     def setUp(self):
+        #as a warning about Werkeug version appears
         warnings.filterwarnings("ignore", category=DeprecationWarning)
+        #unclosed Socket warning
+        warnings.filterwarnings(action="ignore", message="unclosed", category=ResourceWarning)
         self.app = create_app(TestingConfig)
         self.app_context = self.app.app_context()
         self.app_context.push()
@@ -138,8 +141,6 @@ class RouteTestCase(unittest.TestCase):
             self.assertEqual(current_user.email, 'test@email.net')
             response = self.client.get('/search/1',follow_redirects=True)
             self.assertEqual(response.status_code, 200)
-
-
 
 
 if __name__ == '__main__':

@@ -8,7 +8,10 @@ from config import TestingConfig
 
 class UserModelCase(unittest.TestCase):
     def setUp(self):
+        #as a warning about Werkeug version appears
         warnings.filterwarnings("ignore", category=DeprecationWarning)
+        #unclosed Socket warning
+        warnings.filterwarnings(action="ignore", message="unclosed", category=ResourceWarning)
         self.app = create_app(TestingConfig)
         self.app_context = self.app.app_context()
         self.app_context.push()
@@ -32,6 +35,7 @@ class UserModelCase(unittest.TestCase):
         db.session.remove()
         db.drop_all()
         self.app_context.pop()
+
 
     def test_password_hashing(self):
         """
@@ -80,7 +84,7 @@ class UserModelCase(unittest.TestCase):
         # Send a POST request to the generate_text endpoint
         response = self.client.post(
             "/api/prompt",
-            data={"email": "user@example.com", "input": "Hello"},
+            data={"email": "test@email.net", "input": "Hello"},
         )
         # Assert that the response contains the generated_text key in the JSON data
         self.assertIn("generated_text", response.json)
@@ -93,6 +97,7 @@ class UserModelCase(unittest.TestCase):
 
         # Check that the generated_text is of the expected data type
         self.assertIsInstance(generated_text, str)
+
 
     def test_anonymous_user(self):
         """

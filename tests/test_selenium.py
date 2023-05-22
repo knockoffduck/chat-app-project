@@ -109,18 +109,20 @@ class SystemTest(unittest.TestCase):
         self.assertEqual(u.email, "q@gmail.com", msg="user exists in db")
 
     def test_login(self):
-        u = User.query.filter_by(email="test@email.net.au").first()
-        self.assertEqual(u.email, "test@email.net.au", msg="user exists in db")
-        self.driver.get("http://localhost:5000/auth/login")
+        u = User.query.filter_by(email='test@email.net.au').first()
+        self.assertEqual(u.email,'test@email.net.au', msg='user exists in db')
+        self.driver.get('http://localhost:5000/auth/login')
         self.driver.implicitly_wait(5)
         email = self.driver.find_element(By.ID, "email")
-        email.send_keys("test@email.net.au")
+        email.send_keys('test@email.net.au')
         pword = self.driver.find_element(By.ID, "password")
-        pword.send_keys("password")
+        pword.send_keys('password')
         time.sleep(1)
         self.driver.implicitly_wait(5)
         submit = self.driver.find_element(By.ID, "submit")
         submit.click()
+        time.sleep(1)
+        #Chat page appears
         assert "Send" in self.driver.page_source
 
     def test_avatar(self):
